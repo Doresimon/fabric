@@ -42,7 +42,7 @@ setGlobals () {
 		if [ $PEER -eq 0 ]; then
 			CORE_PEER_ADDRESS=peer0.org1.example.com:7051
 		else
-			CORE_PEER_ADDRESS=peer1.org1.example.com:7051
+			CORE_PEER_ADDRESS=peer1.org1.example.com:8051
 		fi
 	elif [ $ORG -eq 3 ] ; then
 		CORE_PEER_LOCALMSPID="Org3MSP"
@@ -55,9 +55,9 @@ setGlobals () {
 		CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_ORG2_CA
 		CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
 		if [ $PEER -eq 0 ]; then
-			CORE_PEER_ADDRESS=peer0.org2.example.com:7051
+			CORE_PEER_ADDRESS=peer0.org2.example.com:9051
 		else
-			CORE_PEER_ADDRESS=peer1.org2.example.com:7051
+			CORE_PEER_ADDRESS=peer1.org2.example.com:10051
 		fi
 	fi
 
@@ -223,7 +223,7 @@ chaincodeQuery () {
 # peers and associated org, then sets $PEER_CONN_PARMS and $PEERS
 parsePeerConnectionParameters() {
 	# check for uneven number of peer and org parameters
-	if [ $(( $# % 2 )) -ne 0 ]; then
+	if [ $(( $# % 3 )) -ne 0 ]; then
         	exit 1
 	fi
 
@@ -232,13 +232,13 @@ parsePeerConnectionParameters() {
 	while [ "$#" -gt 0 ]; do
 		PEER="peer$1.org$2"
 		PEERS="$PEERS $PEER"
-		PEER_CONN_PARMS="$PEER_CONN_PARMS --peerAddresses $PEER.example.com:7051"
+		PEER_CONN_PARMS="$PEER_CONN_PARMS --peerAddresses $PEER.example.com:$3"
 		if [ -z "$CORE_PEER_TLS_ENABLED" -o "$CORE_PEER_TLS_ENABLED" = "true" ]; then
         		TLSINFO=$(eval echo "--tlsRootCertFiles \$PEER$1_ORG$2_CA")
         		PEER_CONN_PARMS="$PEER_CONN_PARMS $TLSINFO"
         	fi
 		# shift by two to get the next pair of peer/org parameters
-        	shift; shift
+        	shift; shift ; shift
 	done
 	# remove leading space for output
 	PEERS="$(echo -e "$PEERS" | sed -e 's/^[[:space:]]*//')"
@@ -300,7 +300,7 @@ chaincodeQuery 0 1 100
 
 # Invoke on chaincode on peer0.org1 and peer0.org2
 echo "Sending invoke transaction on peer0.org1 and peer0.org2..."
-chaincodeInvoke 0 1 0 2
+chaincodeInvoke 0 1 7051 0 2 9051
 
 # Install chaincode on peer1.org2
 echo "Installing chaincode on peer1.org2..."
