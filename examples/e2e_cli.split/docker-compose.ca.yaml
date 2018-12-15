@@ -11,12 +11,12 @@ services:
     image: hyperledger/fabric-ca
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=ca-Alice
+      - FABRIC_CA_SERVER_CA_NAME=ca-Bob
       - FABRIC_CA_SERVER_TLS_ENABLED=true
-      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.Alice.example.com-cert.pem
-      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/5a6cf0ef36d17ce6fee96d42153da20321115c9a2a3aba848d6e2837fd17ffce_sk
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.Bob.example.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/fdc9933b5898d6e0c5270df5c601001c1b12e9bdc996a26f4e0b22a7d8973106_sk
     ports:
       - "7054:7054"
-    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.Alice.example.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/5a6cf0ef36d17ce6fee96d42153da20321115c9a2a3aba848d6e2837fd17ffce_sk -b admin:adminpw -d'
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.Bob.example.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/fdc9933b5898d6e0c5270df5c601001c1b12e9bdc996a26f4e0b22a7d8973106_sk -b admin:adminpw -d'
     volumes:
-      - ./crypto-config/peerOrganizations/Alice.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
+      - ./crypto-config/peerOrganizations/Bob.example.com/ca/:/etc/hyperledger/fabric-ca-server-config

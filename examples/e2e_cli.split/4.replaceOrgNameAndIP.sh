@@ -54,6 +54,7 @@ function replace () {
 	
 	sed $OPTS "s/REPLACE_ORG_NAME_1/${ORG_NAME_1}/g" docker-compose.$1.yaml
 	sed $OPTS "s/REPLACE_ORG_NAME_2/${ORG_NAME_2}/g" docker-compose.$1.yaml
+	
 	sed $OPTS "s/REPLACE_ORG_IP_1/${ORG_IP_1}/g" docker-compose.$1.yaml
 	sed $OPTS "s/REPLACE_ORG_IP_2/${ORG_IP_2}/g" docker-compose.$1.yaml
 }

@@ -17,6 +17,7 @@ then
 fi
 
 ORG_NAME=$1
+ORG_ID=$2
 
 echo $ORG_NAME
 

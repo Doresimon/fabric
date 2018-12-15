@@ -6,8 +6,8 @@
 version: "2"
 
 services:
-  zookeeperAlice:
-    container_name: zookeeperAlice
+  zookeeperBob:
+    container_name: zookeeperBob
     extends:
       file: base/zookeeper.base.yaml
       service: zookeeper
@@ -16,9 +16,13 @@ services:
       - ZOO_SERVERS=server.1=zooKeeperAlice:2888:3888 server.2=zooKeeperBob:2888:3888
     volumes:
       # 数据固化，将zookeeper产生的数据映射到本地，当zookeeper丢失等风险是不至于数据丢失
-      - ./chainData/zookeeper/data/zookeeperAlice/:/data/
+      - ./chainData/zookeeper/data/zookeeperBob/:/data/
     extra_hosts:
       - "zooKeeperAlice:10.171.5.32"
       - "kafkaAlice:10.171.5.32"
       - "zooKeeperBob:10.171.5.128"
       - "kafkaBob:10.171.5.128"
+    ports:
+      - 2181:2181
+      - 2888:2888
+      - 3888:3888

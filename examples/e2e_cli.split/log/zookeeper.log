@@ -1,189 +1,76 @@
-Attaching to zookeeperAlice
-[36mzookeeperAlice    |[0m ZooKeeper JMX enabled by default
-[36mzookeeperAlice    |[0m Using config: /conf/zoo.cfg
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,508 [myid:] - INFO  [main:QuorumPeerConfig@124] - Reading configuration from: /conf/zoo.cfg
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,525 [myid:] - INFO  [main:QuorumPeer$QuorumServer@149] - Resolved hostname: zooKeeperBob to address: zooKeeperBob/10.171.5.128
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,526 [myid:] - INFO  [main:QuorumPeer$QuorumServer@149] - Resolved hostname: zooKeeperAlice to address: zooKeeperAlice/10.171.5.32
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,527 [myid:] - WARN  [main:QuorumPeerConfig@305] - No server failure will be tolerated. You need at least 3 servers.
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,528 [myid:] - INFO  [main:QuorumPeerConfig@352] - Defaulting to majority quorums
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,533 [myid:1] - INFO  [main:DatadirCleanupManager@78] - autopurge.snapRetainCount set to 3
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,533 [myid:1] - INFO  [main:DatadirCleanupManager@79] - autopurge.purgeInterval set to 1
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,535 [myid:1] - INFO  [PurgeTask:DatadirCleanupManager$PurgeTask@138] - Purge task started.
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,545 [myid:1] - INFO  [main:QuorumPeerMain@127] - Starting quorum peer
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,548 [myid:1] - INFO  [PurgeTask:DatadirCleanupManager$PurgeTask@144] - Purge task completed.
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,554 [myid:1] - INFO  [main:NIOServerCnxnFactory@89] - binding to port 0.0.0.0/0.0.0.0:2181
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,556 [myid:1] - INFO  [main:QuorumPeer@1019] - tickTime set to 2000
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,556 [myid:1] - INFO  [main:QuorumPeer@1039] - minSessionTimeout set to -1
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,556 [myid:1] - INFO  [main:QuorumPeer@1050] - maxSessionTimeout set to -1
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,556 [myid:1] - INFO  [main:QuorumPeer@1065] - initLimit set to 5
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,569 [myid:1] - INFO  [ListenerThread:QuorumCnxManager$Listener@534] - My election bind port: zooKeeperAlice/10.171.5.32:3888
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,571 [myid:1] - ERROR [zooKeeperAlice/10.171.5.32:3888:QuorumCnxManager$Listener@547] - Exception while listening
-[36mzookeeperAlice    |[0m java.net.BindException: Cannot assign requested address (Bind failed)
-[36mzookeeperAlice    |[0m 	at java.net.PlainSocketImpl.socketBind(Native Method)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
-[36mzookeeperAlice    |[0m 	at java.net.ServerSocket.bind(ServerSocket.java:375)
-[36mzookeeperAlice    |[0m 	at java.net.ServerSocket.bind(ServerSocket.java:329)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager$Listener.run(QuorumCnxManager.java:537)
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,577 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumPeer@774] - LOOKING
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,580 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@818] - New election. My id =  1, proposed zxid=0x0
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,584 [myid:1] - INFO  [WorkerReceiver[myid=1]:FastLeaderElection@600] - Notification: 1 (message format version), 1 (n.leader), 0x0 (n.zxid), 0x1 (n.round), LOOKING (n.state), 1 (n.sid), 0x0 (n.peerEpoch) LOOKING (my state)
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,588 [myid:1] - WARN  [WorkerSender[myid=1]:QuorumCnxManager@400] - Cannot open channel to 2 at election address zooKeeperBob/10.171.5.128:3888
-[36mzookeeperAlice    |[0m java.net.ConnectException: Connection refused (Connection refused)
-[36mzookeeperAlice    |[0m 	at java.net.PlainSocketImpl.socketConnect(Native Method)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-[36mzookeeperAlice    |[0m 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-[36mzookeeperAlice    |[0m 	at java.net.Socket.connect(Socket.java:589)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectOne(QuorumCnxManager.java:381)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.toSend(QuorumCnxManager.java:354)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.FastLeaderElection$Messenger$WorkerSender.process(FastLeaderElection.java:452)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.FastLeaderElection$Messenger$WorkerSender.run(FastLeaderElection.java:433)
-[36mzookeeperAlice    |[0m 	at java.lang.Thread.run(Thread.java:748)
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,589 [myid:1] - INFO  [WorkerSender[myid=1]:QuorumPeer$QuorumServer@149] - Resolved hostname: zooKeeperBob to address: zooKeeperBob/10.171.5.128
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,786 [myid:1] - WARN  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@400] - Cannot open channel to 2 at election address zooKeeperBob/10.171.5.128:3888
-[36mzookeeperAlice    |[0m java.net.ConnectException: Connection refused (Connection refused)
-[36mzookeeperAlice    |[0m 	at java.net.PlainSocketImpl.socketConnect(Native Method)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-[36mzookeeperAlice    |[0m 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-[36mzookeeperAlice    |[0m 	at java.net.Socket.connect(Socket.java:589)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectOne(QuorumCnxManager.java:381)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectAll(QuorumCnxManager.java:426)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.FastLeaderElection.lookForLeader(FastLeaderElection.java:843)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumPeer.run(QuorumPeer.java:822)
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,787 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumPeer$QuorumServer@149] - Resolved hostname: zooKeeperBob to address: zooKeeperBob/10.171.5.128
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:23,787 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 400
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:24,188 [myid:1] - WARN  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@400] - Cannot open channel to 2 at election address zooKeeperBob/10.171.5.128:3888
-[36mzookeeperAlice    |[0m java.net.ConnectException: Connection refused (Connection refused)
-[36mzookeeperAlice    |[0m 	at java.net.PlainSocketImpl.socketConnect(Native Method)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-[36mzookeeperAlice    |[0m 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-[36mzookeeperAlice    |[0m 	at java.net.Socket.connect(Socket.java:589)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectOne(QuorumCnxManager.java:381)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectAll(QuorumCnxManager.java:426)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.FastLeaderElection.lookForLeader(FastLeaderElection.java:843)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumPeer.run(QuorumPeer.java:822)
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:24,188 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumPeer$QuorumServer@149] - Resolved hostname: zooKeeperBob to address: zooKeeperBob/10.171.5.128
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:24,188 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 800
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:24,574 [myid:1] - INFO  [zooKeeperAlice/10.171.5.32:3888:QuorumCnxManager$Listener@534] - My election bind port: zooKeeperAlice/10.171.5.32:3888
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:24,574 [myid:1] - ERROR [zooKeeperAlice/10.171.5.32:3888:QuorumCnxManager$Listener@547] - Exception while listening
-[36mzookeeperAlice    |[0m java.net.BindException: Cannot assign requested address (Bind failed)
-[36mzookeeperAlice    |[0m 	at java.net.PlainSocketImpl.socketBind(Native Method)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
-[36mzookeeperAlice    |[0m 	at java.net.ServerSocket.bind(ServerSocket.java:375)
-[36mzookeeperAlice    |[0m 	at java.net.ServerSocket.bind(ServerSocket.java:329)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager$Listener.run(QuorumCnxManager.java:537)
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:24,989 [myid:1] - WARN  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@400] - Cannot open channel to 2 at election address zooKeeperBob/10.171.5.128:3888
-[36mzookeeperAlice    |[0m java.net.ConnectException: Connection refused (Connection refused)
-[36mzookeeperAlice    |[0m 	at java.net.PlainSocketImpl.socketConnect(Native Method)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-[36mzookeeperAlice    |[0m 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-[36mzookeeperAlice    |[0m 	at java.net.Socket.connect(Socket.java:589)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectOne(QuorumCnxManager.java:381)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectAll(QuorumCnxManager.java:426)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.FastLeaderElection.lookForLeader(FastLeaderElection.java:843)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumPeer.run(QuorumPeer.java:822)
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:24,990 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumPeer$QuorumServer@149] - Resolved hostname: zooKeeperBob to address: zooKeeperBob/10.171.5.128
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:24,990 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 1600
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:25,574 [myid:1] - INFO  [zooKeeperAlice/10.171.5.32:3888:QuorumCnxManager$Listener@534] - My election bind port: zooKeeperAlice/10.171.5.32:3888
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:25,575 [myid:1] - ERROR [zooKeeperAlice/10.171.5.32:3888:QuorumCnxManager$Listener@547] - Exception while listening
-[36mzookeeperAlice    |[0m java.net.BindException: Cannot assign requested address (Bind failed)
-[36mzookeeperAlice    |[0m 	at java.net.PlainSocketImpl.socketBind(Native Method)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
-[36mzookeeperAlice    |[0m 	at java.net.ServerSocket.bind(ServerSocket.java:375)
-[36mzookeeperAlice    |[0m 	at java.net.ServerSocket.bind(ServerSocket.java:329)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager$Listener.run(QuorumCnxManager.java:537)
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:26,576 [myid:1] - INFO  [zooKeeperAlice/10.171.5.32:3888:QuorumCnxManager$Listener@560] - Leaving listener
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:26,577 [myid:1] - ERROR [zooKeeperAlice/10.171.5.32:3888:QuorumCnxManager$Listener@562] - As I'm leaving the listener thread, I won't be able to participate in leader election any longer: zooKeeperAlice/10.171.5.32:3888
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:26,590 [myid:1] - WARN  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@400] - Cannot open channel to 2 at election address zooKeeperBob/10.171.5.128:3888
-[36mzookeeperAlice    |[0m java.net.ConnectException: Connection refused (Connection refused)
-[36mzookeeperAlice    |[0m 	at java.net.PlainSocketImpl.socketConnect(Native Method)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-[36mzookeeperAlice    |[0m 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-[36mzookeeperAlice    |[0m 	at java.net.Socket.connect(Socket.java:589)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectOne(QuorumCnxManager.java:381)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectAll(QuorumCnxManager.java:426)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.FastLeaderElection.lookForLeader(FastLeaderElection.java:843)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumPeer.run(QuorumPeer.java:822)
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:26,591 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumPeer$QuorumServer@149] - Resolved hostname: zooKeeperBob to address: zooKeeperBob/10.171.5.128
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:26,591 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 3200
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:29,792 [myid:1] - WARN  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@400] - Cannot open channel to 2 at election address zooKeeperBob/10.171.5.128:3888
-[36mzookeeperAlice    |[0m java.net.ConnectException: Connection refused (Connection refused)
-[36mzookeeperAlice    |[0m 	at java.net.PlainSocketImpl.socketConnect(Native Method)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-[36mzookeeperAlice    |[0m 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-[36mzookeeperAlice    |[0m 	at java.net.Socket.connect(Socket.java:589)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectOne(QuorumCnxManager.java:381)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectAll(QuorumCnxManager.java:426)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.FastLeaderElection.lookForLeader(FastLeaderElection.java:843)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumPeer.run(QuorumPeer.java:822)
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:29,793 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumPeer$QuorumServer@149] - Resolved hostname: zooKeeperBob to address: zooKeeperBob/10.171.5.128
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:29,793 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 6400
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:36,194 [myid:1] - WARN  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@400] - Cannot open channel to 2 at election address zooKeeperBob/10.171.5.128:3888
-[36mzookeeperAlice    |[0m java.net.ConnectException: Connection refused (Connection refused)
-[36mzookeeperAlice    |[0m 	at java.net.PlainSocketImpl.socketConnect(Native Method)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-[36mzookeeperAlice    |[0m 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-[36mzookeeperAlice    |[0m 	at java.net.Socket.connect(Socket.java:589)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectOne(QuorumCnxManager.java:381)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectAll(QuorumCnxManager.java:426)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.FastLeaderElection.lookForLeader(FastLeaderElection.java:843)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumPeer.run(QuorumPeer.java:822)
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:36,194 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumPeer$QuorumServer@149] - Resolved hostname: zooKeeperBob to address: zooKeeperBob/10.171.5.128
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:36,194 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 12800
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:48,995 [myid:1] - WARN  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@400] - Cannot open channel to 2 at election address zooKeeperBob/10.171.5.128:3888
-[36mzookeeperAlice    |[0m java.net.ConnectException: Connection refused (Connection refused)
-[36mzookeeperAlice    |[0m 	at java.net.PlainSocketImpl.socketConnect(Native Method)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-[36mzookeeperAlice    |[0m 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-[36mzookeeperAlice    |[0m 	at java.net.Socket.connect(Socket.java:589)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectOne(QuorumCnxManager.java:381)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectAll(QuorumCnxManager.java:426)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.FastLeaderElection.lookForLeader(FastLeaderElection.java:843)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumPeer.run(QuorumPeer.java:822)
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:48,996 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumPeer$QuorumServer@149] - Resolved hostname: zooKeeperBob to address: zooKeeperBob/10.171.5.128
-[36mzookeeperAlice    |[0m 2018-12-15 17:22:48,996 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 25600
-[36mzookeeperAlice    |[0m 2018-12-15 17:23:14,598 [myid:1] - WARN  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@400] - Cannot open channel to 2 at election address zooKeeperBob/10.171.5.128:3888
-[36mzookeeperAlice    |[0m java.net.ConnectException: Connection refused (Connection refused)
-[36mzookeeperAlice    |[0m 	at java.net.PlainSocketImpl.socketConnect(Native Method)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-[36mzookeeperAlice    |[0m 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-[36mzookeeperAlice    |[0m 	at java.net.Socket.connect(Socket.java:589)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectOne(QuorumCnxManager.java:381)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectAll(QuorumCnxManager.java:426)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.FastLeaderElection.lookForLeader(FastLeaderElection.java:843)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumPeer.run(QuorumPeer.java:822)
-[36mzookeeperAlice    |[0m 2018-12-15 17:23:14,599 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumPeer$QuorumServer@149] - Resolved hostname: zooKeeperBob to address: zooKeeperBob/10.171.5.128
-[36mzookeeperAlice    |[0m 2018-12-15 17:23:14,599 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 51200
-[36mzookeeperAlice    |[0m 2018-12-15 17:24:05,800 [myid:1] - WARN  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@400] - Cannot open channel to 2 at election address zooKeeperBob/10.171.5.128:3888
-[36mzookeeperAlice    |[0m java.net.ConnectException: Connection refused (Connection refused)
-[36mzookeeperAlice    |[0m 	at java.net.PlainSocketImpl.socketConnect(Native Method)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-[36mzookeeperAlice    |[0m 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-[36mzookeeperAlice    |[0m 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-[36mzookeeperAlice    |[0m 	at java.net.Socket.connect(Socket.java:589)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectOne(QuorumCnxManager.java:381)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectAll(QuorumCnxManager.java:426)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.FastLeaderElection.lookForLeader(FastLeaderElection.java:843)
-[36mzookeeperAlice    |[0m 	at org.apache.zookeeper.server.quorum.QuorumPeer.run(QuorumPeer.java:822)
-[36mzookeeperAlice    |[0m 2018-12-15 17:24:05,801 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumPeer$QuorumServer@149] - Resolved hostname: zooKeeperBob to address: zooKeeperBob/10.171.5.128
-[36mzookeeperAlice    |[0m 2018-12-15 17:24:05,801 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 60000
-[36mzookeeperAlice exited with code 143
+Attaching to zookeeperBob
+[36mzookeeperBob    |[0m ZooKeeper JMX enabled by default
+[36mzookeeperBob    |[0m Using config: /conf/zoo.cfg
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,642 [myid:] - INFO  [main:QuorumPeerConfig@124] - Reading configuration from: /conf/zoo.cfg
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,650 [myid:] - INFO  [main:QuorumPeer$QuorumServer@149] - Resolved hostname: zooKeeperBob to address: zooKeeperBob/10.171.5.128
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,650 [myid:] - INFO  [main:QuorumPeer$QuorumServer@149] - Resolved hostname: zooKeeperAlice to address: zooKeeperAlice/10.171.5.32
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,651 [myid:] - WARN  [main:QuorumPeerConfig@305] - No server failure will be tolerated. You need at least 3 servers.
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,651 [myid:] - INFO  [main:QuorumPeerConfig@352] - Defaulting to majority quorums
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,653 [myid:1] - INFO  [main:DatadirCleanupManager@78] - autopurge.snapRetainCount set to 3
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,653 [myid:1] - INFO  [main:DatadirCleanupManager@79] - autopurge.purgeInterval set to 1
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,653 [myid:1] - INFO  [PurgeTask:DatadirCleanupManager$PurgeTask@138] - Purge task started.
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,658 [myid:1] - INFO  [PurgeTask:DatadirCleanupManager$PurgeTask@144] - Purge task completed.
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,659 [myid:1] - INFO  [main:QuorumPeerMain@127] - Starting quorum peer
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,665 [myid:1] - INFO  [main:NIOServerCnxnFactory@89] - binding to port 0.0.0.0/0.0.0.0:2181
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,666 [myid:1] - INFO  [main:QuorumPeer@1019] - tickTime set to 2000
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,666 [myid:1] - INFO  [main:QuorumPeer@1039] - minSessionTimeout set to -1
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,666 [myid:1] - INFO  [main:QuorumPeer@1050] - maxSessionTimeout set to -1
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,666 [myid:1] - INFO  [main:QuorumPeer@1065] - initLimit set to 5
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,673 [myid:1] - INFO  [main:QuorumPeer@533] - currentEpoch not found! Creating with a reasonable default of 0. This should only happen when you are upgrading your installation
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,679 [myid:1] - INFO  [main:QuorumPeer@548] - acceptedEpoch not found! Creating with a reasonable default of 0. This should only happen when you are upgrading your installation
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,690 [myid:1] - INFO  [ListenerThread:QuorumCnxManager$Listener@534] - My election bind port: zooKeeperAlice/10.171.5.32:3888
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,691 [myid:1] - ERROR [zooKeeperAlice/10.171.5.32:3888:QuorumCnxManager$Listener@547] - Exception while listening
+[36mzookeeperBob    |[0m java.net.BindException: Cannot assign requested address (Bind failed)
+[36mzookeeperBob    |[0m 	at java.net.PlainSocketImpl.socketBind(Native Method)
+[36mzookeeperBob    |[0m 	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+[36mzookeeperBob    |[0m 	at java.net.ServerSocket.bind(ServerSocket.java:375)
+[36mzookeeperBob    |[0m 	at java.net.ServerSocket.bind(ServerSocket.java:329)
+[36mzookeeperBob    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager$Listener.run(QuorumCnxManager.java:537)
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,695 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumPeer@774] - LOOKING
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,696 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@818] - New election. My id =  1, proposed zxid=0x0
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,697 [myid:1] - INFO  [WorkerReceiver[myid=1]:FastLeaderElection@600] - Notification: 1 (message format version), 1 (n.leader), 0x0 (n.zxid), 0x1 (n.round), LOOKING (n.state), 1 (n.sid), 0x0 (n.peerEpoch) LOOKING (my state)
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,699 [myid:1] - INFO  [WorkerSender[myid=1]:QuorumCnxManager@199] - Have smaller server identifier, so dropping the connection: (2, 1)
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,899 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@199] - Have smaller server identifier, so dropping the connection: (2, 1)
+[36mzookeeperBob    |[0m 2018-12-15 17:27:13,899 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 400
+[36mzookeeperBob    |[0m 2018-12-15 17:27:14,300 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@199] - Have smaller server identifier, so dropping the connection: (2, 1)
+[36mzookeeperBob    |[0m 2018-12-15 17:27:14,300 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 800
+[36mzookeeperBob    |[0m 2018-12-15 17:27:14,692 [myid:1] - INFO  [zooKeeperAlice/10.171.5.32:3888:QuorumCnxManager$Listener@534] - My election bind port: zooKeeperAlice/10.171.5.32:3888
+[36mzookeeperBob    |[0m 2018-12-15 17:27:14,692 [myid:1] - ERROR [zooKeeperAlice/10.171.5.32:3888:QuorumCnxManager$Listener@547] - Exception while listening
+[36mzookeeperBob    |[0m java.net.BindException: Cannot assign requested address (Bind failed)
+[36mzookeeperBob    |[0m 	at java.net.PlainSocketImpl.socketBind(Native Method)
+[36mzookeeperBob    |[0m 	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+[36mzookeeperBob    |[0m 	at java.net.ServerSocket.bind(ServerSocket.java:375)
+[36mzookeeperBob    |[0m 	at java.net.ServerSocket.bind(ServerSocket.java:329)
+[36mzookeeperBob    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager$Listener.run(QuorumCnxManager.java:537)
+[36mzookeeperBob    |[0m 2018-12-15 17:27:15,101 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@199] - Have smaller server identifier, so dropping the connection: (2, 1)
+[36mzookeeperBob    |[0m 2018-12-15 17:27:15,101 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 1600
+[36mzookeeperBob    |[0m 2018-12-15 17:27:15,693 [myid:1] - INFO  [zooKeeperAlice/10.171.5.32:3888:QuorumCnxManager$Listener@534] - My election bind port: zooKeeperAlice/10.171.5.32:3888
+[36mzookeeperBob    |[0m 2018-12-15 17:27:15,693 [myid:1] - ERROR [zooKeeperAlice/10.171.5.32:3888:QuorumCnxManager$Listener@547] - Exception while listening
+[36mzookeeperBob    |[0m java.net.BindException: Cannot assign requested address (Bind failed)
+[36mzookeeperBob    |[0m 	at java.net.PlainSocketImpl.socketBind(Native Method)
+[36mzookeeperBob    |[0m 	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+[36mzookeeperBob    |[0m 	at java.net.ServerSocket.bind(ServerSocket.java:375)
+[36mzookeeperBob    |[0m 	at java.net.ServerSocket.bind(ServerSocket.java:329)
+[36mzookeeperBob    |[0m 	at org.apache.zookeeper.server.quorum.QuorumCnxManager$Listener.run(QuorumCnxManager.java:537)
+[36mzookeeperBob    |[0m 2018-12-15 17:27:16,694 [myid:1] - INFO  [zooKeeperAlice/10.171.5.32:3888:QuorumCnxManager$Listener@560] - Leaving listener
+[36mzookeeperBob    |[0m 2018-12-15 17:27:16,694 [myid:1] - ERROR [zooKeeperAlice/10.171.5.32:3888:QuorumCnxManager$Listener@562] - As I'm leaving the listener thread, I won't be able to participate in leader election any longer: zooKeeperAlice/10.171.5.32:3888
+[36mzookeeperBob    |[0m 2018-12-15 17:27:16,702 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@199] - Have smaller server identifier, so dropping the connection: (2, 1)
+[36mzookeeperBob    |[0m 2018-12-15 17:27:16,702 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 3200
+[36mzookeeperBob    |[0m 2018-12-15 17:27:19,903 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@199] - Have smaller server identifier, so dropping the connection: (2, 1)
+[36mzookeeperBob    |[0m 2018-12-15 17:27:19,904 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 6400
+[36mzookeeperBob    |[0m 2018-12-15 17:27:26,304 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@199] - Have smaller server identifier, so dropping the connection: (2, 1)
+[36mzookeeperBob    |[0m 2018-12-15 17:27:26,305 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 12800
+[36mzookeeperBob    |[0m 2018-12-15 17:27:39,106 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@199] - Have smaller server identifier, so dropping the connection: (2, 1)
+[36mzookeeperBob    |[0m 2018-12-15 17:27:39,106 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 25600
+[36mzookeeperBob    |[0m 2018-12-15 17:28:04,707 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@199] - Have smaller server identifier, so dropping the connection: (2, 1)
+[36mzookeeperBob    |[0m 2018-12-15 17:28:04,707 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 51200
+[36mzookeeperBob    |[0m 2018-12-15 17:28:55,908 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@199] - Have smaller server identifier, so dropping the connection: (2, 1)
+[36mzookeeperBob    |[0m 2018-12-15 17:28:55,908 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 60000
+[36mzookeeperBob    |[0m 2018-12-15 17:29:55,909 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@199] - Have smaller server identifier, so dropping the connection: (2, 1)
+[36mzookeeperBob    |[0m 2018-12-15 17:29:55,909 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 60000
+[36mzookeeperBob    |[0m 2018-12-15 17:30:55,910 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@199] - Have smaller server identifier, so dropping the connection: (2, 1)
+[36mzookeeperBob    |[0m 2018-12-15 17:30:55,911 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 60000
+[36mzookeeperBob    |[0m 2018-12-15 17:31:55,911 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:QuorumCnxManager@199] - Have smaller server identifier, so dropping the connection: (2, 1)
+[36mzookeeperBob    |[0m 2018-12-15 17:31:55,912 [myid:1] - INFO  [QuorumPeer[myid=1]/0.0.0.0:2181:FastLeaderElection@852] - Notification time out: 60000
+[36mzookeeperBob exited with code 143
 [0m

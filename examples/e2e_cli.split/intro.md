@@ -32,7 +32,9 @@
 
 > ./4.replaceOrgNameAndIP.sh Alice 10.171.5.32 Bob 10.171.5.128
 
-> ./5.replaceOrgName.sh Alice
+> ./5.replaceOrgName.sh Alice 1
+>
+> ./5.replaceOrgName.sh Bob 2
 
 > docker-compose -f ./docker-compose.zookeeper.yaml up -d 2>&1
 >
