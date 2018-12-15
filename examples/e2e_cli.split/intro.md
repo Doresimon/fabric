@@ -30,7 +30,9 @@
 >
 > // 6. 生成 \*\*\*MSPanchors.tx
 
-> ./4.replaceOrgNameAndIP Alice 10.171.5.32 Bob 10.171.5.128
+> ./4.replaceOrgNameAndIP.sh Alice 10.171.5.32 Bob 10.171.5.128
+
+> ./5.replaceOrgName.sh Alice
 
 > docker-compose -f ./docker-compose.zookeeper.yaml up -d 2>&1
 >

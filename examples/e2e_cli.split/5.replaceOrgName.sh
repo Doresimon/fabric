@@ -8,7 +8,7 @@
 
 #set -e
 
-if [ x$1 != x ]
+if [ x$1 == x ]
 then
     echo
 	echo "please run with args"
