@@ -22,12 +22,13 @@ services:
       - KAFKA_MIN_INSYNC_REPLICAS=2
       - KAFKA_DEFAULT_REPLICATION_FACTOR=2
       # 指向 Zookeeper 节点的集合，其中包含ZK的集合。
-      - KAFKA_ZOOKEEPER_CONNECT=zooKeeperAlice:2181,zooKeeperBob:2181
+      - KAFKA_ZOOKEEPER_CONNECT=zooKeeperREPLACE_ORG_NAME_1:2181,zooKeeperREPLACE_ORG_NAME_2:2181
     volumes:
       # kafka 数据存储路径，映射到本地
       - ./chainData/kafka/kafka-logs/kafkaREPLACE_ORG_NAME/:/tmp/kafka-logs/
     extra_hosts:
-      - "zooKeeperAlice:10.171.5.128"
-      - "kafkaAlice:10.171.5.128"
-      - "zooKeeperBob:10.171.5.32"
-      - "kafkaBob:10.171.5.32"
+      - "zooKeeperREPLACE_ORG_NAME_1:REPLACE_ORG_IP_1"
+      - "zooKeeperREPLACE_ORG_NAME_2:REPLACE_ORG_IP_2"
+      
+      - "kafkaREPLACE_ORG_NAME_1:REPLACE_ORG_IP_1"
+      - "kafkaREPLACE_ORG_NAME_2:REPLACE_ORG_IP_2"

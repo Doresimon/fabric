@@ -32,7 +32,8 @@ services:
       - ./scripts:/opt/gopath/src/github.com/hyperledger/fabric/peer/scripts/
       - ./channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
     extra_hosts:
-      - "ordererAlice.example.com:10.171.5.128"
-      - "ordererBob.example.com:10.171.5.32"
-      - "peer0.Alice.example.com:10.171.5.128"
-      - "peer0.Bob.example.com:10.171.5.32"
+      - "ordererREPLACE_ORG_NAME_1.example.com:REPLACE_ORG_IP_1"
+      - "ordererREPLACE_ORG_NAME_2.example.com:REPLACE_ORG_IP_2"
+      
+      - "peer0.REPLACE_ORG_NAME_1.example.com:REPLACE_ORG_IP_1"
+      - "peer0.REPLACE_ORG_NAME_2.example.com:REPLACE_ORG_IP_2"

@@ -6,12 +6,12 @@
 version: "2"
 
 services:
-  kafkaBob:
+  kafkaAlice:
     extends:
       file: base/kafka.base.yaml
       service: kafka
-    container_name: kafkaBob
-    hostname: kafkaBob
+    container_name: kafkaAlice
+    hostname: kafkaAlice
     environment:
       - KAFKA_BROKER_ID=1
       # min.insync.replicas=M --- 设置一个M值（例如1<M<N，查看下面的default.replication.factor）
@@ -25,7 +25,7 @@ services:
       - KAFKA_ZOOKEEPER_CONNECT=zooKeeperAlice:2181,zooKeeperBob:2181
     volumes:
       # kafka 数据存储路径，映射到本地
-      - ./chainData/kafka/kafka-logs/kafkaBob/:/tmp/kafka-logs/
+      - ./chainData/kafka/kafka-logs/kafkaAlice/:/tmp/kafka-logs/
     extra_hosts:
       - "zooKeeperAlice:10.171.5.128"
       - "kafkaAlice:10.171.5.128"

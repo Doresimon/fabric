@@ -17,11 +17,14 @@ services:
       - ./crypto-config/ordererOrganizations/example.com/orderers/ordererREPLACE_ORG_NAME.example.com/msp:/var/hyperledger/orderer/msp
       - ./crypto-config/ordererOrganizations/example.com/orderers/ordererREPLACE_ORG_NAME.example.com/tls:/var/hyperledger/orderer/tls
     extra_hosts:
-      - "zooKeeperAlice:10.171.5.128"
-      - "zooKeeperBob:10.171.5.32"
+      - "ordererREPLACE_ORG_NAME_1.example.com:REPLACE_ORG_IP_1"
+      - "ordererREPLACE_ORG_NAME_2.example.com:REPLACE_ORG_IP_2"
 
-      - "kafkaAlice:10.171.5.128"
-      - "kafkaBob:10.171.5.32"
+      - "peer0.REPLACE_ORG_NAME_1.example.com:REPLACE_ORG_IP_1"
+      - "peer0.REPLACE_ORG_NAME_2.example.com:REPLACE_ORG_IP_2"
 
-      - "ordererAlice.example.com:10.171.5.128"
-      - "ordererBob.example.com:10.171.5.32"
+      - "zooKeeperREPLACE_ORG_NAME_1:REPLACE_ORG_IP_1"
+      - "kafkaREPLACE_ORG_NAME_1:REPLACE_ORG_IP_1"
+
+      - "zooKeeperREPLACE_ORG_NAME_2:REPLACE_ORG_IP_2"
+      - "kafkaREPLACE_ORG_NAME_2:REPLACE_ORG_IP_2"
