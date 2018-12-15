@@ -116,13 +116,13 @@ function generateChannelArtifacts() {
 	echo "#################################################################"
 	echo "#######    Generating anchor peer update for Org1MSP   ##########"
 	echo "#################################################################"
-	$CONFIGTXGEN -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org1MSP
+	$CONFIGTXGEN -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/AliceMSPanchors.tx -channelID $CHANNEL_NAME -asOrg AliceMSP
 
 	echo
 	echo "#################################################################"
 	echo "#######    Generating anchor peer update for Org2MSP   ##########"
 	echo "#################################################################"
-	$CONFIGTXGEN -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org2MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org2MSP
+	$CONFIGTXGEN -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/BobMSPanchors.tx -channelID $CHANNEL_NAME -asOrg BobMSP
 	echo
 }
 
