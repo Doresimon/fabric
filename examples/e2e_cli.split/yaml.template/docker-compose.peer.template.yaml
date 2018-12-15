@@ -22,6 +22,10 @@ services:
       - /var/run/:/host/var/run/
       - ./crypto-config/peerOrganizations/REPLACE_ORG_NAME.example.com/peers/peer0.REPLACE_ORG_NAME.example.com/msp:/etc/hyperledger/fabric/msp
       - ./crypto-config/peerOrganizations/REPLACE_ORG_NAME.example.com/peers/peer0.REPLACE_ORG_NAME.example.com/tls:/etc/hyperledger/fabric/tls
+    ports:
+      - 7051:7051
+      - 7052:7052
+      - 7053:7053
     extra_hosts:
       - "ordererREPLACE_ORG_NAME_1.example.com:REPLACE_ORG_IP_1"
       - "ordererREPLACE_ORG_NAME_2.example.com:REPLACE_ORG_IP_2"

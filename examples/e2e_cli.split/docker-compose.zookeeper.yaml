@@ -12,7 +12,7 @@ services:
       file: base/zookeeper.base.yaml
       service: zookeeper
     environment:
-      - ZOO_MY_ID=1
+      - ZOO_MY_ID=2
       - ZOO_SERVERS=server.1=zooKeeperAlice:2888:3888 server.2=zooKeeperBob:2888:3888
     volumes:
       # 数据固化，将zookeeper产生的数据映射到本地，当zookeeper丢失等风险是不至于数据丢失

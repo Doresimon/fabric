@@ -13,7 +13,7 @@ services:
     container_name: kafkaREPLACE_ORG_NAME
     hostname: kafkaREPLACE_ORG_NAME
     environment:
-      - KAFKA_BROKER_ID=1
+      - KAFKA_BROKER_ID=REPLACE_ORG_ID
       # min.insync.replicas=M --- 设置一个M值（例如1<M<N，查看下面的default.replication.factor）
       # 数据提交时会写入至少M个副本（这些数据然后会被同步并且归属到in-sync副本集合或ISR）。
       # 其它情况，写入操作会返回一个错误。接下来：
@@ -26,6 +26,8 @@ services:
     volumes:
       # kafka 数据存储路径，映射到本地
       - ./chainData/kafka/kafka-logs/kafkaREPLACE_ORG_NAME/:/tmp/kafka-logs/
+    ports:
+      - "9002:9092"
     extra_hosts:
       - "zooKeeperREPLACE_ORG_NAME_1:REPLACE_ORG_IP_1"
       - "zooKeeperREPLACE_ORG_NAME_2:REPLACE_ORG_IP_2"
