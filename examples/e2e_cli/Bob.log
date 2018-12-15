@@ -1,0 +1,23 @@
+setting to default channel 'mychannel'
+crypto-config directory already exists.
+Creating peer1.org2.example.com ... 
+Creating zookeeper1 ... 
+Creating peer0.org2.example.com ... 
+Creating zookeeper2 ... 
+Creating zookeeper0 ... 
+Creating zookeeper1
+Creating peer1.org2.example.com
+Creating zookeeper0
+Creating zookeeper2
+Creating peer0.org2.example.com
+[1A[2KCreating zookeeper1 ... [32mdone[0m[1B[1A[2KCreating peer1.org2.example.com ... [32mdone[0m[1B[1A[2KCreating peer0.org2.example.com ... [32mdone[0m[1B[1A[2KCreating zookeeper2 ... [32mdone[0m[1B[1A[2KCreating zookeeper0 ... [32mdone[0m[1BCreating kafka0 ... 
+Creating kafka2 ... 
+Creating kafka0
+Creating kafka3 ... 
+Creating kafka1 ... 
+Creating kafka2
+Creating kafka1
+Creating kafka3
+[1A[2KCreating kafka0 ... [32mdone[0m[1B[1A[2KCreating kafka1 ... [32mdone[0m[1B[1A[2KCreating kafka2 ... [32mdone[0m[1B[1A[2KCreating kafka3 ... [32mdone[0m[1BCreating orderer.example.com ... 
+Creating orderer.example.com
+[1A[2KCreating orderer.example.com ... [32mdone[0m[1B
