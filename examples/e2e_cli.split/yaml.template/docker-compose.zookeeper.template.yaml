@@ -8,6 +8,7 @@ version: "2"
 services:
   zookeeperREPLACE_ORG_NAME:
     container_name: zookeeperREPLACE_ORG_NAME
+    hostname: zooKeeperREPLACE_ORG_NAME
     extends:
       file: base/zookeeper.base.yaml
       service: zookeeper
