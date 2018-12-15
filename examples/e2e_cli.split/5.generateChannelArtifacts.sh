@@ -18,76 +18,6 @@ echo
 
 OS_ARCH=$(echo "$(uname -s|tr '[:upper:]' '[:lower:]'|sed 's/mingw64_nt.*/windows/')-$(uname -m | sed 's/x86_64/amd64/g')" | awk '{print tolower($0)}')
 
-## Using docker-compose template replace private key file names with constants
-function replacePrivateKey () {
-	ARCH=`uname -s | grep Darwin`
-	if [ "$ARCH" == "Darwin" ]; then
-		OPTS="-it"
-	else
-		OPTS="-i"
-	fi
-
-	cp docker-compose.ca.template.yaml docker-compose.ca.yaml
-
-        CURRENT_DIR=$PWD
-        cd crypto-config/peerOrganizations/Alice.example.com/ca/
-        PRIV_KEY=$(ls *_sk)
-        cd $CURRENT_DIR
-        sed $OPTS "s/CA_PRIVATE_KEY/${PRIV_KEY}/g" docker-compose.ca.yaml
-        # cd crypto-config/peerOrganizations/Bob.example.com/ca/
-        # PRIV_KEY=$(ls *_sk)
-        # cd $CURRENT_DIR
-        # sed $OPTS "s/CA2_PRIVATE_KEY/${PRIV_KEY}/g" docker-compose-e2e.yaml
-}
-
-## Generates Org certs using cryptogen tool
-function generateCerts (){
-	CRYPTOGEN=$FABRIC_ROOT/release/$OS_ARCH/bin/cryptogen
-
-	if [ -f "$CRYPTOGEN" ]; then
-            echo "Using cryptogen -> $CRYPTOGEN"
-	else
-	    echo "Building cryptogen"
-	    make -C $FABRIC_ROOT release
-	fi
-
-	echo
-	echo "##########################################################"
-	echo "##### Generate certificates using cryptogen tool #########"
-	echo "##########################################################"
-	$CRYPTOGEN generate --config=./crypto-config.yaml
-	echo
-}
-
-function generateIdemixMaterial (){
-	IDEMIXGEN=$FABRIC_ROOT/release/$OS_ARCH/bin/idemixgen
-	CURDIR=`pwd`
-	IDEMIXMATDIR=$CURDIR/crypto-config/idemix
-
-	if [ -f "$IDEMIXGEN" ]; then
-            echo "Using idemixgen -> $IDEMIXGEN"
-	else
-	    echo "Building idemixgen"
-	    make -C $FABRIC_ROOT release
-	fi
-
-	echo
-	echo "####################################################################"
-	echo "##### Generate idemix crypto material using idemixgen tool #########"
-	echo "####################################################################"
-
-	mkdir -p $IDEMIXMATDIR
-	cd $IDEMIXMATDIR
-
-	# Generate the idemix issuer keys
-	$IDEMIXGEN ca-keygen
-
-	# Generate the idemix signer keys
-	$IDEMIXGEN signerconfig -u OU1 -e OU1 -r 1
-
-	cd $CURDIR
-}
-
 ## Generate orderer genesis block , channel configuration transaction and anchor peer update transactions
 function generateChannelArtifacts() {
 
@@ -126,7 +56,4 @@ function generateChannelArtifacts() {
 	echo
 }
 
-generateCerts
-generateIdemixMaterial
-replacePrivateKey
 generateChannelArtifacts
