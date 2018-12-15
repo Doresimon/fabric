@@ -68,6 +68,7 @@ function replace () {
 	cd $CURRENT_DIR
 	
 	sed $OPTS "s/REPLACE_ORG_NAME/${ORG_NAME}/g" docker-compose.$1.yaml
+	sed $OPTS "s/REPLACE_ORG_ID/${ORG_ID}/g" docker-compose.$1.yaml
 }
 
 replace zookeeper
