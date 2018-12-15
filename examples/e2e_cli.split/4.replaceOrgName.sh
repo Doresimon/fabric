@@ -32,14 +32,12 @@ function replacePrivateKey () {
 	echo "##### Generate docker-compose.ca.yaml using ca certificate #########"
 	echo "####################################################################"
 
-	cp ./yaml.template/docker-compose.ca.template.yaml docker-compose.ca.yaml
-
-        CURRENT_DIR=$PWD
-        cd crypto-config/peerOrganizations/${ORG_NAME}.example.com/ca/
-        PRIV_KEY=$(ls *_sk)
-        cd $CURRENT_DIR
-        sed $OPTS "s/REPLACE_CA_PRIVATE_KEY/${PRIV_KEY}/g" docker-compose.ca.yaml
-        # sed $OPTS "s/REPLACE_ORG_NAME/${ORG_NAME}/g" docker-compose.ca.yaml
+	CURRENT_DIR=$PWD
+	cd crypto-config/peerOrganizations/${ORG_NAME}.example.com/ca/
+	PRIV_KEY=$(ls *_sk)
+	cd $CURRENT_DIR
+	sed $OPTS "s/REPLACE_CA_PRIVATE_KEY/${PRIV_KEY}/g" docker-compose.ca.yaml
+	# sed $OPTS "s/REPLACE_ORG_NAME/${ORG_NAME}/g" docker-compose.ca.yaml
 }
 
 function replace () {
@@ -51,9 +49,9 @@ function replace () {
 	fi
 
 	echo
-	echo "####################################################################"
-	echo "##### Generate docker-compose.kafka.yaml using ca certificate #########"
-	echo "####################################################################"
+	echo "#####################################################################################"
+	echo "##### Generate docker-compose.$1.yaml using docker-compose.$1.template.yaml #########"
+	echo "#####################################################################################"
 
 	cp ./yaml.template/docker-compose.$1.template.yaml docker-compose.$1.yaml
 
@@ -63,10 +61,10 @@ function replace () {
         sed $OPTS "s/REPLACE_ORG_NAME/${ORG_NAME}/g" docker-compose.$1.yaml
 }
 
-replacePrivateKey
 replace zookeeper
 replace kafka
 replace order
 replace peer
 replace cli
 replace ca
+replacePrivateKey

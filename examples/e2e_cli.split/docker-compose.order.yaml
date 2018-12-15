@@ -6,16 +6,16 @@
 version: "2"
 
 services:
-  ordererAlice.example.com:
+  ordererBob.example.com:
     extends:
       file: base/orderer.base.yaml
       service: orderer.base
-    container_name: ordererAlice.example.com
+    container_name: ordererBob.example.com
     volumes:
       # mapping data from docker to local storage
-      - ./chainData/orderer/ordererAlice/:/var/hyperledger/production/
-      - ./crypto-config/ordererOrganizations/example.com/orderers/ordererAlice.example.com/msp:/var/hyperledger/orderer/msp
-      - ./crypto-config/ordererOrganizations/example.com/orderers/ordererAlice.example.com/tls:/var/hyperledger/orderer/tls
+      - ./chainData/orderer/ordererBob/:/var/hyperledger/production/
+      - ./crypto-config/ordererOrganizations/example.com/orderers/ordererBob.example.com/msp:/var/hyperledger/orderer/msp
+      - ./crypto-config/ordererOrganizations/example.com/orderers/ordererBob.example.com/tls:/var/hyperledger/orderer/tls
     extra_hosts:
       - "zooKeeperAlice:10.171.5.128"
       - "zooKeeperBob:10.171.5.32"

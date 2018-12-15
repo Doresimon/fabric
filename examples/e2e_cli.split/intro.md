@@ -29,17 +29,8 @@
 > // 5. 生成 channel.tx
 >
 > // 6. 生成 \*\*\*MSPanchors.tx
->
-<!-- > docker-compose -f ./docker-compose.zookeeper.yaml up -d > ./log/zookeeper.log &
->
-> docker-compose -f ./docker-compose.kafka.yaml up -d > ./log/kafka.log &
->
-> docker-compose -f ./docker-compose.order.yaml up -d > ./log/order.log &
->
-> docker-compose -f ./docker-compose.peer.yaml up -d > ./log/peer.log &
->
-> docker-compose -f docker-compose.ca.yaml up -d > ./log/ca.log & -->
->
+
+
 > docker-compose -f ./docker-compose.zookeeper.yaml up -d 2>&1
 >
 > docker-compose -f ./docker-compose.kafka.yaml up -d 2>&1
@@ -49,3 +40,16 @@
 > docker-compose -f ./docker-compose.peer.yaml up -d 2>&1
 >
 > docker-compose -f docker-compose.ca.yaml up -d 2>&1
+
+debug version
+
+> docker-compose -f ./docker-compose.zookeeper.yaml up > ./log/zookeeper.log &
+>
+> docker-compose -f ./docker-compose.kafka.yaml up > ./log/kafka.log &
+>
+> docker-compose -f ./docker-compose.order.yaml up > ./log/order.log &
+>
+> docker-compose -f ./docker-compose.peer.yaml up > ./log/peer.log &
+>
+> docker-compose -f docker-compose.ca.yaml up > ./log/ca.log &
+>

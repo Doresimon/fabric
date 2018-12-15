@@ -33,6 +33,6 @@ services:
       - ./channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
     extra_hosts:
       - "ordererAlice.example.com:10.171.5.128"
-      - "ordererBob.lychee.com:10.171.5.32"
+      - "ordererBob.example.com:10.171.5.32"
       - "peer0.Alice.example.com:10.171.5.128"
       - "peer0.Bob.example.com:10.171.5.32"
