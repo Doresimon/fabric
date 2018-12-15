@@ -30,11 +30,11 @@ function replacePrivateKey () {
 	cp docker-compose-e2e-template.yaml docker-compose-e2e.yaml
 
         CURRENT_DIR=$PWD
-        cd crypto-config/peerOrganizations/org1.example.com/ca/
+        cd crypto-config/peerOrganizations/Alice.example.com/ca/
         PRIV_KEY=$(ls *_sk)
         cd $CURRENT_DIR
         sed $OPTS "s/CA1_PRIVATE_KEY/${PRIV_KEY}/g" docker-compose-e2e.yaml
-        cd crypto-config/peerOrganizations/org2.example.com/ca/
+        cd crypto-config/peerOrganizations/Bob.example.com/ca/
         PRIV_KEY=$(ls *_sk)
         cd $CURRENT_DIR
         sed $OPTS "s/CA2_PRIVATE_KEY/${PRIV_KEY}/g" docker-compose-e2e.yaml
@@ -114,13 +114,13 @@ function generateChannelArtifacts() {
 
 	echo
 	echo "#################################################################"
-	echo "#######    Generating anchor peer update for Org1MSP   ##########"
+	echo "#######    Generating anchor peer update for AliceMSP   ##########"
 	echo "#################################################################"
 	$CONFIGTXGEN -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/AliceMSPanchors.tx -channelID $CHANNEL_NAME -asOrg AliceMSP
 
 	echo
 	echo "#################################################################"
-	echo "#######    Generating anchor peer update for Org2MSP   ##########"
+	echo "#######    Generating anchor peer update for BobMSP   ##########"
 	echo "#################################################################"
 	$CONFIGTXGEN -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/BobMSPanchors.tx -channelID $CHANNEL_NAME -asOrg BobMSP
 	echo
