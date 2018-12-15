@@ -39,7 +39,34 @@ function replacePrivateKey () {
         PRIV_KEY=$(ls *_sk)
         cd $CURRENT_DIR
         sed $OPTS "s/REPLACE_CA_PRIVATE_KEY/${PRIV_KEY}/g" docker-compose.ca.yaml
-        sed $OPTS "s/REPLACE_ORG_NAME/${ORG_NAME}/g" docker-compose.ca.yaml
+        # sed $OPTS "s/REPLACE_ORG_NAME/${ORG_NAME}/g" docker-compose.ca.yaml
+}
+
+function replace () {
+	ARCH=`uname -s | grep Darwin`
+	if [ "$ARCH" == "Darwin" ]; then
+		OPTS="-it"
+	else
+		OPTS="-i"
+	fi
+
+	echo
+	echo "####################################################################"
+	echo "##### Generate docker-compose.kafka.yaml using ca certificate #########"
+	echo "####################################################################"
+
+	cp ./yaml.template/docker-compose.$1.template.yaml docker-compose.$1.yaml
+
+        CURRENT_DIR=$PWD
+        cd $CURRENT_DIR
+		
+        sed $OPTS "s/REPLACE_ORG_NAME/${ORG_NAME}/g" docker-compose.$1.yaml
 }
 
 replacePrivateKey
+replace zookeeper
+replace kafka
+replace order
+replace peer
+replace cli
+replace ca
