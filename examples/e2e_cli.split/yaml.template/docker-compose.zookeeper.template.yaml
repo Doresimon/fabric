@@ -22,3 +22,7 @@ services:
       - "kafkaREPLACE_ORG_NAME_1:REPLACE_ORG_IP_1"
       - "zooKeeperREPLACE_ORG_NAME_2:REPLACE_ORG_IP_2"
       - "kafkaREPLACE_ORG_NAME_2:REPLACE_ORG_IP_2"
+    ports:
+      - 2181:2181
+      - 2888:2888
+      - 3888:3888
