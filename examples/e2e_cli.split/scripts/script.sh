@@ -22,10 +22,16 @@ PEER0_ORG1_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrga
 PEER0_ORG2_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/Bob.example.com/peers/peer0.Bob.example.com/tls/ca.crt
 ORDERER_SYSCHAN_ID=e2e-orderer-syschan
 
+CC_NAME=mycc0110-3
+
 CHAINCODE_VERSION=1.0
-CC_NAME=mycc0110-5
+
 
 echo "Channel name : "$CHANNEL_NAME
+
+echo "Chaincode name : "$CC_NAME
+
+echo "Chaincode version : "$CHAINCODE_VERSION
 
 verifyResult () {
 	if [ $1 -ne 0 ] ; then

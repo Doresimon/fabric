@@ -33,13 +33,13 @@ Organizations:
         Policies:
             Readers:
                 Type: Signature
-                Rule: "OR('OrdererMSP.member', 'AliceMSP.peer', 'BobMSP.peer',)"
+                Rule: "OR('OrdererMSP.member')"
             Writers:
                 Type: Signature
-                Rule: "OR('OrdererMSP.member', 'AliceMSP.peer', 'BobMSP.peer',)"
+                Rule: "OR('OrdererMSP.member')"
             Admins:
                 Type: Signature
-                Rule: "OR('OrdererMSP.admin', 'AliceMSP.peer', 'BobMSP.peer',)"
+                Rule: "OR('OrdererMSP.admin')"
 
     - &Alice
         # DefaultOrg defines the organization which is used in the sampleconfig
@@ -244,7 +244,8 @@ Orderer: &OrdererDefaults
     OrdererType: kafka
 
     Addresses:
-        - orderer.example.com:7050
+        - ordererAlice.example.com:7050
+        - ordererBob.example.com:7050
 
     # Batch Timeout: The amount of time to wait before creating a batch
     BatchTimeout: 2s
@@ -357,9 +358,9 @@ Profiles:
         Consortiums:
             SampleConsortium:
                 Organizations:
+                    - *OrdererOrg
                     - *Alice
                     - *Bob
-                    - *Org3
     TwoOrgsChannel:
         Consortium: SampleConsortium
         Application:
@@ -367,4 +368,3 @@ Profiles:
             Organizations:
                 - *Alice
                 - *Bob
-                - *Org3
