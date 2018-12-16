@@ -6,22 +6,22 @@
 version: "2"
 
 services:
-  peer0.Alice.example.com:
-    container_name: peer0.Alice.example.com
+  peer0.REPLACE_ORG_NAME.example.com:
+    container_name: peer0.REPLACE_ORG_NAME.example.com
     extends:
       file: base/peer.base.yaml
       service: peer.base
     environment:
-      - CORE_PEER_ID=peer0.Alice.example.com
-      - CORE_PEER_ADDRESS=peer0.Alice.example.com:7051
-      - CORE_PEER_CHAINCODEADDRESS=peer0.Alice.example.com:7052
+      - CORE_PEER_ID=peer0.REPLACE_ORG_NAME.example.com
+      - CORE_PEER_ADDRESS=peer0.REPLACE_ORG_NAME.example.com:7051
+      - CORE_PEER_CHAINCODEADDRESS=peer0.REPLACE_ORG_NAME.example.com:7052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.Alice.example.com:7051
-      - CORE_PEER_LOCALMSPID=AliceMSP
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.REPLACE_ORG_NAME.example.com:7051
+      - CORE_PEER_LOCALMSPID=REPLACE_ORG_NAMEMSP
     volumes:
       - /var/run/:/host/var/run/
-      - ./crypto-config/peerOrganizations/Alice.example.com/peers/peer0.Alice.example.com/msp:/etc/hyperledger/fabric/msp
-      - ./crypto-config/peerOrganizations/Alice.example.com/peers/peer0.Alice.example.com/tls:/etc/hyperledger/fabric/tls
+      - ./crypto-config/peerOrganizations/REPLACE_ORG_NAME.example.com/peers/peer0.REPLACE_ORG_NAME.example.com/msp:/etc/hyperledger/fabric/msp
+      - ./crypto-config/peerOrganizations/REPLACE_ORG_NAME.example.com/peers/peer0.REPLACE_ORG_NAME.example.com/tls:/etc/hyperledger/fabric/tls
     ports:
       - 7051:7051
       - 7052:7052
