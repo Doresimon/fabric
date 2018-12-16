@@ -5,6 +5,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+DOWN_NAME=$1
+
 function clearContainers () {
         CONTAINER_IDS=$(docker ps -aq)
         if [ -z "$CONTAINER_IDS" -o "$CONTAINER_IDS" = " " ]; then
@@ -38,15 +40,24 @@ function networkDown () {
 
 #     docker-compose -f docker-compose.couch.yaml down
 
-
-    #Cleanup the chaincode containers
-    clearContainers
-
-    #Cleanup images
-    removeUnwantedImages
-
 }
 
+function networkDownOne () {
+    docker-compose -f docker-compose.$1.yaml down
+}
 
-networkDown
+if [ x$DOWN_NAME == x ]
+then
+        echo
+        echo "shutdown all"
+	
+        networkDown
 
+        #Cleanup the chaincode containers
+        clearContainers
+
+        #Cleanup images
+        removeUnwantedImages
+else
+        networkDownOne $DOWN_NAME
+fi
