@@ -30,6 +30,10 @@
 >
 > // 6. 生成 \*\*\*MSPanchors.tx
 
+> rm -rf chainData
+>
+> rm -rf crypto-config
+
 > ./4.replaceOrgNameAndIP.sh Alice 10.171.5.32 Bob 10.171.5.128
 
 > ./5.replaceOrgName.sh Alice 1
