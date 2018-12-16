@@ -23,7 +23,3 @@ services:
       - "kafkaAlice:10.171.5.32"
       - "zooKeeperBob:10.171.5.128"
       - "kafkaBob:10.171.5.128"
-    ports:
-      - 2181:2181
-      - 2888:2888
-      - 3888:3888

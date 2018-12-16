@@ -30,5 +30,7 @@ services:
       - ORDERER_KAFKA_BROKERS=[kafkaAlice:9092,kafkaBob:9092]
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: orderer
+    ports:
+      - 7050:7050
     volumes:
       - ../channel-artifacts/genesis.block:/var/hyperledger/orderer/orderer.genesis.block

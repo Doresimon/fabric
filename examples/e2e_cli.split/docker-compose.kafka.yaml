@@ -26,8 +26,6 @@ services:
     volumes:
       # kafka 数据存储路径，映射到本地
       - ./chainData/kafka/kafka-logs/kafkaREPLACE_ORG_NAME/:/tmp/kafka-logs/
-    ports:
-      - "9002:9092"
     extra_hosts:
       - "zooKeeperAlice:10.171.5.32"
       - "zooKeeperBob:10.171.5.128"

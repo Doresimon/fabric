@@ -16,8 +16,6 @@ services:
       - ./chainData/orderer/ordererREPLACE_ORG_NAME/:/var/hyperledger/production/
       - ./crypto-config/ordererOrganizations/example.com/orderers/ordererREPLACE_ORG_NAME.example.com/msp:/var/hyperledger/orderer/msp
       - ./crypto-config/ordererOrganizations/example.com/orderers/ordererREPLACE_ORG_NAME.example.com/tls:/var/hyperledger/orderer/tls
-    ports:
-      - 7050:7050
     extra_hosts:
       - "ordererREPLACE_ORG_NAME_1.example.com:REPLACE_ORG_IP_1"
       - "ordererREPLACE_ORG_NAME_2.example.com:REPLACE_ORG_IP_2"

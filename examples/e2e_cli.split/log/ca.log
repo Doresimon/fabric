@@ -1,0 +1,98 @@
+Attaching to CA
+[36mCA    |[0m 2018/12/16 09:13:18 [INFO] Created default configuration file at /etc/hyperledger/fabric-ca-server/fabric-ca-server-config.yaml
+[36mCA    |[0m 2018/12/16 09:13:18 [INFO] Starting server in home directory: /etc/hyperledger/fabric-ca-server
+[36mCA    |[0m 2018/12/16 09:13:18 [INFO] Server Version: 1.3.0
+[36mCA    |[0m 2018/12/16 09:13:18 [INFO] Server Levels: &{Identity:1 Affiliation:1 Certificate:1 Credential:1 RAInfo:1 Nonce:1}
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Making server filenames absolute
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Initializing default CA in directory /etc/hyperledger/fabric-ca-server
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Init CA with home /etc/hyperledger/fabric-ca-server and config {Version:1.3.0 Cfg:{Identities:{AllowRemove:false} Affiliations:{AllowRemove:false}} CA:{Name:ca-Alice Keyfile:/etc/hyperledger/fabric-ca-server-config/c42ce2b7196f431ec711009d5499195f4d6606cf398d7f7e50a92aa166e86e6d_sk Certfile:/etc/hyperledger/fabric-ca-server-config/ca.Alice.example.com-cert.pem Chainfile:ca-chain.pem} Signing:0xc42021bee0 CSR:{CN:fabric-ca-server Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[d41bb68cd653 localhost] KeyRequest:0xc4201f76c0 CA:0xc4201f7740 SerialNumber:} Registry:{MaxEnrollments:-1 Identities:[{ Name:**** Pass:**** Type:client Affiliation: MaxEnrollments:0 Attrs:map[hf.GenCRL:1 hf.Registrar.Attributes:* hf.AffiliationMgr:1 hf.Registrar.Roles:* hf.Registrar.DelegateRoles:* hf.Revoker:1 hf.IntermediateCA:1]  }]} Affiliations:map[org2:[department1] org1:[department1 department2]] LDAP:{ Enabled:false URL:ldap://****:****@<host>:<port>/<base> UserFilter:(uid=%s) GroupFilter:(memberUid=%s) Attribute:{[uid member] [{ }] map[groups:[{ }]]} TLS:{false [] { }}  } DB:{ Type:sqlite3 Datasource:fabric-ca-server.db TLS:{false [] { }}  } CSP:0xc4201f77e0 Client:<nil> Intermediate:{ParentServer:{ URL: CAName:  } TLS:{Enabled:false CertFiles:[] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** CAName: AttrReqs:[] Profile: Label: CSR:<nil> Type:x509  }} CRL:{Expiry:24h0m0s} Idemix:{IssuerPublicKeyfile: IssuerSecretKeyfile: RevocationPublicKeyfile: RevocationPrivateKeyfile: RHPoolSize:1000 NonceExpiration:15s NonceSweepInterval:15m}}
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] CA Home Directory: /etc/hyperledger/fabric-ca-server
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Checking configuration file version '1.3.0' against server version: '1.3.0'
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc42021c4b0 PluginOpts:<nil>}
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc420227f30 DummyKeystore:<nil>}
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Initialize key material
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Making CA filenames absolute
+[36mCA    |[0m 2018/12/16 09:13:18 [INFO] The CA key and certificate files already exist
+[36mCA    |[0m 2018/12/16 09:13:18 [INFO] Key file location: /etc/hyperledger/fabric-ca-server-config/c42ce2b7196f431ec711009d5499195f4d6606cf398d7f7e50a92aa166e86e6d_sk
+[36mCA    |[0m 2018/12/16 09:13:18 [INFO] Certificate file location: /etc/hyperledger/fabric-ca-server-config/ca.Alice.example.com-cert.pem
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Validating the CA certificate and key
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Check CA certificate for valid dates
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Check CA certificate for valid usages
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Check CA certificate for valid IsCA value
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Check that key type is supported
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Check that key size is of appropriate length
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Check that public key and private key match
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Validation of CA certificate and key successful
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Loading CN from existing enrollment information
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Initializing DB
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Initializing 'sqlite3' database at '/etc/hyperledger/fabric-ca-server/fabric-ca-server.db'
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Using sqlite database, connect to database in home (/etc/hyperledger/fabric-ca-server/fabric-ca-server.db) directory
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Creating SQLite database (/etc/hyperledger/fabric-ca-server/fabric-ca-server.db) if it does not exist...
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Creating users table if it does not exist
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Creating affiliations table if it does not exist
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Creating certificates table if it does not exist
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Creating credentials table if it does not exist
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Creating revocation_authority_info table if it does not exist
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Creating nonces table if it does not exist
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Creating properties table if it does not exist
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Successfully opened sqlite3 DB
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Checking database schema...
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Update SQLite schema, if using outdated schema
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Upgrade identities table
+[36mCA    |[0m 2018/12/16 09:13:18 [DEBUG] Creating users table if it does not exist
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] Upgrade affiliation table
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] Creating affiliations table if it does not exist
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] Upgrade certificates table
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] Creating certificates table if it does not exist
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] Initializing identity registry
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] Initialized DB identity registry
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] DB: Get properties [identity.level affiliation.level certificate.level]
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] Checking database levels 'map[affiliation.level:0 certificate.level:0 identity.level:0]' against server levels '&{Identity:1 Affiliation:1 Certificate:1 Credential:1 RAInfo:1 Nonce:1}'
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] Loading identity table
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] Loading identity 'admin'
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] DB: Getting identity admin
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] Max enrollment value verification - User specified max enrollment: 0, CA max enrollment: -1
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] DB: Add identity admin
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] Successfully added identity admin to the database
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] Registered identity: { Name:**** Pass:**** Type:client Affiliation: MaxEnrollments:-1 Attrs:map[hf.IntermediateCA:1 hf.GenCRL:1 hf.Registrar.Attributes:* hf.AffiliationMgr:1 hf.Registrar.Roles:* hf.Registrar.DelegateRoles:* hf.Revoker:1]  }
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] Successfully loaded identity table
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] Loading affiliations table
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] DB: Add affiliation org2
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] Affiliation 'org2' added
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] DB: Add affiliation org2.department1
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] Affiliation 'org2.department1' added
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] DB: Add affiliation org1
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] Affiliation 'org1' added
+[36mCA    |[0m 2018/12/16 09:13:19 [DEBUG] DB: Add affiliation org1.department1
+[36mCA    |[0m 2018/12/16 09:13:20 [DEBUG] Affiliation 'org1.department1' added
+[36mCA    |[0m 2018/12/16 09:13:20 [DEBUG] DB: Add affiliation org1.department2
+[36mCA    |[0m 2018/12/16 09:13:20 [DEBUG] Affiliation 'org1.department2' added
+[36mCA    |[0m 2018/12/16 09:13:20 [DEBUG] Successfully loaded affiliations table
+[36mCA    |[0m 2018/12/16 09:13:20 [DEBUG] Checking and performing migration, if needed
+[36mCA    |[0m 2018/12/16 09:13:20 [DEBUG] Updating database level to &{Identity:1 Affiliation:1 Certificate:1 Credential:1 RAInfo:1 Nonce:1}
+[36mCA    |[0m 2018/12/16 09:13:21 [INFO] Initialized sqlite3 database at /etc/hyperledger/fabric-ca-server/fabric-ca-server.db
+[36mCA    |[0m 2018/12/16 09:13:21 [DEBUG] Initializing enrollment signer
+[36mCA    |[0m 2018/12/16 09:13:21 [DEBUG] No key found in BCCSP keystore, attempting fallback
+[36mCA    |[0m 2018/12/16 09:13:21 [DEBUG] validating configuration
+[36mCA    |[0m 2018/12/16 09:13:21 [DEBUG] validate local profile
+[36mCA    |[0m 2018/12/16 09:13:21 [DEBUG] profile is valid
+[36mCA    |[0m 2018/12/16 09:13:21 [DEBUG] validate local profile
+[36mCA    |[0m 2018/12/16 09:13:21 [DEBUG] profile is valid
+[36mCA    |[0m 2018/12/16 09:13:21 [DEBUG] validate local profile
+[36mCA    |[0m 2018/12/16 09:13:21 [DEBUG] profile is valid
+[36mCA    |[0m 2018/12/16 09:13:21 [DEBUG] CA initialization successful
+[36mCA    |[0m 2018/12/16 09:13:21 [DEBUG] Initializing Idemix issuer...
+[36mCA    |[0m 2018/12/16 09:13:21 [INFO] The issuer key was successfully stored. The public key is at: /etc/hyperledger/fabric-ca-server/IssuerPublicKey, secret key is at: /etc/hyperledger/fabric-ca-server/msp/keystore/IssuerSecretKey
+[36mCA    |[0m 2018/12/16 09:13:21 [DEBUG] Intializing revocation authority for issuer 'ca-Alice'
+[36mCA    |[0m 2018/12/16 09:13:21 [DEBUG] Initialize Idemix issuer revocation key material
+[36mCA    |[0m 2018/12/16 09:13:21 [INFO] Idemix issuer revocation public and secret keys were generated for CA 'ca-Alice'
+[36mCA    |[0m 2018/12/16 09:13:21 [INFO] The revocation key was successfully stored. The public key is at: /etc/hyperledger/fabric-ca-server/IssuerRevocationPublicKey, private key is at: /etc/hyperledger/fabric-ca-server/msp/keystore/IssuerRevocationPrivateKey
+[36mCA    |[0m 2018/12/16 09:13:21 [DEBUG] Intializing nonce manager for issuer 'ca-Alice'
+[36mCA    |[0m 2018/12/16 09:13:21 [INFO] Home directory for default CA: /etc/hyperledger/fabric-ca-server
+[36mCA    |[0m 2018/12/16 09:13:21 [DEBUG] 1 CA instance(s) running on server
+[36mCA    |[0m 2018/12/16 09:13:21 [DEBUG] TLS is enabled
+[36mCA    |[0m 2018/12/16 09:13:21 [DEBUG] TLS Certificate: /etc/hyperledger/fabric-ca-server-config/ca.Alice.example.com-cert.pem, TLS Key: /etc/hyperledger/fabric-ca-server-config/c42ce2b7196f431ec711009d5499195f4d6606cf398d7f7e50a92aa166e86e6d_sk
+[36mCA    |[0m 2018/12/16 09:13:21 [DEBUG] Client authentication type requested: noclientcert
+[36mCA    |[0m 2018/12/16 09:13:21 [INFO] Listening on https://0.0.0.0:7054
+[36mCA exited with code 137
+[0m

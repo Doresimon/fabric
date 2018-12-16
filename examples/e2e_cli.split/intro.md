@@ -43,8 +43,10 @@
 > ./5.replaceOrgName.sh Alice 1
 >
 > ./5.replaceOrgName.sh Bob 2
+>
+> ./6.generateChannelArtifacts.sh
 
-> docker-compose -f ./docker-compose.zookeeper.yaml up -d 2>&1
+<!-- > docker-compose -f ./docker-compose.zookeeper.yaml up -d 2>&1
 >
 > docker-compose -f ./docker-compose.kafka.yaml up -d 2>&1
 >
@@ -52,7 +54,7 @@
 >
 > docker-compose -f ./docker-compose.peer.yaml up -d 2>&1
 >
-> docker-compose -f docker-compose.ca.yaml up -d 2>&1
+> docker-compose -f docker-compose.ca.yaml up -d 2>&1 -->
 
 debug version
 

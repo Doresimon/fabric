@@ -1,0 +1,538 @@
+Attaching to peer0.Alice.example.com
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.787 UTC [viperutil] getKeysRecursively -> DEBU 001[0m Found map[string]interface{} value for peer.BCCSP
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.787 UTC [viperutil] unmarshalJSON -> DEBU 002[0m Unmarshal JSON: value cannot be unmarshalled: invalid character 'S' looking for beginning of value
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.787 UTC [viperutil] getKeysRecursively -> DEBU 003[0m Found real value for peer.BCCSP.Default setting to string SW
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.787 UTC [viperutil] getKeysRecursively -> DEBU 004[0m Found map[string]interface{} value for peer.BCCSP.SW
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.788 UTC [viperutil] unmarshalJSON -> DEBU 005[0m Unmarshal JSON: value cannot be unmarshalled: invalid character 'S' looking for beginning of value
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.788 UTC [viperutil] getKeysRecursively -> DEBU 006[0m Found real value for peer.BCCSP.SW.Hash setting to string SHA2
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.788 UTC [viperutil] unmarshalJSON -> DEBU 007[0m Unmarshal JSON: value is not a string: 256
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.788 UTC [viperutil] getKeysRecursively -> DEBU 008[0m Found real value for peer.BCCSP.SW.Security setting to int 256
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.788 UTC [viperutil] getKeysRecursively -> DEBU 009[0m Found map[string]interface{} value for peer.BCCSP.SW.FileKeyStore
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.788 UTC [viperutil] unmarshalJSON -> DEBU 00a[0m Unmarshal JSON: value cannot be unmarshalled: unexpected end of JSON input
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.788 UTC [viperutil] getKeysRecursively -> DEBU 00b[0m Found real value for peer.BCCSP.SW.FileKeyStore.KeyStore setting to string 
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.788 UTC [viperutil] getKeysRecursively -> DEBU 00c[0m Found map[string]interface{} value for peer.BCCSP.PKCS11
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.788 UTC [viperutil] unmarshalJSON -> DEBU 00d[0m Unmarshal JSON: value is not a string: <nil>
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.788 UTC [viperutil] getKeysRecursively -> DEBU 00e[0m Found real value for peer.BCCSP.PKCS11.Pin setting to <nil> <nil>
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.788 UTC [viperutil] unmarshalJSON -> DEBU 00f[0m Unmarshal JSON: value is not a string: <nil>
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.789 UTC [viperutil] getKeysRecursively -> DEBU 010[0m Found real value for peer.BCCSP.PKCS11.Hash setting to <nil> <nil>
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.789 UTC [viperutil] unmarshalJSON -> DEBU 011[0m Unmarshal JSON: value is not a string: <nil>
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.789 UTC [viperutil] getKeysRecursively -> DEBU 012[0m Found real value for peer.BCCSP.PKCS11.Security setting to <nil> <nil>
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.789 UTC [viperutil] getKeysRecursively -> DEBU 013[0m Found map[string]interface{} value for peer.BCCSP.PKCS11.FileKeyStore
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.789 UTC [viperutil] unmarshalJSON -> DEBU 014[0m Unmarshal JSON: value is not a string: <nil>
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.789 UTC [viperutil] getKeysRecursively -> DEBU 015[0m Found real value for peer.BCCSP.PKCS11.FileKeyStore.KeyStore setting to <nil> <nil>
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.789 UTC [viperutil] unmarshalJSON -> DEBU 016[0m Unmarshal JSON: value is not a string: <nil>
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.789 UTC [viperutil] getKeysRecursively -> DEBU 017[0m Found real value for peer.BCCSP.PKCS11.Library setting to <nil> <nil>
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.789 UTC [viperutil] unmarshalJSON -> DEBU 018[0m Unmarshal JSON: value is not a string: <nil>
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.789 UTC [viperutil] getKeysRecursively -> DEBU 019[0m Found real value for peer.BCCSP.PKCS11.Label setting to <nil> <nil>
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.790 UTC [viperutil] EnhancedExactUnmarshalKey -> DEBU 01a[0m map[peer.BCCSP:map[Default:SW SW:map[FileKeyStore:map[KeyStore:] Hash:SHA2 Security:256] PKCS11:map[Pin:<nil> Hash:<nil> Security:<nil> FileKeyStore:map[KeyStore:<nil>] Library:<nil> Label:<nil>]]]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.790 UTC [bccsp_sw] openKeyStore -> DEBU 01b[0m KeyStore opened at [/etc/hyperledger/fabric/msp/keystore]...done
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.790 UTC [bccsp] initBCCSP -> DEBU 01c[0m Initialize BCCSP [SW]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.790 UTC [msp] getPemMaterialFromDir -> DEBU 01d[0m Reading directory /etc/hyperledger/fabric/msp/signcerts
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.790 UTC [msp] getPemMaterialFromDir -> DEBU 01e[0m Inspecting file /etc/hyperledger/fabric/msp/signcerts/peer0.Alice.example.com-cert.pem
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.790 UTC [msp] getPemMaterialFromDir -> DEBU 01f[0m Reading directory /etc/hyperledger/fabric/msp/cacerts
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.790 UTC [msp] getPemMaterialFromDir -> DEBU 020[0m Inspecting file /etc/hyperledger/fabric/msp/cacerts/ca.Alice.example.com-cert.pem
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.790 UTC [msp] getPemMaterialFromDir -> DEBU 021[0m Reading directory /etc/hyperledger/fabric/msp/admincerts
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.790 UTC [msp] getPemMaterialFromDir -> DEBU 022[0m Inspecting file /etc/hyperledger/fabric/msp/admincerts/Admin@Alice.example.com-cert.pem
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.790 UTC [msp] getPemMaterialFromDir -> DEBU 023[0m Reading directory /etc/hyperledger/fabric/msp/intermediatecerts
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.790 UTC [msp] getMspConfig -> DEBU 024[0m Intermediate certs folder not found at [/etc/hyperledger/fabric/msp/intermediatecerts]. Skipping. [stat /etc/hyperledger/fabric/msp/intermediatecerts: no such file or directory]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.790 UTC [msp] getPemMaterialFromDir -> DEBU 025[0m Reading directory /etc/hyperledger/fabric/msp/tlscacerts
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.790 UTC [msp] getPemMaterialFromDir -> DEBU 026[0m Inspecting file /etc/hyperledger/fabric/msp/tlscacerts/tlsca.Alice.example.com-cert.pem
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.790 UTC [msp] getPemMaterialFromDir -> DEBU 027[0m Reading directory /etc/hyperledger/fabric/msp/tlsintermediatecerts
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.790 UTC [msp] getMspConfig -> DEBU 028[0m TLS intermediate certs folder not found at [/etc/hyperledger/fabric/msp/tlsintermediatecerts]. Skipping. [stat /etc/hyperledger/fabric/msp/tlsintermediatecerts: no such file or directory]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.790 UTC [msp] getPemMaterialFromDir -> DEBU 029[0m Reading directory /etc/hyperledger/fabric/msp/crls
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.790 UTC [msp] getMspConfig -> DEBU 02a[0m crls folder not found at [/etc/hyperledger/fabric/msp/crls]. Skipping. [stat /etc/hyperledger/fabric/msp/crls: no such file or directory]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.791 UTC [msp] getMspConfig -> DEBU 02b[0m Loading NodeOUs
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.794 UTC [msp] newBccspMsp -> DEBU 02c[0m Creating BCCSP-based MSP instance
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.794 UTC [msp] New -> DEBU 02d[0m Creating Cache-MSP instance
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.795 UTC [msp] loadLocaMSP -> DEBU 02e[0m Created new local MSP
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.797 UTC [msp] Setup -> DEBU 02f[0m Setting up MSP instance AliceMSP
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.797 UTC [msp/identity] newIdentity -> DEBU 030[0m Creating identity instance for cert -----BEGIN CERTIFICATE-----
+[36mpeer0.Alice.example.com    |[0m MIICRjCCAe2gAwIBAgIQEQBEnGXDmnBqukFnx7dGyTAKBggqhkjOPQQDAjB1MQsw
+[36mpeer0.Alice.example.com    |[0m CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+[36mpeer0.Alice.example.com    |[0m YW5jaXNjbzEaMBgGA1UEChMRQWxpY2UuZXhhbXBsZS5jb20xHTAbBgNVBAMTFGNh
+[36mpeer0.Alice.example.com    |[0m LkFsaWNlLmV4YW1wbGUuY29tMB4XDTE4MTIxNjA4MzQwMFoXDTI4MTIxMzA4MzQw
+[36mpeer0.Alice.example.com    |[0m MFowdTELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcT
+[36mpeer0.Alice.example.com    |[0m DVNhbiBGcmFuY2lzY28xGjAYBgNVBAoTEUFsaWNlLmV4YW1wbGUuY29tMR0wGwYD
+[36mpeer0.Alice.example.com    |[0m VQQDExRjYS5BbGljZS5leGFtcGxlLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEH
+[36mpeer0.Alice.example.com    |[0m A0IABAEEO+uC7KeDR8ja3tskkzxR1HAYYKOpO8brD+nkMhvD/84YuZXtBojbrDsk
+[36mpeer0.Alice.example.com    |[0m JhvVzAFjDxJ996uGWvRoLq2g59OjXzBdMA4GA1UdDwEB/wQEAwIBpjAPBgNVHSUE
+[36mpeer0.Alice.example.com    |[0m CDAGBgRVHSUAMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIMQs4rcZb0MexxEA
+[36mpeer0.Alice.example.com    |[0m nVSZGV9NZgbPOY1/flCpKqFm6G5tMAoGCCqGSM49BAMCA0cAMEQCIBOoHtO75Dj8
+[36mpeer0.Alice.example.com    |[0m yKSmPUvqXkyrJMLNad/Qkuogk2qSg0h9AiAHlLkAHp1oj5pcSKGVDj0/WzMW9XLT
+[36mpeer0.Alice.example.com    |[0m oRO3R/UFeSy5fA==
+[36mpeer0.Alice.example.com    |[0m -----END CERTIFICATE-----
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.797 UTC [msp/identity] newIdentity -> DEBU 031[0m Creating identity instance for cert -----BEGIN CERTIFICATE-----
+[36mpeer0.Alice.example.com    |[0m MIICLjCCAdSgAwIBAgIRAPdnskjgt/ngFqczVdpb8nQwCgYIKoZIzj0EAwIwdTEL
+[36mpeer0.Alice.example.com    |[0m MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+[36mpeer0.Alice.example.com    |[0m cmFuY2lzY28xGjAYBgNVBAoTEUFsaWNlLmV4YW1wbGUuY29tMR0wGwYDVQQDExRj
+[36mpeer0.Alice.example.com    |[0m YS5BbGljZS5leGFtcGxlLmNvbTAeFw0xODEyMTYwODM0MDBaFw0yODEyMTMwODM0
+[36mpeer0.Alice.example.com    |[0m MDBaMG0xCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH
+[36mpeer0.Alice.example.com    |[0m Ew1TYW4gRnJhbmNpc2NvMQ8wDQYDVQQLEwZjbGllbnQxIDAeBgNVBAMMF0FkbWlu
+[36mpeer0.Alice.example.com    |[0m QEFsaWNlLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE0z7r
+[36mpeer0.Alice.example.com    |[0m 27tfbsH3jFEtKT1XBZPw5Laqp0XtiG1oP8qMRv8UKt/rkJpEF1A0wnEgECDGM1v4
+[36mpeer0.Alice.example.com    |[0m FboBOoRAlvnGKFpNkqNNMEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAw
+[36mpeer0.Alice.example.com    |[0m KwYDVR0jBCQwIoAgxCzitxlvQx7HEQCdVJkZX01mBs85jX9+UKkqoWbobm0wCgYI
+[36mpeer0.Alice.example.com    |[0m KoZIzj0EAwIDSAAwRQIhAPu7LI6avDMp5Kj+QR8z2XDHDE1DQ0HTugtLV8BZZLOV
+[36mpeer0.Alice.example.com    |[0m AiAGstFpJ9zHoLHdAJLVFFjSwCOs3WceklBpC8oWuTl12A==
+[36mpeer0.Alice.example.com    |[0m -----END CERTIFICATE-----
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.814 UTC [msp/identity] newIdentity -> DEBU 032[0m Creating identity instance for cert -----BEGIN CERTIFICATE-----
+[36mpeer0.Alice.example.com    |[0m MIICKzCCAdKgAwIBAgIRAMLscR3l4ClQvvnOetvcgH4wCgYIKoZIzj0EAwIwdTEL
+[36mpeer0.Alice.example.com    |[0m MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+[36mpeer0.Alice.example.com    |[0m cmFuY2lzY28xGjAYBgNVBAoTEUFsaWNlLmV4YW1wbGUuY29tMR0wGwYDVQQDExRj
+[36mpeer0.Alice.example.com    |[0m YS5BbGljZS5leGFtcGxlLmNvbTAeFw0xODEyMTYwODM0MDBaFw0yODEyMTMwODM0
+[36mpeer0.Alice.example.com    |[0m MDBaMGsxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH
+[36mpeer0.Alice.example.com    |[0m Ew1TYW4gRnJhbmNpc2NvMQ0wCwYDVQQLEwRwZWVyMSAwHgYDVQQDExdwZWVyMC5B
+[36mpeer0.Alice.example.com    |[0m bGljZS5leGFtcGxlLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABGlN9QRz
+[36mpeer0.Alice.example.com    |[0m cnq0YW7jq6rlUARUfJcUe0pTnamFQLhmkQ47wqpHbVO/Dikd0ovxqvEqI4zYvGaS
+[36mpeer0.Alice.example.com    |[0m asSXNpBmonMxAUqjTTBLMA4GA1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMCsG
+[36mpeer0.Alice.example.com    |[0m A1UdIwQkMCKAIMQs4rcZb0MexxEAnVSZGV9NZgbPOY1/flCpKqFm6G5tMAoGCCqG
+[36mpeer0.Alice.example.com    |[0m SM49BAMCA0cAMEQCIB0HhUkV4BK+WPePtrZm77+z4Q7Pb73r6Z4s8oekvlNSAiBR
+[36mpeer0.Alice.example.com    |[0m JqFE604NRRC8WZmHgp72Mmh0R+O8iSnMnTuD/06nXA==
+[36mpeer0.Alice.example.com    |[0m -----END CERTIFICATE-----
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.815 UTC [bccsp_sw] loadPrivateKey -> DEBU 033[0m Loading private key [aea854f29f0b1ca29b16f3cfb0e254681b77bea0173f922c9c76057103637b18] at [/etc/hyperledger/fabric/msp/keystore/aea854f29f0b1ca29b16f3cfb0e254681b77bea0173f922c9c76057103637b18_sk]...
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.815 UTC [msp/identity] newIdentity -> DEBU 034[0m Creating identity instance for cert -----BEGIN CERTIFICATE-----
+[36mpeer0.Alice.example.com    |[0m MIICKzCCAdKgAwIBAgIRAMLscR3l4ClQvvnOetvcgH4wCgYIKoZIzj0EAwIwdTEL
+[36mpeer0.Alice.example.com    |[0m MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+[36mpeer0.Alice.example.com    |[0m cmFuY2lzY28xGjAYBgNVBAoTEUFsaWNlLmV4YW1wbGUuY29tMR0wGwYDVQQDExRj
+[36mpeer0.Alice.example.com    |[0m YS5BbGljZS5leGFtcGxlLmNvbTAeFw0xODEyMTYwODM0MDBaFw0yODEyMTMwODM0
+[36mpeer0.Alice.example.com    |[0m MDBaMGsxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH
+[36mpeer0.Alice.example.com    |[0m Ew1TYW4gRnJhbmNpc2NvMQ0wCwYDVQQLEwRwZWVyMSAwHgYDVQQDExdwZWVyMC5B
+[36mpeer0.Alice.example.com    |[0m bGljZS5leGFtcGxlLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABGlN9QRz
+[36mpeer0.Alice.example.com    |[0m cnq0YW7jq6rlUARUfJcUe0pTnamFQLhmkQ47wqpHbVO/Dikd0ovxqvEqI4zYvGaS
+[36mpeer0.Alice.example.com    |[0m asSXNpBmonMxAUqjTTBLMA4GA1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMCsG
+[36mpeer0.Alice.example.com    |[0m A1UdIwQkMCKAIMQs4rcZb0MexxEAnVSZGV9NZgbPOY1/flCpKqFm6G5tMAoGCCqG
+[36mpeer0.Alice.example.com    |[0m SM49BAMCA0cAMEQCIB0HhUkV4BK+WPePtrZm77+z4Q7Pb73r6Z4s8oekvlNSAiBR
+[36mpeer0.Alice.example.com    |[0m JqFE604NRRC8WZmHgp72Mmh0R+O8iSnMnTuD/06nXA==
+[36mpeer0.Alice.example.com    |[0m -----END CERTIFICATE-----
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.815 UTC [msp] setupSigningIdentity -> DEBU 035[0m Signing identity expires at 2028-12-13 08:34:00 +0000 UTC
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.815 UTC [msp] Validate -> DEBU 036[0m MSP AliceMSP validating identity
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:14.816 UTC [nodeCmd] serve -> INFO 037[0m Starting peer:
+[36mpeer0.Alice.example.com    |[0m  Version: 1.3.0
+[36mpeer0.Alice.example.com    |[0m  Commit SHA: ab0a67a
+[36mpeer0.Alice.example.com    |[0m  Go version: go1.10.4
+[36mpeer0.Alice.example.com    |[0m  OS/Arch: linux/amd64
+[36mpeer0.Alice.example.com    |[0m  Experimental features: false
+[36mpeer0.Alice.example.com    |[0m  Chaincode:
+[36mpeer0.Alice.example.com    |[0m   Base Image Version: 0.4.13
+[36mpeer0.Alice.example.com    |[0m   Base Docker Namespace: hyperledger
+[36mpeer0.Alice.example.com    |[0m   Base Docker Label: org.hyperledger.fabric
+[36mpeer0.Alice.example.com    |[0m   Docker Namespace: hyperledger
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:14.816 UTC [ledgermgmt] initialize -> INFO 038[0m Initializing ledger mgmt
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:14.816 UTC [kvledger] NewProvider -> INFO 039[0m Initializing ledger provider
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.816 UTC [kvledger.util] CreateDirIfMissing -> DEBU 03a[0m CreateDirIfMissing [/var/hyperledger/production/ledgersData/ledgerProvider/]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.816 UTC [kvledger.util] logDirStatus -> DEBU 03b[0m Before creating dir - [/var/hyperledger/production/ledgersData/ledgerProvider/] does not exist
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.816 UTC [kvledger.util] logDirStatus -> DEBU 03c[0m After creating dir - [/var/hyperledger/production/ledgersData/ledgerProvider/] exists
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.961 UTC [kvledger.util] CreateDirIfMissing -> DEBU 03d[0m CreateDirIfMissing [/var/hyperledger/production/ledgersData/chains/index/]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.961 UTC [kvledger.util] logDirStatus -> DEBU 03e[0m Before creating dir - [/var/hyperledger/production/ledgersData/chains/index/] does not exist
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:14.962 UTC [kvledger.util] logDirStatus -> DEBU 03f[0m After creating dir - [/var/hyperledger/production/ledgersData/chains/index/] exists
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.045 UTC [kvledger.util] CreateDirIfMissing -> DEBU 040[0m CreateDirIfMissing [/var/hyperledger/production/ledgersData/pvtdataStore/]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.045 UTC [kvledger.util] logDirStatus -> DEBU 041[0m Before creating dir - [/var/hyperledger/production/ledgersData/pvtdataStore/] does not exist
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.046 UTC [kvledger.util] logDirStatus -> DEBU 042[0m After creating dir - [/var/hyperledger/production/ledgersData/pvtdataStore/] exists
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.129 UTC [kvledger.util] CreateDirIfMissing -> DEBU 043[0m CreateDirIfMissing [/var/hyperledger/production/ledgersData/bookkeeper/]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.129 UTC [kvledger.util] logDirStatus -> DEBU 044[0m Before creating dir - [/var/hyperledger/production/ledgersData/bookkeeper/] does not exist
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.129 UTC [kvledger.util] logDirStatus -> DEBU 045[0m After creating dir - [/var/hyperledger/production/ledgersData/bookkeeper/] exists
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.205 UTC [stateleveldb] NewVersionedDBProvider -> DEBU 046[0m constructing VersionedDBProvider dbPath=/var/hyperledger/production/ledgersData/stateLeveldb
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.205 UTC [kvledger.util] CreateDirIfMissing -> DEBU 047[0m CreateDirIfMissing [/var/hyperledger/production/ledgersData/stateLeveldb/]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.205 UTC [kvledger.util] logDirStatus -> DEBU 048[0m Before creating dir - [/var/hyperledger/production/ledgersData/stateLeveldb/] does not exist
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.205 UTC [kvledger.util] logDirStatus -> DEBU 049[0m After creating dir - [/var/hyperledger/production/ledgersData/stateLeveldb/] exists
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.305 UTC [historyleveldb] NewHistoryDBProvider -> DEBU 04a[0m constructing HistoryDBProvider dbPath=/var/hyperledger/production/ledgersData/historyLeveldb
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.306 UTC [kvledger.util] CreateDirIfMissing -> DEBU 04b[0m CreateDirIfMissing [/var/hyperledger/production/ledgersData/historyLeveldb/]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.306 UTC [kvledger.util] logDirStatus -> DEBU 04c[0m Before creating dir - [/var/hyperledger/production/ledgersData/historyLeveldb/] does not exist
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.306 UTC [kvledger.util] logDirStatus -> DEBU 04d[0m After creating dir - [/var/hyperledger/production/ledgersData/historyLeveldb/] exists
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.406 UTC [kvledger] NewProvider -> INFO 04e[0m ledger provider Initialized
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.406 UTC [confighistory] newDBProvider -> DEBU 04f[0m Opening db for config history: db path = /var/hyperledger/production/ledgersData/configHistory
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.406 UTC [kvledger.util] CreateDirIfMissing -> DEBU 050[0m CreateDirIfMissing [/var/hyperledger/production/ledgersData/configHistory/]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.406 UTC [kvledger.util] logDirStatus -> DEBU 051[0m Before creating dir - [/var/hyperledger/production/ledgersData/configHistory/] does not exist
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.406 UTC [kvledger.util] logDirStatus -> DEBU 052[0m After creating dir - [/var/hyperledger/production/ledgersData/configHistory/] exists
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.523 UTC [kvledger] recoverUnderConstructionLedger -> DEBU 053[0m Recovering under construction ledger
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.523 UTC [kvledger] recoverUnderConstructionLedger -> DEBU 054[0m No under construction ledger found. Quitting recovery
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.523 UTC [ledgermgmt] initialize -> INFO 055[0m ledger mgmt initialized
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.524 UTC [peer] func1 -> INFO 056[0m Auto-detected peer address: 172.31.0.5:7051
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.524 UTC [peer] func1 -> INFO 057[0m Returning peer0.Alice.example.com:7051
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.524 UTC [peer] func1 -> INFO 058[0m Auto-detected peer address: 172.31.0.5:7051
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.524 UTC [peer] func1 -> INFO 059[0m Returning peer0.Alice.example.com:7051
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.526 UTC [nodeCmd] serve -> INFO 05a[0m Starting peer with TLS enabled
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.527 UTC [nodeCmd] computeChaincodeEndpoint -> INFO 05b[0m Entering computeChaincodeEndpoint with peerHostname: peer0.Alice.example.com
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.527 UTC [nodeCmd] computeChaincodeEndpoint -> INFO 05c[0m Exit with ccEndpoint: peer0.Alice.example.com:7052
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.529 UTC [inproccontroller] Register -> DEBU 05d[0m Registering chaincode instance: lscc-1.3.0
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.529 UTC [sccapi] registerSysCC -> INFO 05e[0m system chaincode lscc(github.com/hyperledger/fabric/core/scc/lscc) registered
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.530 UTC [inproccontroller] Register -> DEBU 05f[0m Registering chaincode instance: cscc-1.3.0
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.530 UTC [sccapi] registerSysCC -> INFO 060[0m system chaincode cscc(github.com/hyperledger/fabric/core/scc/cscc) registered
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.530 UTC [inproccontroller] Register -> DEBU 061[0m Registering chaincode instance: qscc-1.3.0
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.530 UTC [sccapi] registerSysCC -> INFO 062[0m system chaincode qscc(github.com/hyperledger/fabric/core/scc/qscc) registered
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.530 UTC [inproccontroller] Register -> DEBU 063[0m Registering chaincode instance: +lifecycle-1.3.0
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.530 UTC [sccapi] registerSysCC -> INFO 064[0m system chaincode +lifecycle(github.com/hyperledger/fabric/core/chaincode/lifecycle) registered
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.530 UTC [nodeCmd] serve -> DEBU 065[0m Running peer
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.531 UTC [viperutil] getKeysRecursively -> DEBU 066[0m Found map[string]interface{} value for peer.handlers
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.531 UTC [viperutil] unmarshalJSON -> DEBU 067[0m Unmarshal JSON: value is not a string: [map[name:DefaultAuth] map[name:ExpirationCheck]]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.531 UTC [viperutil] getKeysRecursively -> DEBU 068[0m Found real value for peer.handlers.authFilters setting to []interface {} [map[name:DefaultAuth] map[name:ExpirationCheck]]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.531 UTC [viperutil] unmarshalJSON -> DEBU 069[0m Unmarshal JSON: value is not a string: [map[name:DefaultDecorator]]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.531 UTC [viperutil] getKeysRecursively -> DEBU 06a[0m Found real value for peer.handlers.decorators setting to []interface {} [map[name:DefaultDecorator]]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.531 UTC [viperutil] getKeysRecursively -> DEBU 06b[0m Found map[string]interface{} value for peer.handlers.endorsers
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.531 UTC [viperutil] getKeysRecursively -> DEBU 06c[0m Found map[string]interface{} value for peer.handlers.endorsers.escc
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.531 UTC [viperutil] unmarshalJSON -> DEBU 06d[0m Unmarshal JSON: value cannot be unmarshalled: invalid character 'D' looking for beginning of value
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.531 UTC [viperutil] getKeysRecursively -> DEBU 06e[0m Found real value for peer.handlers.endorsers.escc.name setting to string DefaultEndorsement
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.531 UTC [viperutil] unmarshalJSON -> DEBU 06f[0m Unmarshal JSON: value is not a string: <nil>
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.531 UTC [viperutil] getKeysRecursively -> DEBU 070[0m Found real value for peer.handlers.endorsers.escc.library setting to <nil> <nil>
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.532 UTC [viperutil] getKeysRecursively -> DEBU 071[0m Found map[string]interface{} value for peer.handlers.validators
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.532 UTC [viperutil] getKeysRecursively -> DEBU 072[0m Found map[string]interface{} value for peer.handlers.validators.vscc
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.532 UTC [viperutil] unmarshalJSON -> DEBU 073[0m Unmarshal JSON: value cannot be unmarshalled: invalid character 'D' looking for beginning of value
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.532 UTC [viperutil] getKeysRecursively -> DEBU 074[0m Found real value for peer.handlers.validators.vscc.name setting to string DefaultValidation
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.532 UTC [viperutil] unmarshalJSON -> DEBU 075[0m Unmarshal JSON: value is not a string: <nil>
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.532 UTC [viperutil] getKeysRecursively -> DEBU 076[0m Found real value for peer.handlers.validators.vscc.library setting to <nil> <nil>
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.532 UTC [viperutil] EnhancedExactUnmarshalKey -> DEBU 077[0m map[peer.handlers:map[authFilters:[map[name:DefaultAuth] map[name:ExpirationCheck]] decorators:[map[name:DefaultDecorator]] endorsers:map[escc:map[name:DefaultEndorsement library:<nil>]] validators:map[vscc:map[name:DefaultValidation library:<nil>]]]]
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.533 UTC [gossip/service] func1 -> INFO 078[0m Initialize gossip with endpoint peer0.Alice.example.com:7051 and bootstrap set [127.0.0.1:7051]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.536 UTC [gossip/discovery] periodicalSendAlive -> DEBU 079[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.536 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 07a[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.536 UTC [gossip/gossip] NewGossipService -> INFO 07b[0m Creating gossip service with self membership of {peer0.Alice.example.com:7051 [] [195 180 104 184 2 21 97 170 60 124 236 7 253 133 20 182 136 26 106 139 6 102 142 144 202 226 64 66 145 40 132 3] peer0.Alice.example.com:7051 <nil> <nil>}
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.537 UTC [gossip/gossip] start -> INFO 07c[0m Gossip instance peer0.Alice.example.com:7051 started
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.537 UTC [gossip/gossip] syncDiscovery -> DEBU 07d[0m Entering discovery sync with interval 4s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.537 UTC [gossip/discovery] Connect -> DEBU 07e[0m Skipping connecting to myself
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [chaincode] LaunchConfig -> DEBU 07f[0m launchConfig: executable:"chaincode",Args:[chaincode,-peer.address=peer0.Alice.example.com:7052],Envs:[CORE_CHAINCODE_LOGGING_LEVEL=info,CORE_CHAINCODE_LOGGING_SHIM=warning,CORE_CHAINCODE_LOGGING_FORMAT=%{color}%{time:2006-01-02 15:04:05.000 MST} [%{module}] %{shortfunc} -> %{level:.4s} %{id:03x}%{color:reset} %{message},CORE_CHAINCODE_ID_NAME=lscc:1.3.0,CORE_PEER_TLS_ENABLED=true,CORE_TLS_CLIENT_KEY_PATH=/etc/hyperledger/fabric/client.key,CORE_TLS_CLIENT_CERT_PATH=/etc/hyperledger/fabric/client.crt,CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/peer.crt],Files:[/etc/hyperledger/fabric/client.crt /etc/hyperledger/fabric/client.key /etc/hyperledger/fabric/peer.crt]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [chaincode] Start -> DEBU 080[0m start container: lscc:1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [chaincode] Start -> DEBU 081[0m start container with args: chaincode -peer.address=peer0.Alice.example.com:7052
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [chaincode] Start -> DEBU 082[0m start container with env:
+[36mpeer0.Alice.example.com    |[0m 	CORE_CHAINCODE_LOGGING_LEVEL=info
+[36mpeer0.Alice.example.com    |[0m 	CORE_CHAINCODE_LOGGING_SHIM=warning
+[36mpeer0.Alice.example.com    |[0m 	CORE_CHAINCODE_LOGGING_FORMAT=%{color}%{time:2006-01-02 15:04:05.000 MST} [%{module}] %{shortfunc} -> %{level:.4s} %{id:03x}%{color:reset} %{message}
+[36mpeer0.Alice.example.com    |[0m 	CORE_CHAINCODE_ID_NAME=lscc:1.3.0
+[36mpeer0.Alice.example.com    |[0m 	CORE_PEER_TLS_ENABLED=true
+[36mpeer0.Alice.example.com    |[0m 	CORE_TLS_CLIENT_KEY_PATH=/etc/hyperledger/fabric/client.key
+[36mpeer0.Alice.example.com    |[0m 	CORE_TLS_CLIENT_CERT_PATH=/etc/hyperledger/fabric/client.crt
+[36mpeer0.Alice.example.com    |[0m 	CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/peer.crt
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [container] lockContainer -> DEBU 083[0m waiting for container(lscc-1.3.0) lock
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [container] lockContainer -> DEBU 084[0m got container (lscc-1.3.0) lock
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [inproccontroller] getInstance -> DEBU 085[0m chaincode instance created for lscc-1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [container] unlockContainer -> DEBU 086[0m container lock deleted(lscc-1.3.0)
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [inproccontroller] func2 -> DEBU 087[0m chaincode-support started for  lscc-1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [inproccontroller] func1 -> DEBU 088[0m chaincode started for lscc-1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [chaincode] handleMessage -> DEBU 089[0m [] Fabric side handling ChaincodeMessage of type: REGISTER in state created
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [chaincode] HandleRegister -> DEBU 08a[0m Received REGISTER in state created
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [chaincode] Register -> DEBU 08b[0m registered handler complete for chaincode lscc:1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [chaincode] HandleRegister -> DEBU 08c[0m Got REGISTER for chaincodeID = name:"lscc:1.3.0" , sending back REGISTERED
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [chaincode] HandleRegister -> DEBU 08d[0m Changed state to established for name:"lscc:1.3.0" 
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [chaincode] sendReady -> DEBU 08e[0m sending READY for chaincode name:"lscc:1.3.0" 
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [chaincode] sendReady -> DEBU 08f[0m Changed to state ready for chaincode name:"lscc:1.3.0" 
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [chaincode] Launch -> DEBU 090[0m launch complete
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [chaincode] Execute -> DEBU 091[0m Entry
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [chaincode] handleMessage -> DEBU 092[0m [3890ca1b] Fabric side handling ChaincodeMessage of type: COMPLETED in state ready
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [chaincode] Notify -> DEBU 093[0m [3890ca1b] notifying Txid:3890ca1b-35d5-4e3f-9e0f-b1c5d5148158, channelID:
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.557 UTC [chaincode] Execute -> DEBU 094[0m Exit
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.558 UTC [sccapi] deploySysCC -> INFO 095[0m system chaincode lscc/(github.com/hyperledger/fabric/core/scc/lscc) deployed
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.558 UTC [chaincode] LaunchConfig -> DEBU 096[0m launchConfig: executable:"chaincode",Args:[chaincode,-peer.address=peer0.Alice.example.com:7052],Envs:[CORE_CHAINCODE_LOGGING_LEVEL=info,CORE_CHAINCODE_LOGGING_SHIM=warning,CORE_CHAINCODE_LOGGING_FORMAT=%{color}%{time:2006-01-02 15:04:05.000 MST} [%{module}] %{shortfunc} -> %{level:.4s} %{id:03x}%{color:reset} %{message},CORE_CHAINCODE_ID_NAME=cscc:1.3.0,CORE_PEER_TLS_ENABLED=true,CORE_TLS_CLIENT_KEY_PATH=/etc/hyperledger/fabric/client.key,CORE_TLS_CLIENT_CERT_PATH=/etc/hyperledger/fabric/client.crt,CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/peer.crt],Files:[/etc/hyperledger/fabric/client.crt /etc/hyperledger/fabric/client.key /etc/hyperledger/fabric/peer.crt]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.558 UTC [chaincode] Start -> DEBU 097[0m start container: cscc:1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.558 UTC [chaincode] Start -> DEBU 098[0m start container with args: chaincode -peer.address=peer0.Alice.example.com:7052
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.558 UTC [chaincode] Start -> DEBU 099[0m start container with env:
+[36mpeer0.Alice.example.com    |[0m 	CORE_CHAINCODE_LOGGING_LEVEL=info
+[36mpeer0.Alice.example.com    |[0m 	CORE_CHAINCODE_LOGGING_SHIM=warning
+[36mpeer0.Alice.example.com    |[0m 	CORE_CHAINCODE_LOGGING_FORMAT=%{color}%{time:2006-01-02 15:04:05.000 MST} [%{module}] %{shortfunc} -> %{level:.4s} %{id:03x}%{color:reset} %{message}
+[36mpeer0.Alice.example.com    |[0m 	CORE_CHAINCODE_ID_NAME=cscc:1.3.0
+[36mpeer0.Alice.example.com    |[0m 	CORE_PEER_TLS_ENABLED=true
+[36mpeer0.Alice.example.com    |[0m 	CORE_TLS_CLIENT_KEY_PATH=/etc/hyperledger/fabric/client.key
+[36mpeer0.Alice.example.com    |[0m 	CORE_TLS_CLIENT_CERT_PATH=/etc/hyperledger/fabric/client.crt
+[36mpeer0.Alice.example.com    |[0m 	CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/peer.crt
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.558 UTC [container] lockContainer -> DEBU 09a[0m waiting for container(cscc-1.3.0) lock
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.558 UTC [container] lockContainer -> DEBU 09b[0m got container (cscc-1.3.0) lock
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.558 UTC [inproccontroller] getInstance -> DEBU 09c[0m chaincode instance created for cscc-1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.558 UTC [container] unlockContainer -> DEBU 09d[0m container lock deleted(cscc-1.3.0)
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.558 UTC [inproccontroller] func2 -> DEBU 09e[0m chaincode-support started for  cscc-1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.558 UTC [inproccontroller] func1 -> DEBU 09f[0m chaincode started for cscc-1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] handleMessage -> DEBU 0a0[0m [] Fabric side handling ChaincodeMessage of type: REGISTER in state created
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] HandleRegister -> DEBU 0a1[0m Received REGISTER in state created
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] Register -> DEBU 0a2[0m registered handler complete for chaincode cscc:1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] HandleRegister -> DEBU 0a3[0m Got REGISTER for chaincodeID = name:"cscc:1.3.0" , sending back REGISTERED
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] HandleRegister -> DEBU 0a4[0m Changed state to established for name:"cscc:1.3.0" 
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] sendReady -> DEBU 0a5[0m sending READY for chaincode name:"cscc:1.3.0" 
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] sendReady -> DEBU 0a6[0m Changed to state ready for chaincode name:"cscc:1.3.0" 
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] Launch -> DEBU 0a7[0m launch complete
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] Execute -> DEBU 0a8[0m Entry
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.559 UTC [cscc] Init -> INFO 0a9[0m Init CSCC
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] handleMessage -> DEBU 0aa[0m [5fec40f9] Fabric side handling ChaincodeMessage of type: COMPLETED in state ready
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] Notify -> DEBU 0ab[0m [5fec40f9] notifying Txid:5fec40f9-0f2d-4634-b970-430dc08bf545, channelID:
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] Execute -> DEBU 0ac[0m Exit
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.559 UTC [sccapi] deploySysCC -> INFO 0ad[0m system chaincode cscc/(github.com/hyperledger/fabric/core/scc/cscc) deployed
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] LaunchConfig -> DEBU 0ae[0m launchConfig: executable:"chaincode",Args:[chaincode,-peer.address=peer0.Alice.example.com:7052],Envs:[CORE_CHAINCODE_LOGGING_LEVEL=info,CORE_CHAINCODE_LOGGING_SHIM=warning,CORE_CHAINCODE_LOGGING_FORMAT=%{color}%{time:2006-01-02 15:04:05.000 MST} [%{module}] %{shortfunc} -> %{level:.4s} %{id:03x}%{color:reset} %{message},CORE_CHAINCODE_ID_NAME=qscc:1.3.0,CORE_PEER_TLS_ENABLED=true,CORE_TLS_CLIENT_KEY_PATH=/etc/hyperledger/fabric/client.key,CORE_TLS_CLIENT_CERT_PATH=/etc/hyperledger/fabric/client.crt,CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/peer.crt],Files:[/etc/hyperledger/fabric/client.crt /etc/hyperledger/fabric/client.key /etc/hyperledger/fabric/peer.crt]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] Start -> DEBU 0af[0m start container: qscc:1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] Start -> DEBU 0b0[0m start container with args: chaincode -peer.address=peer0.Alice.example.com:7052
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] Start -> DEBU 0b1[0m start container with env:
+[36mpeer0.Alice.example.com    |[0m 	CORE_CHAINCODE_LOGGING_LEVEL=info
+[36mpeer0.Alice.example.com    |[0m 	CORE_CHAINCODE_LOGGING_SHIM=warning
+[36mpeer0.Alice.example.com    |[0m 	CORE_CHAINCODE_LOGGING_FORMAT=%{color}%{time:2006-01-02 15:04:05.000 MST} [%{module}] %{shortfunc} -> %{level:.4s} %{id:03x}%{color:reset} %{message}
+[36mpeer0.Alice.example.com    |[0m 	CORE_CHAINCODE_ID_NAME=qscc:1.3.0
+[36mpeer0.Alice.example.com    |[0m 	CORE_PEER_TLS_ENABLED=true
+[36mpeer0.Alice.example.com    |[0m 	CORE_TLS_CLIENT_KEY_PATH=/etc/hyperledger/fabric/client.key
+[36mpeer0.Alice.example.com    |[0m 	CORE_TLS_CLIENT_CERT_PATH=/etc/hyperledger/fabric/client.crt
+[36mpeer0.Alice.example.com    |[0m 	CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/peer.crt
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [container] lockContainer -> DEBU 0b2[0m waiting for container(qscc-1.3.0) lock
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [container] lockContainer -> DEBU 0b3[0m got container (qscc-1.3.0) lock
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [inproccontroller] getInstance -> DEBU 0b4[0m chaincode instance created for qscc-1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [container] unlockContainer -> DEBU 0b5[0m container lock deleted(qscc-1.3.0)
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [inproccontroller] func2 -> DEBU 0b6[0m chaincode-support started for  qscc-1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [inproccontroller] func1 -> DEBU 0b7[0m chaincode started for qscc-1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] handleMessage -> DEBU 0b8[0m [] Fabric side handling ChaincodeMessage of type: REGISTER in state created
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] HandleRegister -> DEBU 0b9[0m Received REGISTER in state created
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] Register -> DEBU 0ba[0m registered handler complete for chaincode qscc:1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] HandleRegister -> DEBU 0bb[0m Got REGISTER for chaincodeID = name:"qscc:1.3.0" , sending back REGISTERED
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.559 UTC [chaincode] HandleRegister -> DEBU 0bc[0m Changed state to established for name:"qscc:1.3.0" 
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] sendReady -> DEBU 0bd[0m sending READY for chaincode name:"qscc:1.3.0" 
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] sendReady -> DEBU 0be[0m Changed to state ready for chaincode name:"qscc:1.3.0" 
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] Launch -> DEBU 0bf[0m launch complete
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] Execute -> DEBU 0c0[0m Entry
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.560 UTC [qscc] Init -> INFO 0c1[0m Init QSCC
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] handleMessage -> DEBU 0c2[0m [234bfc21] Fabric side handling ChaincodeMessage of type: COMPLETED in state ready
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] Notify -> DEBU 0c3[0m [234bfc21] notifying Txid:234bfc21-23fb-4a3d-8929-0c5b6a08c8e6, channelID:
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] Execute -> DEBU 0c4[0m Exit
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.560 UTC [sccapi] deploySysCC -> INFO 0c5[0m system chaincode qscc/(github.com/hyperledger/fabric/core/scc/qscc) deployed
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] LaunchConfig -> DEBU 0c6[0m launchConfig: executable:"chaincode",Args:[chaincode,-peer.address=peer0.Alice.example.com:7052],Envs:[CORE_CHAINCODE_LOGGING_LEVEL=info,CORE_CHAINCODE_LOGGING_SHIM=warning,CORE_CHAINCODE_LOGGING_FORMAT=%{color}%{time:2006-01-02 15:04:05.000 MST} [%{module}] %{shortfunc} -> %{level:.4s} %{id:03x}%{color:reset} %{message},CORE_CHAINCODE_ID_NAME=+lifecycle:1.3.0,CORE_PEER_TLS_ENABLED=true,CORE_TLS_CLIENT_KEY_PATH=/etc/hyperledger/fabric/client.key,CORE_TLS_CLIENT_CERT_PATH=/etc/hyperledger/fabric/client.crt,CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/peer.crt],Files:[/etc/hyperledger/fabric/client.crt /etc/hyperledger/fabric/client.key /etc/hyperledger/fabric/peer.crt]
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] Start -> DEBU 0c7[0m start container: +lifecycle:1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] Start -> DEBU 0c8[0m start container with args: chaincode -peer.address=peer0.Alice.example.com:7052
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] Start -> DEBU 0c9[0m start container with env:
+[36mpeer0.Alice.example.com    |[0m 	CORE_CHAINCODE_LOGGING_LEVEL=info
+[36mpeer0.Alice.example.com    |[0m 	CORE_CHAINCODE_LOGGING_SHIM=warning
+[36mpeer0.Alice.example.com    |[0m 	CORE_CHAINCODE_LOGGING_FORMAT=%{color}%{time:2006-01-02 15:04:05.000 MST} [%{module}] %{shortfunc} -> %{level:.4s} %{id:03x}%{color:reset} %{message}
+[36mpeer0.Alice.example.com    |[0m 	CORE_CHAINCODE_ID_NAME=+lifecycle:1.3.0
+[36mpeer0.Alice.example.com    |[0m 	CORE_PEER_TLS_ENABLED=true
+[36mpeer0.Alice.example.com    |[0m 	CORE_TLS_CLIENT_KEY_PATH=/etc/hyperledger/fabric/client.key
+[36mpeer0.Alice.example.com    |[0m 	CORE_TLS_CLIENT_CERT_PATH=/etc/hyperledger/fabric/client.crt
+[36mpeer0.Alice.example.com    |[0m 	CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/peer.crt
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [container] lockContainer -> DEBU 0ca[0m waiting for container(+lifecycle-1.3.0) lock
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [container] lockContainer -> DEBU 0cb[0m got container (+lifecycle-1.3.0) lock
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [inproccontroller] getInstance -> DEBU 0cc[0m chaincode instance created for +lifecycle-1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [container] unlockContainer -> DEBU 0cd[0m container lock deleted(+lifecycle-1.3.0)
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [inproccontroller] func2 -> DEBU 0ce[0m chaincode-support started for  +lifecycle-1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [inproccontroller] func1 -> DEBU 0cf[0m chaincode started for +lifecycle-1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] handleMessage -> DEBU 0d0[0m [] Fabric side handling ChaincodeMessage of type: REGISTER in state created
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] HandleRegister -> DEBU 0d1[0m Received REGISTER in state created
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] Register -> DEBU 0d2[0m registered handler complete for chaincode +lifecycle:1.3.0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] HandleRegister -> DEBU 0d3[0m Got REGISTER for chaincodeID = name:"+lifecycle:1.3.0" , sending back REGISTERED
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] HandleRegister -> DEBU 0d4[0m Changed state to established for name:"+lifecycle:1.3.0" 
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] sendReady -> DEBU 0d5[0m sending READY for chaincode name:"+lifecycle:1.3.0" 
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] sendReady -> DEBU 0d6[0m Changed to state ready for chaincode name:"+lifecycle:1.3.0" 
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] Launch -> DEBU 0d7[0m launch complete
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.560 UTC [chaincode] Execute -> DEBU 0d8[0m Entry
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.573 UTC [chaincode] handleMessage -> DEBU 0d9[0m [88bf209e] Fabric side handling ChaincodeMessage of type: COMPLETED in state ready
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.573 UTC [chaincode] Notify -> DEBU 0da[0m [88bf209e] notifying Txid:88bf209e-3dcc-4e51-b1c5-79b8827b4dcd, channelID:
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.573 UTC [chaincode] Execute -> DEBU 0db[0m Exit
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.573 UTC [sccapi] deploySysCC -> INFO 0dc[0m system chaincode +lifecycle/(github.com/hyperledger/fabric/core/chaincode/lifecycle) deployed
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.573 UTC [nodeCmd] serve -> INFO 0dd[0m Deployed system chaincodes
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:15.573 UTC [ccprovider] ListInstalledChaincodes -> DEBU 0de[0m Returning []
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.574 UTC [discovery] NewService -> INFO 0df[0m Created with config TLS: true, authCacheMaxSize: 1000, authCachePurgeRatio: 0.750000
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.574 UTC [nodeCmd] registerDiscoveryService -> INFO 0e0[0m Discovery service activated
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.574 UTC [nodeCmd] serve -> INFO 0e1[0m Starting peer with ID=[name:"peer0.Alice.example.com" ], network ID=[dev], address=[peer0.Alice.example.com:7051]
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.574 UTC [nodeCmd] serve -> INFO 0e2[0m Started peer with ID=[name:"peer0.Alice.example.com" ], network ID=[dev], address=[peer0.Alice.example.com:7051]
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:11:15.575 UTC [nodeCmd] func8 -> INFO 0e3[0m Starting profiling server with listenAddress = 0.0.0.0:6060
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:20.536 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0e4[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:25.537 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0e5[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:30.537 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0e6[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:35.538 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0e7[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:40.536 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 0e8[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:40.538 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0e9[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:45.538 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0ea[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:50.539 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0eb[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:11:55.539 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0ec[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:12:00.540 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0ed[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:12:05.536 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 0ee[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:12:05.540 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0ef[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:12:10.541 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0f0[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:12:15.541 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0f1[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:12:20.541 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0f2[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:12:25.542 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0f3[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:12:30.536 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 0f4[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:12:30.542 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0f5[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:12:35.543 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0f6[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:12:40.543 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0f7[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:12:45.544 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0f8[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:12:50.544 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0f9[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:12:55.537 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 0fa[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:12:55.545 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0fb[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:13:00.545 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0fc[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:13:05.546 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0fd[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:13:10.546 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0fe[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:13:15.547 UTC [gossip/discovery] periodicalSendAlive -> DEBU 0ff[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:13:20.537 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 100[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:13:20.547 UTC [gossip/discovery] periodicalSendAlive -> DEBU 101[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:13:25.548 UTC [gossip/discovery] periodicalSendAlive -> DEBU 102[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:13:30.548 UTC [gossip/discovery] periodicalSendAlive -> DEBU 103[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:13:35.548 UTC [gossip/discovery] periodicalSendAlive -> DEBU 104[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:13:40.549 UTC [gossip/discovery] periodicalSendAlive -> DEBU 105[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:13:45.537 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 106[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:13:45.549 UTC [gossip/discovery] periodicalSendAlive -> DEBU 107[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:13:50.550 UTC [gossip/discovery] periodicalSendAlive -> DEBU 108[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:13:55.550 UTC [gossip/discovery] periodicalSendAlive -> DEBU 109[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:14:00.551 UTC [gossip/discovery] periodicalSendAlive -> DEBU 10a[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:14:05.551 UTC [gossip/discovery] periodicalSendAlive -> DEBU 10b[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:14:10.537 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 10c[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:14:10.552 UTC [gossip/discovery] periodicalSendAlive -> DEBU 10d[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:14:15.552 UTC [gossip/discovery] periodicalSendAlive -> DEBU 10e[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:14:20.553 UTC [gossip/discovery] periodicalSendAlive -> DEBU 10f[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:14:25.553 UTC [gossip/discovery] periodicalSendAlive -> DEBU 110[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:14:30.554 UTC [gossip/discovery] periodicalSendAlive -> DEBU 111[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:14:35.538 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 112[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:14:35.554 UTC [gossip/discovery] periodicalSendAlive -> DEBU 113[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:14:40.555 UTC [gossip/discovery] periodicalSendAlive -> DEBU 114[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:14:45.555 UTC [gossip/discovery] periodicalSendAlive -> DEBU 115[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:14:50.556 UTC [gossip/discovery] periodicalSendAlive -> DEBU 116[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:14:55.556 UTC [gossip/discovery] periodicalSendAlive -> DEBU 117[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:15:00.538 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 118[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:15:00.557 UTC [gossip/discovery] periodicalSendAlive -> DEBU 119[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:15:05.557 UTC [gossip/discovery] periodicalSendAlive -> DEBU 11a[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:15:10.557 UTC [gossip/discovery] periodicalSendAlive -> DEBU 11b[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:15:15.558 UTC [gossip/discovery] periodicalSendAlive -> DEBU 11c[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:15:20.559 UTC [gossip/discovery] periodicalSendAlive -> DEBU 11d[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:15:25.538 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 11e[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:15:25.559 UTC [gossip/discovery] periodicalSendAlive -> DEBU 11f[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:15:30.559 UTC [gossip/discovery] periodicalSendAlive -> DEBU 120[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:15:35.560 UTC [gossip/discovery] periodicalSendAlive -> DEBU 121[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:15:40.560 UTC [gossip/discovery] periodicalSendAlive -> DEBU 122[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:15:45.561 UTC [gossip/discovery] periodicalSendAlive -> DEBU 123[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:15:50.538 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 124[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:15:50.561 UTC [gossip/discovery] periodicalSendAlive -> DEBU 125[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:15:55.562 UTC [gossip/discovery] periodicalSendAlive -> DEBU 126[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:16:00.562 UTC [gossip/discovery] periodicalSendAlive -> DEBU 127[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:16:05.563 UTC [gossip/discovery] periodicalSendAlive -> DEBU 128[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:16:10.563 UTC [gossip/discovery] periodicalSendAlive -> DEBU 129[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:16:15.539 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 12a[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:16:15.564 UTC [gossip/discovery] periodicalSendAlive -> DEBU 12b[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:16:20.564 UTC [gossip/discovery] periodicalSendAlive -> DEBU 12c[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:16:25.565 UTC [gossip/discovery] periodicalSendAlive -> DEBU 12d[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:16:30.565 UTC [gossip/discovery] periodicalSendAlive -> DEBU 12e[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:16:35.566 UTC [gossip/discovery] periodicalSendAlive -> DEBU 12f[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:16:40.539 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 130[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:16:40.566 UTC [gossip/discovery] periodicalSendAlive -> DEBU 131[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:16:45.567 UTC [gossip/discovery] periodicalSendAlive -> DEBU 132[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:16:50.567 UTC [gossip/discovery] periodicalSendAlive -> DEBU 133[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:16:55.567 UTC [gossip/discovery] periodicalSendAlive -> DEBU 134[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:17:00.568 UTC [gossip/discovery] periodicalSendAlive -> DEBU 135[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:17:05.539 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 136[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:17:05.568 UTC [gossip/discovery] periodicalSendAlive -> DEBU 137[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:17:10.569 UTC [gossip/discovery] periodicalSendAlive -> DEBU 138[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:17:15.569 UTC [gossip/discovery] periodicalSendAlive -> DEBU 139[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:17:20.570 UTC [gossip/discovery] periodicalSendAlive -> DEBU 13a[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:17:25.570 UTC [gossip/discovery] periodicalSendAlive -> DEBU 13b[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:17:30.540 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 13c[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:17:30.571 UTC [gossip/discovery] periodicalSendAlive -> DEBU 13d[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:17:35.572 UTC [gossip/discovery] periodicalSendAlive -> DEBU 13e[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:17:40.572 UTC [gossip/discovery] periodicalSendAlive -> DEBU 13f[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:17:45.573 UTC [gossip/discovery] periodicalSendAlive -> DEBU 140[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:17:50.573 UTC [gossip/discovery] periodicalSendAlive -> DEBU 141[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:17:55.540 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 142[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:17:55.574 UTC [gossip/discovery] periodicalSendAlive -> DEBU 143[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:18:00.574 UTC [gossip/discovery] periodicalSendAlive -> DEBU 144[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:18:05.574 UTC [gossip/discovery] periodicalSendAlive -> DEBU 145[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:18:10.575 UTC [gossip/discovery] periodicalSendAlive -> DEBU 146[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:18:15.576 UTC [gossip/discovery] periodicalSendAlive -> DEBU 147[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:18:20.540 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 148[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:18:20.576 UTC [gossip/discovery] periodicalSendAlive -> DEBU 149[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:18:25.577 UTC [gossip/discovery] periodicalSendAlive -> DEBU 14a[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:18:30.577 UTC [gossip/discovery] periodicalSendAlive -> DEBU 14b[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:18:35.578 UTC [gossip/discovery] periodicalSendAlive -> DEBU 14c[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:18:40.578 UTC [gossip/discovery] periodicalSendAlive -> DEBU 14d[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:18:45.540 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 14e[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:18:45.579 UTC [gossip/discovery] periodicalSendAlive -> DEBU 14f[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:18:50.579 UTC [gossip/discovery] periodicalSendAlive -> DEBU 150[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:18:55.580 UTC [gossip/discovery] periodicalSendAlive -> DEBU 151[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:19:00.580 UTC [gossip/discovery] periodicalSendAlive -> DEBU 152[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:19:05.581 UTC [gossip/discovery] periodicalSendAlive -> DEBU 153[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:19:10.541 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 154[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:19:10.581 UTC [gossip/discovery] periodicalSendAlive -> DEBU 155[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:19:15.582 UTC [gossip/discovery] periodicalSendAlive -> DEBU 156[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:19:20.582 UTC [gossip/discovery] periodicalSendAlive -> DEBU 157[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:19:25.583 UTC [gossip/discovery] periodicalSendAlive -> DEBU 158[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:19:30.583 UTC [gossip/discovery] periodicalSendAlive -> DEBU 159[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:19:35.541 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 15a[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:19:35.584 UTC [gossip/discovery] periodicalSendAlive -> DEBU 15b[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:19:40.584 UTC [gossip/discovery] periodicalSendAlive -> DEBU 15c[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:19:45.585 UTC [gossip/discovery] periodicalSendAlive -> DEBU 15d[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:19:50.585 UTC [gossip/discovery] periodicalSendAlive -> DEBU 15e[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:19:55.586 UTC [gossip/discovery] periodicalSendAlive -> DEBU 15f[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:20:00.541 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 160[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:20:00.586 UTC [gossip/discovery] periodicalSendAlive -> DEBU 161[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:20:05.587 UTC [gossip/discovery] periodicalSendAlive -> DEBU 162[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:20:10.587 UTC [gossip/discovery] periodicalSendAlive -> DEBU 163[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:20:15.588 UTC [gossip/discovery] periodicalSendAlive -> DEBU 164[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:20:20.588 UTC [gossip/discovery] periodicalSendAlive -> DEBU 165[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:20:25.542 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 166[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:20:25.589 UTC [gossip/discovery] periodicalSendAlive -> DEBU 167[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:20:30.589 UTC [gossip/discovery] periodicalSendAlive -> DEBU 168[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:20:35.590 UTC [gossip/discovery] periodicalSendAlive -> DEBU 169[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:20:40.590 UTC [gossip/discovery] periodicalSendAlive -> DEBU 16a[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:20:45.591 UTC [gossip/discovery] periodicalSendAlive -> DEBU 16b[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:20:50.542 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 16c[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:20:50.591 UTC [gossip/discovery] periodicalSendAlive -> DEBU 16d[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:20:55.592 UTC [gossip/discovery] periodicalSendAlive -> DEBU 16e[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:21:00.592 UTC [gossip/discovery] periodicalSendAlive -> DEBU 16f[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:21:05.593 UTC [gossip/discovery] periodicalSendAlive -> DEBU 170[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:21:10.593 UTC [gossip/discovery] periodicalSendAlive -> DEBU 171[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:21:15.542 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 172[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:21:15.594 UTC [gossip/discovery] periodicalSendAlive -> DEBU 173[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:21:20.594 UTC [gossip/discovery] periodicalSendAlive -> DEBU 174[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:21:25.595 UTC [gossip/discovery] periodicalSendAlive -> DEBU 175[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:21:30.595 UTC [gossip/discovery] periodicalSendAlive -> DEBU 176[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:21:35.596 UTC [gossip/discovery] periodicalSendAlive -> DEBU 177[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:21:40.542 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 178[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:21:40.596 UTC [gossip/discovery] periodicalSendAlive -> DEBU 179[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:21:45.597 UTC [gossip/discovery] periodicalSendAlive -> DEBU 17a[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:21:50.597 UTC [gossip/discovery] periodicalSendAlive -> DEBU 17b[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:21:55.597 UTC [gossip/discovery] periodicalSendAlive -> DEBU 17c[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:22:00.598 UTC [gossip/discovery] periodicalSendAlive -> DEBU 17d[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:22:05.543 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 17e[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:22:05.598 UTC [gossip/discovery] periodicalSendAlive -> DEBU 17f[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:22:10.599 UTC [gossip/discovery] periodicalSendAlive -> DEBU 180[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:22:15.599 UTC [gossip/discovery] periodicalSendAlive -> DEBU 181[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:22:20.600 UTC [gossip/discovery] periodicalSendAlive -> DEBU 182[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:22:25.600 UTC [gossip/discovery] periodicalSendAlive -> DEBU 183[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:22:30.543 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 184[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:22:30.601 UTC [gossip/discovery] periodicalSendAlive -> DEBU 185[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:22:35.601 UTC [gossip/discovery] periodicalSendAlive -> DEBU 186[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:22:40.602 UTC [gossip/discovery] periodicalSendAlive -> DEBU 187[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:22:45.602 UTC [gossip/discovery] periodicalSendAlive -> DEBU 188[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:22:50.603 UTC [gossip/discovery] periodicalSendAlive -> DEBU 189[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:22:55.543 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 18a[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:22:55.603 UTC [gossip/discovery] periodicalSendAlive -> DEBU 18b[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:23:00.604 UTC [gossip/discovery] periodicalSendAlive -> DEBU 18c[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:23:05.604 UTC [gossip/discovery] periodicalSendAlive -> DEBU 18d[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:23:10.604 UTC [gossip/discovery] periodicalSendAlive -> DEBU 18e[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:23:15.605 UTC [gossip/discovery] periodicalSendAlive -> DEBU 18f[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:23:20.543 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 190[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:23:20.605 UTC [gossip/discovery] periodicalSendAlive -> DEBU 191[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:23:25.606 UTC [gossip/discovery] periodicalSendAlive -> DEBU 192[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:23:30.606 UTC [gossip/discovery] periodicalSendAlive -> DEBU 193[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:23:35.607 UTC [gossip/discovery] periodicalSendAlive -> DEBU 194[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:23:40.607 UTC [gossip/discovery] periodicalSendAlive -> DEBU 195[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:23:45.543 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 196[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:23:45.608 UTC [gossip/discovery] periodicalSendAlive -> DEBU 197[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:23:50.608 UTC [gossip/discovery] periodicalSendAlive -> DEBU 198[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:23:55.609 UTC [gossip/discovery] periodicalSendAlive -> DEBU 199[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:24:00.609 UTC [gossip/discovery] periodicalSendAlive -> DEBU 19a[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:24:05.610 UTC [gossip/discovery] periodicalSendAlive -> DEBU 19b[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:24:10.544 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 19c[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:24:10.610 UTC [gossip/discovery] periodicalSendAlive -> DEBU 19d[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:24:15.611 UTC [gossip/discovery] periodicalSendAlive -> DEBU 19e[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:24:20.611 UTC [gossip/discovery] periodicalSendAlive -> DEBU 19f[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:24:25.612 UTC [gossip/discovery] periodicalSendAlive -> DEBU 1a0[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:24:30.612 UTC [gossip/discovery] periodicalSendAlive -> DEBU 1a1[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:24:35.544 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 1a2[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:24:35.613 UTC [gossip/discovery] periodicalSendAlive -> DEBU 1a3[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:24:40.613 UTC [gossip/discovery] periodicalSendAlive -> DEBU 1a4[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:24:45.614 UTC [gossip/discovery] periodicalSendAlive -> DEBU 1a5[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:24:50.614 UTC [gossip/discovery] periodicalSendAlive -> DEBU 1a6[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:24:55.615 UTC [gossip/discovery] periodicalSendAlive -> DEBU 1a7[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:25:00.544 UTC [gossip/discovery] periodicalReconnectToDead -> DEBU 1a8[0m Sleeping 25s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:25:00.615 UTC [gossip/discovery] periodicalSendAlive -> DEBU 1a9[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:25:05.616 UTC [gossip/discovery] periodicalSendAlive -> DEBU 1aa[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:25:10.616 UTC [gossip/discovery] periodicalSendAlive -> DEBU 1ab[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:25:15.617 UTC [gossip/discovery] periodicalSendAlive -> DEBU 1ac[0m Sleeping 5s
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:25:18.254 UTC [nodeCmd] func6 -> DEBU 1ad[0m sig: terminated
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:25:18.254 UTC [gossip/gossip] Stop -> INFO 1ae[0m Stopping gossip
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:25:18.254 UTC [gossip/discovery] Stop -> INFO 1af[0m Stopping
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:25:18.254 UTC [gossip/discovery] Stop -> INFO 1b0[0m Stopped
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:25:18.254 UTC [gossip/comm] Stop -> INFO 1b1[0m Stopping
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:25:18.254 UTC [gossip/comm] Stop -> DEBU 1b2[0m Shut down connection store, connection count: 0
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:25:18.254 UTC [gossip/comm] func1 -> DEBU 1b3[0m Exiting Accept() loop
+[36mpeer0.Alice.example.com    |[0m [34m2018-12-16 09:25:18.254 UTC [gossip/comm] Stop -> INFO 1b4[0m Stopped
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:25:18.255 UTC [gossip/discovery] handleMessages -> DEBU 1b5[0m Stopped
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:25:18.255 UTC [gossip/discovery] handlePresumedDeadPeers -> DEBU 1b6[0m Stopped
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:25:18.255 UTC [gossip/gossip] acceptMessages -> DEBU 1b7[0m Exiting
+[36mpeer0.Alice.example.com    |[0m [36m2018-12-16 09:25:18.255 UTC [gossip/gossip] handlePresumedDead -> DEBU 1b8[0m Exiting
+[36mpeer0.Alice.example.com exited with code 0
+[0m
