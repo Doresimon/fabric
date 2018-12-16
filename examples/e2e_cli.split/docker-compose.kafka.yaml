@@ -6,12 +6,12 @@
 version: "2"
 
 services:
-  kafkaBob:
+  kafkaAlice:
     extends:
       file: base/kafka.base.yaml
       service: kafka
-    container_name: kafkaBob
-    hostname: kafkaBob
+    container_name: kafkaAlice
+    hostname: kafkaAlice
     environment:
       - KAFKA_BROKER_ID=1
       # min.insync.replicas=M --- 设置一个M值（例如1<M<N，查看下面的default.replication.factor）
@@ -19,13 +19,15 @@ services:
       # 其它情况，写入操作会返回一个错误。接下来：
       # 1. 如果channel写入的数据多达N-M个副本变的不可用，操作可以正常执行。
       # 2. 如果有更多的副本不可用，Kafka不可以维护一个有M数量的ISR集合，因此Kafka停止接收写操作。Channel只有当同步M个副本后才可以重新可以写。
-      - KAFKA_MIN_INSYNC_REPLICAS=2
+      - KAFKA_MIN_INSYNC_REPLICAS=1
       - KAFKA_DEFAULT_REPLICATION_FACTOR=2
       # 指向 Zookeeper 节点的集合，其中包含ZK的集合。
       - KAFKA_ZOOKEEPER_CONNECT=zooKeeperAlice:2181,zooKeeperBob:2181
     volumes:
       # kafka 数据存储路径，映射到本地
-      - ./chainData/kafka/kafka-logs/kafkaBob/:/tmp/kafka-logs/
+      - ./chainData/kafka/kafka-logs/kafkaAlice/:/tmp/kafka-logs/
+    ports:
+      - "9002:9092"
     extra_hosts:
       - "zooKeeperAlice:10.171.5.32"
       - "zooKeeperBob:10.171.5.128"

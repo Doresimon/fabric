@@ -1,0 +1,222 @@
+Attaching to kafkaAlice
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,060] INFO KafkaConfig values: 
+[36mkafkaAlice    |[0m 	advertised.host.name = null
+[36mkafkaAlice    |[0m 	advertised.listeners = null
+[36mkafkaAlice    |[0m 	advertised.port = null
+[36mkafkaAlice    |[0m 	alter.config.policy.class.name = null
+[36mkafkaAlice    |[0m 	authorizer.class.name = 
+[36mkafkaAlice    |[0m 	auto.create.topics.enable = true
+[36mkafkaAlice    |[0m 	auto.leader.rebalance.enable = true
+[36mkafkaAlice    |[0m 	background.threads = 10
+[36mkafkaAlice    |[0m 	broker.id = 1
+[36mkafkaAlice    |[0m 	broker.id.generation.enable = true
+[36mkafkaAlice    |[0m 	broker.rack = null
+[36mkafkaAlice    |[0m 	compression.type = producer
+[36mkafkaAlice    |[0m 	connections.max.idle.ms = 600000
+[36mkafkaAlice    |[0m 	controlled.shutdown.enable = true
+[36mkafkaAlice    |[0m 	controlled.shutdown.max.retries = 3
+[36mkafkaAlice    |[0m 	controlled.shutdown.retry.backoff.ms = 5000
+[36mkafkaAlice    |[0m 	controller.socket.timeout.ms = 30000
+[36mkafkaAlice    |[0m 	create.topic.policy.class.name = null
+[36mkafkaAlice    |[0m 	default.replication.factor = 2
+[36mkafkaAlice    |[0m 	delete.records.purgatory.purge.interval.requests = 1
+[36mkafkaAlice    |[0m 	delete.topic.enable = true
+[36mkafkaAlice    |[0m 	fetch.purgatory.purge.interval.requests = 1000
+[36mkafkaAlice    |[0m 	group.initial.rebalance.delay.ms = 0
+[36mkafkaAlice    |[0m 	group.max.session.timeout.ms = 300000
+[36mkafkaAlice    |[0m 	group.min.session.timeout.ms = 6000
+[36mkafkaAlice    |[0m 	host.name = 
+[36mkafkaAlice    |[0m 	inter.broker.listener.name = null
+[36mkafkaAlice    |[0m 	inter.broker.protocol.version = 1.0-IV0
+[36mkafkaAlice    |[0m 	leader.imbalance.check.interval.seconds = 300
+[36mkafkaAlice    |[0m 	leader.imbalance.per.broker.percentage = 10
+[36mkafkaAlice    |[0m 	listener.security.protocol.map = PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+[36mkafkaAlice    |[0m 	listeners = null
+[36mkafkaAlice    |[0m 	log.cleaner.backoff.ms = 15000
+[36mkafkaAlice    |[0m 	log.cleaner.dedupe.buffer.size = 134217728
+[36mkafkaAlice    |[0m 	log.cleaner.delete.retention.ms = 86400000
+[36mkafkaAlice    |[0m 	log.cleaner.enable = true
+[36mkafkaAlice    |[0m 	log.cleaner.io.buffer.load.factor = 0.9
+[36mkafkaAlice    |[0m 	log.cleaner.io.buffer.size = 524288
+[36mkafkaAlice    |[0m 	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+[36mkafkaAlice    |[0m 	log.cleaner.min.cleanable.ratio = 0.5
+[36mkafkaAlice    |[0m 	log.cleaner.min.compaction.lag.ms = 0
+[36mkafkaAlice    |[0m 	log.cleaner.threads = 1
+[36mkafkaAlice    |[0m 	log.cleanup.policy = [delete]
+[36mkafkaAlice    |[0m 	log.dir = /tmp/kafka-logs
+[36mkafkaAlice    |[0m 	log.dirs = /tmp/kafka-logs
+[36mkafkaAlice    |[0m 	log.flush.interval.messages = 9223372036854775807
+[36mkafkaAlice    |[0m 	log.flush.interval.ms = null
+[36mkafkaAlice    |[0m 	log.flush.offset.checkpoint.interval.ms = 60000
+[36mkafkaAlice    |[0m 	log.flush.scheduler.interval.ms = 9223372036854775807
+[36mkafkaAlice    |[0m 	log.flush.start.offset.checkpoint.interval.ms = 60000
+[36mkafkaAlice    |[0m 	log.index.interval.bytes = 4096
+[36mkafkaAlice    |[0m 	log.index.size.max.bytes = 10485760
+[36mkafkaAlice    |[0m 	log.message.format.version = 1.0-IV0
+[36mkafkaAlice    |[0m 	log.message.timestamp.difference.max.ms = 9223372036854775807
+[36mkafkaAlice    |[0m 	log.message.timestamp.type = CreateTime
+[36mkafkaAlice    |[0m 	log.preallocate = false
+[36mkafkaAlice    |[0m 	log.retention.bytes = -1
+[36mkafkaAlice    |[0m 	log.retention.check.interval.ms = 300000
+[36mkafkaAlice    |[0m 	log.retention.hours = 168
+[36mkafkaAlice    |[0m 	log.retention.minutes = null
+[36mkafkaAlice    |[0m 	log.retention.ms = -1
+[36mkafkaAlice    |[0m 	log.roll.hours = 168
+[36mkafkaAlice    |[0m 	log.roll.jitter.hours = 0
+[36mkafkaAlice    |[0m 	log.roll.jitter.ms = null
+[36mkafkaAlice    |[0m 	log.roll.ms = null
+[36mkafkaAlice    |[0m 	log.segment.bytes = 1073741824
+[36mkafkaAlice    |[0m 	log.segment.delete.delay.ms = 60000
+[36mkafkaAlice    |[0m 	max.connections.per.ip = 2147483647
+[36mkafkaAlice    |[0m 	max.connections.per.ip.overrides = 
+[36mkafkaAlice    |[0m 	message.max.bytes = 103809024
+[36mkafkaAlice    |[0m 	metric.reporters = []
+[36mkafkaAlice    |[0m 	metrics.num.samples = 2
+[36mkafkaAlice    |[0m 	metrics.recording.level = INFO
+[36mkafkaAlice    |[0m 	metrics.sample.window.ms = 30000
+[36mkafkaAlice    |[0m 	min.insync.replicas = 1
+[36mkafkaAlice    |[0m 	num.io.threads = 8
+[36mkafkaAlice    |[0m 	num.network.threads = 3
+[36mkafkaAlice    |[0m 	num.partitions = 1
+[36mkafkaAlice    |[0m 	num.recovery.threads.per.data.dir = 1
+[36mkafkaAlice    |[0m 	num.replica.fetchers = 1
+[36mkafkaAlice    |[0m 	offset.metadata.max.bytes = 4096
+[36mkafkaAlice    |[0m 	offsets.commit.required.acks = -1
+[36mkafkaAlice    |[0m 	offsets.commit.timeout.ms = 5000
+[36mkafkaAlice    |[0m 	offsets.load.buffer.size = 5242880
+[36mkafkaAlice    |[0m 	offsets.retention.check.interval.ms = 600000
+[36mkafkaAlice    |[0m 	offsets.retention.minutes = 1440
+[36mkafkaAlice    |[0m 	offsets.topic.compression.codec = 0
+[36mkafkaAlice    |[0m 	offsets.topic.num.partitions = 50
+[36mkafkaAlice    |[0m 	offsets.topic.replication.factor = 1
+[36mkafkaAlice    |[0m 	offsets.topic.segment.bytes = 104857600
+[36mkafkaAlice    |[0m 	port = 9092
+[36mkafkaAlice    |[0m 	principal.builder.class = null
+[36mkafkaAlice    |[0m 	producer.purgatory.purge.interval.requests = 1000
+[36mkafkaAlice    |[0m 	queued.max.request.bytes = -1
+[36mkafkaAlice    |[0m 	queued.max.requests = 500
+[36mkafkaAlice    |[0m 	quota.consumer.default = 9223372036854775807
+[36mkafkaAlice    |[0m 	quota.producer.default = 9223372036854775807
+[36mkafkaAlice    |[0m 	quota.window.num = 11
+[36mkafkaAlice    |[0m 	quota.window.size.seconds = 1
+[36mkafkaAlice    |[0m 	replica.fetch.backoff.ms = 1000
+[36mkafkaAlice    |[0m 	replica.fetch.max.bytes = 103809024
+[36mkafkaAlice    |[0m 	replica.fetch.min.bytes = 1
+[36mkafkaAlice    |[0m 	replica.fetch.response.max.bytes = 10485760
+[36mkafkaAlice    |[0m 	replica.fetch.wait.max.ms = 500
+[36mkafkaAlice    |[0m 	replica.high.watermark.checkpoint.interval.ms = 5000
+[36mkafkaAlice    |[0m 	replica.lag.time.max.ms = 10000
+[36mkafkaAlice    |[0m 	replica.socket.receive.buffer.bytes = 65536
+[36mkafkaAlice    |[0m 	replica.socket.timeout.ms = 30000
+[36mkafkaAlice    |[0m 	replication.quota.window.num = 11
+[36mkafkaAlice    |[0m 	replication.quota.window.size.seconds = 1
+[36mkafkaAlice    |[0m 	request.timeout.ms = 30000
+[36mkafkaAlice    |[0m 	reserved.broker.max.id = 1000
+[36mkafkaAlice    |[0m 	sasl.enabled.mechanisms = [GSSAPI]
+[36mkafkaAlice    |[0m 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+[36mkafkaAlice    |[0m 	sasl.kerberos.min.time.before.relogin = 60000
+[36mkafkaAlice    |[0m 	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+[36mkafkaAlice    |[0m 	sasl.kerberos.service.name = null
+[36mkafkaAlice    |[0m 	sasl.kerberos.ticket.renew.jitter = 0.05
+[36mkafkaAlice    |[0m 	sasl.kerberos.ticket.renew.window.factor = 0.8
+[36mkafkaAlice    |[0m 	sasl.mechanism.inter.broker.protocol = GSSAPI
+[36mkafkaAlice    |[0m 	security.inter.broker.protocol = PLAINTEXT
+[36mkafkaAlice    |[0m 	socket.receive.buffer.bytes = 102400
+[36mkafkaAlice    |[0m 	socket.request.max.bytes = 104857600
+[36mkafkaAlice    |[0m 	socket.send.buffer.bytes = 102400
+[36mkafkaAlice    |[0m 	ssl.cipher.suites = null
+[36mkafkaAlice    |[0m 	ssl.client.auth = none
+[36mkafkaAlice    |[0m 	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+[36mkafkaAlice    |[0m 	ssl.endpoint.identification.algorithm = null
+[36mkafkaAlice    |[0m 	ssl.key.password = null
+[36mkafkaAlice    |[0m 	ssl.keymanager.algorithm = SunX509
+[36mkafkaAlice    |[0m 	ssl.keystore.location = null
+[36mkafkaAlice    |[0m 	ssl.keystore.password = null
+[36mkafkaAlice    |[0m 	ssl.keystore.type = JKS
+[36mkafkaAlice    |[0m 	ssl.protocol = TLS
+[36mkafkaAlice    |[0m 	ssl.provider = null
+[36mkafkaAlice    |[0m 	ssl.secure.random.implementation = null
+[36mkafkaAlice    |[0m 	ssl.trustmanager.algorithm = PKIX
+[36mkafkaAlice    |[0m 	ssl.truststore.location = null
+[36mkafkaAlice    |[0m 	ssl.truststore.password = null
+[36mkafkaAlice    |[0m 	ssl.truststore.type = JKS
+[36mkafkaAlice    |[0m 	transaction.abort.timed.out.transaction.cleanup.interval.ms = 60000
+[36mkafkaAlice    |[0m 	transaction.max.timeout.ms = 900000
+[36mkafkaAlice    |[0m 	transaction.remove.expired.transaction.cleanup.interval.ms = 3600000
+[36mkafkaAlice    |[0m 	transaction.state.log.load.buffer.size = 5242880
+[36mkafkaAlice    |[0m 	transaction.state.log.min.isr = 1
+[36mkafkaAlice    |[0m 	transaction.state.log.num.partitions = 50
+[36mkafkaAlice    |[0m 	transaction.state.log.replication.factor = 1
+[36mkafkaAlice    |[0m 	transaction.state.log.segment.bytes = 104857600
+[36mkafkaAlice    |[0m 	transactional.id.expiration.ms = 604800000
+[36mkafkaAlice    |[0m 	unclean.leader.election.enable = false
+[36mkafkaAlice    |[0m 	zookeeper.connect = zooKeeperAlice:2181,zooKeeperBob:2181
+[36mkafkaAlice    |[0m 	zookeeper.connection.timeout.ms = 6000
+[36mkafkaAlice    |[0m 	zookeeper.session.timeout.ms = 6000
+[36mkafkaAlice    |[0m 	zookeeper.set.acl = false
+[36mkafkaAlice    |[0m 	zookeeper.sync.time.ms = 2000
+[36mkafkaAlice    |[0m  (kafka.server.KafkaConfig)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,104] INFO starting (kafka.server.KafkaServer)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,106] INFO Connecting to zookeeper on zooKeeperAlice:2181,zooKeeperBob:2181 (kafka.server.KafkaServer)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,116] INFO Starting ZkClient event thread. (org.I0Itec.zkclient.ZkEventThread)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,120] INFO Client environment:zookeeper.version=3.4.10-39d3a4f269333c922ed3db283be479f9deacaa0f, built on 03/23/2017 10:13 GMT (org.apache.zookeeper.ZooKeeper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,120] INFO Client environment:host.name=kafkaAlice (org.apache.zookeeper.ZooKeeper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,120] INFO Client environment:java.version=1.8.0_181 (org.apache.zookeeper.ZooKeeper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,120] INFO Client environment:java.vendor=Oracle Corporation (org.apache.zookeeper.ZooKeeper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,120] INFO Client environment:java.home=/usr/lib/jvm/java-8-openjdk-amd64/jre (org.apache.zookeeper.ZooKeeper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,121] INFO Client environment:java.class.path=:/opt/kafka/bin/../libs/aopalliance-repackaged-2.5.0-b32.jar:/opt/kafka/bin/../libs/argparse4j-0.7.0.jar:/opt/kafka/bin/../libs/commons-lang3-3.5.jar:/opt/kafka/bin/../libs/connect-api-1.0.0.jar:/opt/kafka/bin/../libs/connect-file-1.0.0.jar:/opt/kafka/bin/../libs/connect-json-1.0.0.jar:/opt/kafka/bin/../libs/connect-runtime-1.0.0.jar:/opt/kafka/bin/../libs/connect-transforms-1.0.0.jar:/opt/kafka/bin/../libs/guava-20.0.jar:/opt/kafka/bin/../libs/hk2-api-2.5.0-b32.jar:/opt/kafka/bin/../libs/hk2-locator-2.5.0-b32.jar:/opt/kafka/bin/../libs/hk2-utils-2.5.0-b32.jar:/opt/kafka/bin/../libs/jackson-annotations-2.9.1.jar:/opt/kafka/bin/../libs/jackson-core-2.9.1.jar:/opt/kafka/bin/../libs/jackson-databind-2.9.1.jar:/opt/kafka/bin/../libs/jackson-jaxrs-base-2.9.1.jar:/opt/kafka/bin/../libs/jackson-jaxrs-json-provider-2.9.1.jar:/opt/kafka/bin/../libs/jackson-module-jaxb-annotations-2.9.1.jar:/opt/kafka/bin/../libs/javassist-3.20.0-GA.jar:/opt/kafka/bin/../libs/javassist-3.21.0-GA.jar:/opt/kafka/bin/../libs/javax.annotation-api-1.2.jar:/opt/kafka/bin/../libs/javax.inject-1.jar:/opt/kafka/bin/../libs/javax.inject-2.5.0-b32.jar:/opt/kafka/bin/../libs/javax.servlet-api-3.1.0.jar:/opt/kafka/bin/../libs/javax.ws.rs-api-2.0.1.jar:/opt/kafka/bin/../libs/jersey-client-2.25.1.jar:/opt/kafka/bin/../libs/jersey-common-2.25.1.jar:/opt/kafka/bin/../libs/jersey-container-servlet-2.25.1.jar:/opt/kafka/bin/../libs/jersey-container-servlet-core-2.25.1.jar:/opt/kafka/bin/../libs/jersey-guava-2.25.1.jar:/opt/kafka/bin/../libs/jersey-media-jaxb-2.25.1.jar:/opt/kafka/bin/../libs/jersey-server-2.25.1.jar:/opt/kafka/bin/../libs/jetty-continuation-9.2.22.v20170606.jar:/opt/kafka/bin/../libs/jetty-http-9.2.22.v20170606.jar:/opt/kafka/bin/../libs/jetty-io-9.2.22.v20170606.jar:/opt/kafka/bin/../libs/jetty-security-9.2.22.v20170606.jar:/opt/kafka/bin/../libs/jetty-server-9.2.22.v20170606.jar:/opt/kafka/bin/../libs/jetty-servlet-9.2.22.v20170606.jar:/opt/kafka/bin/../libs/jetty-servlets-9.2.22.v20170606.jar:/opt/kafka/bin/../libs/jetty-util-9.2.22.v20170606.jar:/opt/kafka/bin/../libs/jopt-simple-5.0.4.jar:/opt/kafka/bin/../libs/kafka-clients-1.0.0.jar:/opt/kafka/bin/../libs/kafka-log4j-appender-1.0.0.jar:/opt/kafka/bin/../libs/kafka-streams-1.0.0.jar:/opt/kafka/bin/../libs/kafka-streams-examples-1.0.0.jar:/opt/kafka/bin/../libs/kafka-tools-1.0.0.jar:/opt/kafka/bin/../libs/kafka_2.11-1.0.0-sources.jar:/opt/kafka/bin/../libs/kafka_2.11-1.0.0-test-sources.jar:/opt/kafka/bin/../libs/kafka_2.11-1.0.0.jar:/opt/kafka/bin/../libs/log4j-1.2.17.jar:/opt/kafka/bin/../libs/lz4-java-1.4.jar:/opt/kafka/bin/../libs/maven-artifact-3.5.0.jar:/opt/kafka/bin/../libs/metrics-core-2.2.0.jar:/opt/kafka/bin/../libs/osgi-resource-locator-1.0.1.jar:/opt/kafka/bin/../libs/plexus-utils-3.0.24.jar:/opt/kafka/bin/../libs/reflections-0.9.11.jar:/opt/kafka/bin/../libs/rocksdbjni-5.7.3.jar:/opt/kafka/bin/../libs/scala-library-2.11.11.jar:/opt/kafka/bin/../libs/slf4j-api-1.7.25.jar:/opt/kafka/bin/../libs/slf4j-log4j12-1.7.25.jar:/opt/kafka/bin/../libs/snappy-java-1.1.4.jar:/opt/kafka/bin/../libs/validation-api-1.1.0.Final.jar:/opt/kafka/bin/../libs/zkclient-0.10.jar:/opt/kafka/bin/../libs/zookeeper-3.4.10.jar (org.apache.zookeeper.ZooKeeper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,121] INFO Client environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib (org.apache.zookeeper.ZooKeeper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,121] INFO Client environment:java.io.tmpdir=/tmp (org.apache.zookeeper.ZooKeeper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,121] INFO Client environment:java.compiler=<NA> (org.apache.zookeeper.ZooKeeper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,121] INFO Client environment:os.name=Linux (org.apache.zookeeper.ZooKeeper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,121] INFO Client environment:os.arch=amd64 (org.apache.zookeeper.ZooKeeper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,121] INFO Client environment:os.version=4.15.0-36-generic (org.apache.zookeeper.ZooKeeper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,121] INFO Client environment:user.name=root (org.apache.zookeeper.ZooKeeper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,121] INFO Client environment:user.home=/root (org.apache.zookeeper.ZooKeeper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,121] INFO Client environment:user.dir=/ (org.apache.zookeeper.ZooKeeper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,122] INFO Initiating client connection, connectString=zooKeeperAlice:2181,zooKeeperBob:2181 sessionTimeout=6000 watcher=org.I0Itec.zkclient.ZkClient@6572421 (org.apache.zookeeper.ZooKeeper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,132] INFO Waiting for keeper state SyncConnected (org.I0Itec.zkclient.ZkClient)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,133] INFO Opening socket connection to server kafkaBob/10.171.5.128:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,138] INFO Socket connection established to kafkaBob/10.171.5.128:2181, initiating session (org.apache.zookeeper.ClientCnxn)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,158] INFO Session establishment complete on server kafkaBob/10.171.5.128:2181, sessionid = 0x267b61f28690001, negotiated timeout = 6000 (org.apache.zookeeper.ClientCnxn)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,160] INFO zookeeper state changed (SyncConnected) (org.I0Itec.zkclient.ZkClient)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,342] INFO Cluster ID = zOMx0-rnS7-QsHqsSkXl0A (kafka.server.KafkaServer)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,376] INFO [ThrottledRequestReaper-Fetch]: Starting (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,377] INFO [ThrottledRequestReaper-Produce]: Starting (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,378] INFO [ThrottledRequestReaper-Request]: Starting (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,421] INFO Loading logs. (kafka.log.LogManager)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,428] INFO Logs loading complete in 7 ms. (kafka.log.LogManager)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,486] INFO Starting log cleanup with a period of 300000 ms. (kafka.log.LogManager)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,488] INFO Starting log flusher with a default period of 9223372036854775807 ms. (kafka.log.LogManager)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,719] INFO Awaiting socket connections on 0.0.0.0:9092. (kafka.network.Acceptor)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,723] INFO [SocketServer brokerId=1] Started 1 acceptor threads (kafka.network.SocketServer)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,750] INFO [ExpirationReaper-1-Produce]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,753] INFO [ExpirationReaper-1-Fetch]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,763] INFO [ExpirationReaper-1-DeleteRecords]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,776] INFO [LogDirFailureHandler]: Starting (kafka.server.ReplicaManager$LogDirFailureHandler)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,811] INFO [ExpirationReaper-1-topic]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,822] INFO [ExpirationReaper-1-Heartbeat]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,828] INFO [ExpirationReaper-1-Rebalance]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,844] INFO [GroupCoordinator 1]: Starting up. (kafka.coordinator.group.GroupCoordinator)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,846] INFO [GroupCoordinator 1]: Startup complete. (kafka.coordinator.group.GroupCoordinator)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,847] INFO [GroupMetadataManager brokerId=1] Removed 0 expired offsets in 1 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,876] INFO [ProducerId Manager 1]: Acquired new producerId block (brokerId:1,blockStartProducerId:1000,blockEndProducerId:1999) by writing to Zk with path version 2 (kafka.coordinator.transaction.ProducerIdManager)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,892] INFO [TransactionCoordinator id=1] Starting up. (kafka.coordinator.transaction.TransactionCoordinator)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,893] INFO [Transaction Marker Channel Manager 1]: Starting (kafka.coordinator.transaction.TransactionMarkerChannelManager)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,893] INFO [TransactionCoordinator id=1] Startup complete. (kafka.coordinator.transaction.TransactionCoordinator)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,950] INFO Creating /brokers/ids/1 (is it secure? false) (kafka.utils.ZKCheckedEphemeral)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,976] INFO Result of znode creation is: OK (kafka.utils.ZKCheckedEphemeral)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,977] INFO Registered broker 1 at path /brokers/ids/1 with addresses: EndPoint(kafkaAlice,9092,ListenerName(PLAINTEXT),PLAINTEXT) (kafka.utils.ZkUtils)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,981] INFO Kafka version : 1.0.0 (org.apache.kafka.common.utils.AppInfoParser)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,981] INFO Kafka commitId : aaa7af6d4a11b29d (org.apache.kafka.common.utils.AppInfoParser)
+[36mkafkaAlice    |[0m [2018-12-16 08:28:22,983] INFO [KafkaServer id=1] started (kafka.server.KafkaServer)
+[36mkafkaAlice    |[0m [2018-12-16 08:36:51,807] INFO Terminating process due to signal SIGTERM (kafka.Kafka$)
+[36mkafkaAlice    |[0m [2018-12-16 08:36:51,809] INFO [KafkaServer id=1] shutting down (kafka.server.KafkaServer)
+[36mkafkaAlice    |[0m [2018-12-16 08:36:51,809] INFO [KafkaServer id=1] Starting controlled shutdown (kafka.server.KafkaServer)
+[36mkafkaAlice    |[0m [2018-12-16 08:36:51,830] WARN [KafkaServer id=1] Connection to node 2 could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[36mkafkaAlice    |[0m [2018-12-16 08:36:51,831] WARN [KafkaServer id=1] Error during controlled shutdown, possibly because leader movement took longer than the configured controller.socket.timeout.ms and/or request.timeout.ms: Connection to kafkaBob:9092 (id: 2 rack: null) failed. (kafka.server.KafkaServer)
+[36mkafkaAlice    |[0m [2018-12-16 08:36:56,831] WARN [KafkaServer id=1] Retrying controlled shutdown after the previous attempt failed... (kafka.server.KafkaServer)
+[36mkafkaAlice    |[0m [2018-12-16 08:36:56,839] WARN [KafkaServer id=1] Connection to node 2 could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)
+[36mkafkaAlice    |[0m [2018-12-16 08:36:56,839] WARN [KafkaServer id=1] Error during controlled shutdown, possibly because leader movement took longer than the configured controller.socket.timeout.ms and/or request.timeout.ms: Connection to kafkaBob:9092 (id: 2 rack: null) failed. (kafka.server.KafkaServer)
+[36mkafkaAlice exited with code 137
+[0m

@@ -1,0 +1,11 @@
+Attaching to ordererAlice.example.com
+[36mordererAlice.example.com    |[0m [34m2018-12-16 08:29:05.332 UTC [localconfig] completeInitialization -> INFO 001[0m Kafka.Version unset, setting to 0.10.2.0
+[36mordererAlice.example.com    |[0m [36m2018-12-16 08:29:05.332 UTC [bccsp_sw] createKeyStoreIfNotExists -> DEBU 002[0m KeyStore path [/var/hyperledger/orderer/msp/keystore] missing [true]: [<clean>]
+[36mordererAlice.example.com    |[0m [36m2018-12-16 08:29:05.335 UTC [bccsp_sw] createKeyStore -> DEBU 003[0m Creating KeyStore at [/var/hyperledger/orderer/msp/keystore]...
+[36mordererAlice.example.com    |[0m [36m2018-12-16 08:29:05.335 UTC [bccsp_sw] createKeyStore -> DEBU 004[0m KeyStore created at [/var/hyperledger/orderer/msp/keystore].
+[36mordererAlice.example.com    |[0m [36m2018-12-16 08:29:05.335 UTC [bccsp_sw] openKeyStore -> DEBU 005[0m KeyStore opened at [/var/hyperledger/orderer/msp/keystore]...done
+[36mordererAlice.example.com    |[0m [36m2018-12-16 08:29:05.335 UTC [bccsp] initBCCSP -> DEBU 006[0m Initialize BCCSP [SW]
+[36mordererAlice.example.com    |[0m [36m2018-12-16 08:29:05.335 UTC [msp] getPemMaterialFromDir -> DEBU 007[0m Reading directory /var/hyperledger/orderer/msp/signcerts
+[36mordererAlice.example.com    |[0m [35m2018-12-16 08:29:05.336 UTC [orderer/common/server] initializeLocalMsp -> FATA 008[0m Failed to initialize local MSP: could not load a valid signer certificate from directory /var/hyperledger/orderer/msp/signcerts: stat /var/hyperledger/orderer/msp/signcerts: no such file or directory
+[36mordererAlice.example.com exited with code 1
+[0m

@@ -34,6 +34,10 @@
 >
 > rm -rf crypto-config
 
+> ./2.generateCerts.sh
+
+> ./3.generateIdemixMaterial.sh
+
 > ./4.replaceOrgNameAndIP.sh Alice 10.171.5.32 Bob 10.171.5.128
 
 > ./5.replaceOrgName.sh Alice 1
