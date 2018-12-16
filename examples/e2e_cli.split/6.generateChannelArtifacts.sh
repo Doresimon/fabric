@@ -9,7 +9,7 @@
 #set -e
 
 CHANNEL_NAME=$1
-: ${CHANNEL_NAME:="mychannel"}
+: ${CHANNEL_NAME:="fudan0110"}
 echo $CHANNEL_NAME
 
 export FABRIC_ROOT=$PWD/../..

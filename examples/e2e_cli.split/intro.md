@@ -68,3 +68,5 @@ debug version
 >
 > docker-compose -f docker-compose.ca.yaml up > ./log/ca.log &
 >
+> docker-compose -f docker-compose.cli.yaml up > ./log/cli.log &
+>

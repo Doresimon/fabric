@@ -1,0 +1,4 @@
+Attaching to cli
+[36mcli    |[0m ]0;root@a34abb109e44: /opt/gopath/src/github.com/hyperledger/fabric/peerroot@a34abb109e44:/opt/gopath/src/github.com/hyperledger/fabric/peer# exit
+[36mcli exited with code 0
+[0m

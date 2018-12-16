@@ -2,7 +2,8 @@
 # Copyright London Stock Exchange Group All Rights Reserved.
 #
 # SPDX-License-Identifier: Apache-2.0
-#
+# set -o xtrace
+
 echo
 echo " ____    _____      _      ____    _____           _____   ____    _____ "
 echo "/ ___|  |_   _|    / \    |  _ \  |_   _|         | ____| |___ \  | ____|"
@@ -12,14 +13,17 @@ echo "|____/    |_|   /_/   \_\ |_| \_\   |_|           |_____| |_____| |_____|"
 echo
 
 CHANNEL_NAME="$1"
-: ${CHANNEL_NAME:="mychannel"}
-: ${TIMEOUT:="60"}
+: ${CHANNEL_NAME:="fudan0110"}
+: ${TIMEOUT:="12"}
 COUNTER=1
 MAX_RETRY=5
-ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
-PEER0_ORG1_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt
-PEER0_ORG2_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
+ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/ordererBob.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+PEER0_ORG1_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/Alice.example.com/peers/peer0.Alice.example.com/tls/ca.crt
+PEER0_ORG2_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/Bob.example.com/peers/peer0.Bob.example.com/tls/ca.crt
 ORDERER_SYSCHAN_ID=e2e-orderer-syschan
+
+CHAINCODE_VERSION=1.0
+CC_NAME=mycc0110-5
 
 echo "Channel name : "$CHANNEL_NAME
 
@@ -35,29 +39,23 @@ verifyResult () {
 setGlobals () {
 	PEER=$1
 	ORG=$2
-	if [ $ORG -eq 1 ] ; then
-		CORE_PEER_LOCALMSPID="Org1MSP"
+	if [ 9$ORG -eq 91 ] ; then
+		CORE_PEER_LOCALMSPID="AliceMSP"
 		CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_ORG1_CA
-		CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
+		CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/Alice.example.com/users/Admin@Alice.example.com/msp
 		if [ $PEER -eq 0 ]; then
-			CORE_PEER_ADDRESS=peer0.org1.example.com:7051
+			CORE_PEER_ADDRESS=peer0.Alice.example.com:7051
 		else
-			CORE_PEER_ADDRESS=peer1.org1.example.com:7051
+			CORE_PEER_ADDRESS=peer0.Alice.example.com:7051
 		fi
-	elif [ $ORG -eq 3 ] ; then
-		CORE_PEER_LOCALMSPID="Org3MSP"
-		CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt
-		CORE_PEER_ADDRESS=peer0.org1.example.com:7051
-		CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/idemix/idemix-config
-		CORE_PEER_LOCALMSPTYPE=idemix
 	else
-		CORE_PEER_LOCALMSPID="Org2MSP"
+		CORE_PEER_LOCALMSPID="BobMSP"
 		CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_ORG2_CA
-		CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
-		if [ $PEER -eq 0 ]; then
-			CORE_PEER_ADDRESS=peer0.org2.example.com:7051
+		CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/Bob.example.com/users/Admin@Bob.example.com/msp
+		if [ 9$PEER -eq 90 ]; then
+			CORE_PEER_ADDRESS=peer0.Bob.example.com:7051
 		else
-			CORE_PEER_ADDRESS=peer1.org2.example.com:7051
+			CORE_PEER_ADDRESS=peer0.Bob.example.com:7051
 		fi
 	fi
 
@@ -68,7 +66,7 @@ checkOSNAvailability() {
 	# Use orderer's MSP for fetching system channel config block
 	CORE_PEER_LOCALMSPID="OrdererMSP"
 	CORE_PEER_TLS_ROOTCERT_FILE=$ORDERER_CA
-	CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp
+	CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/ordererBob.example.com/msp
 
 	local rc=1
 	local starttime=$(date +%s)
@@ -80,14 +78,16 @@ checkOSNAvailability() {
 		 sleep 3
 		 echo "Attempting to fetch system channel '$ORDERER_SYSCHAN_ID' ...$(($(date +%s)-starttime)) secs"
 		 if [ -z "$CORE_PEER_TLS_ENABLED" -o "$CORE_PEER_TLS_ENABLED" = "false" ]; then
-			 peer channel fetch 0 -o orderer.example.com:7050 -c "$ORDERER_SYSCHAN_ID" >&log.txt
+			 peer channel fetch 0 -o ordererBob.example.com:7050 -c "$ORDERER_SYSCHAN_ID" >&log.log
+			#  peer channel fetch 0 -o ordererBob.example.com:7050 -c "$ORDERER_SYSCHAN_ID"
 		 else
-			 peer channel fetch 0 0_block.pb -o orderer.example.com:7050 -c "$ORDERER_SYSCHAN_ID" --tls --cafile $ORDERER_CA >&log.txt
+			 peer channel fetch 0 0_block.pb -o ordererBob.example.com:7050 -c "$ORDERER_SYSCHAN_ID" --tls --cafile $ORDERER_CA >&log.log
+			#  peer channel fetch 0 0_block.pb -o ordererBob.example.com:7050 -c "$ORDERER_SYSCHAN_ID" --tls --cafile $ORDERER_CA
 		 fi
-		 test $? -eq 0 && VALUE=$(cat log.txt | awk '/Received block/ {print $NF}')
+		 test $? -eq 0 && VALUE=$(cat log.log | awk '/Received block/ {print $NF}')
 		 test "$VALUE" = "0" && let rc=0
 	done
-	cat log.txt
+	cat log.log
 	verifyResult $rc "Ordering Service is not available, Please try again ..."
 	echo "===================== Ordering Service is up and running ===================== "
 	echo
@@ -96,12 +96,12 @@ checkOSNAvailability() {
 createChannel() {
 	setGlobals 0 1
 	if [ -z "$CORE_PEER_TLS_ENABLED" -o "$CORE_PEER_TLS_ENABLED" = "false" ]; then
-		peer channel create -o orderer.example.com:7050 -c $CHANNEL_NAME -f ./channel-artifacts/channel.tx >&log.txt
+		peer channel create -o ordererBob.example.com:7050 -c $CHANNEL_NAME -f ./channel-artifacts/channel.tx >&log.log
 	else
-		peer channel create -o orderer.example.com:7050 -c $CHANNEL_NAME -f ./channel-artifacts/channel.tx --tls --cafile $ORDERER_CA >&log.txt
+		peer channel create -o ordererBob.example.com:7050 -c $CHANNEL_NAME -f ./channel-artifacts/channel.tx --tls --cafile $ORDERER_CA >&log.log
 	fi
 	res=$?
-	cat log.txt
+	cat log.log
 	verifyResult $res "Channel creation failed"
 	echo "===================== Channel '$CHANNEL_NAME' created ===================== "
 	echo
@@ -113,12 +113,12 @@ updateAnchorPeers() {
 	setGlobals $PEER $ORG
 
 	if [ -z "$CORE_PEER_TLS_ENABLED" -o "$CORE_PEER_TLS_ENABLED" = "false" ]; then
-		peer channel update -o orderer.example.com:7050 -c $CHANNEL_NAME -f ./channel-artifacts/${CORE_PEER_LOCALMSPID}anchors.tx >&log.txt
+		peer channel update -o ordererBob.example.com:7050 -c $CHANNEL_NAME -f ./channel-artifacts/${CORE_PEER_LOCALMSPID}anchors.tx >&log.log
 	else
-		peer channel update -o orderer.example.com:7050 -c $CHANNEL_NAME -f ./channel-artifacts/${CORE_PEER_LOCALMSPID}anchors.tx --tls --cafile $ORDERER_CA >&log.txt
+		peer channel update -o ordererBob.example.com:7050 -c $CHANNEL_NAME -f ./channel-artifacts/${CORE_PEER_LOCALMSPID}anchors.tx --tls --cafile $ORDERER_CA >&log.log
 	fi
 	res=$?
-	cat log.txt
+	cat log.log
 	verifyResult $res "Anchor peer update failed"
 	echo "===================== Anchor peers updated for org '$CORE_PEER_LOCALMSPID' on channel '$CHANNEL_NAME' ===================== "
 	sleep 5
@@ -131,9 +131,9 @@ joinChannelWithRetry () {
 	ORG=$2
 	setGlobals $PEER $ORG
 
-	peer channel join -b $CHANNEL_NAME.block  >&log.txt
+	peer channel join -b $CHANNEL_NAME.block  >&log.log
 	res=$?
-	cat log.txt
+	cat log.log
 	if [ $res -ne 0 -a $COUNTER -lt $MAX_RETRY ]; then
 		COUNTER=` expr $COUNTER + 1`
 		echo "peer${PEER}.org${ORG} failed to join the channel, Retry after 2 seconds"
@@ -147,7 +147,7 @@ joinChannelWithRetry () {
 
 joinChannel () {
 	for org in 1 2; do
-	    for peer in 0 1; do
+	    for peer in 0; do
 		    joinChannelWithRetry $peer $org
 		    echo "===================== peer${peer}.org${org} joined channel '$CHANNEL_NAME' ===================== "
 		    sleep 2
@@ -160,9 +160,9 @@ installChaincode () {
 	PEER=$1
 	ORG=$2
 	setGlobals $PEER $ORG
-	peer chaincode install -n mycc -v 1.0 -p github.com/hyperledger/fabric/examples/chaincode/go/example02/cmd >&log.txt
+	peer chaincode install -n $CC_NAME -v $CHAINCODE_VERSION -p github.com/hyperledger/fabric/examples/chaincode/go/example02/cmd >&log.log
 	res=$?
-	cat log.txt
+	cat log.log
 	verifyResult $res "Chaincode installation on peer peer${PEER}.org${ORG} has Failed"
 	echo "===================== Chaincode is installed on peer${PEER}.org${ORG} ===================== "
 	echo
@@ -175,12 +175,12 @@ instantiateChaincode () {
 	# while 'peer chaincode' command can get the orderer endpoint from the peer (if join was successful),
 	# lets supply it directly as we know it using the "-o" option
 	if [ -z "$CORE_PEER_TLS_ENABLED" -o "$CORE_PEER_TLS_ENABLED" = "false" ]; then
-		peer chaincode instantiate -o orderer.example.com:7050 -C $CHANNEL_NAME -n mycc -v 1.0 -c '{"Args":["init","a","100","b","200"]}' -P "AND ('Org1MSP.peer','Org2MSP.peer')" >&log.txt
+		peer chaincode instantiate -o ordererBob.example.com:7050 -C $CHANNEL_NAME -n $CC_NAME -v $CHAINCODE_VERSION -c '{"Args":["init","a","100","b","200"]}' -P "OR ('AliceMSP.peer','BobMSP.peer')" >&log.log
 	else
-		peer chaincode instantiate -o orderer.example.com:7050 --tls --cafile $ORDERER_CA -C $CHANNEL_NAME -n mycc -v 1.0 -c '{"Args":["init","a","100","b","200"]}' -P "AND ('Org1MSP.peer','Org2MSP.peer')" >&log.txt
+		peer chaincode instantiate -o ordererBob.example.com:7050 --tls --cafile $ORDERER_CA -C $CHANNEL_NAME -n $CC_NAME -v $CHAINCODE_VERSION -c '{"Args":["init","a","100","b","200"]}' -P "OR ('AliceMSP.peer','BobMSP.peer')" >&log.log
 	fi
 	res=$?
-	cat log.txt
+	cat log.log
 	verifyResult $res "Chaincode instantiation on peer${PEER}.org${ORG} on channel '$CHANNEL_NAME' failed"
 	echo "===================== Chaincode is instantiated on peer${PEER}.org${ORG} on channel '$CHANNEL_NAME' ===================== "
 	echo
@@ -201,12 +201,13 @@ chaincodeQuery () {
 	do
         	sleep 3
         	echo "Attempting to Query peer${PEER}.org${ORG} ...$(($(date +%s)-starttime)) secs"
-        	peer chaincode query -C $CHANNEL_NAME -n mycc -c '{"Args":["query","a"]}' >&log.txt
-        	test $? -eq 0 && VALUE=$(cat log.txt | egrep '^[0-9]+$')
+        	# peer chaincode query -C $CHANNEL_NAME -n $CC_NAME -c '{"Args":["query","a"]}' >&log.log
+        	peer chaincode query -C $CHANNEL_NAME -n $CC_NAME -c '{"Args":["query","a"]}' >&log.log
+        	test $? -eq 0 && VALUE=$(cat log.log | egrep '^[0-9]+$')
         	test "$VALUE" = "$EXPECTED_RESULT" && let rc=0
 	done
 	echo
-	cat log.txt
+	cat log.log
 	if test $rc -eq 0 ; then
 		echo "===================== Query successful on peer${PEER}.org${ORG} on channel '$CHANNEL_NAME' ===================== "
     	else
@@ -255,64 +256,69 @@ chaincodeInvoke () {
 	# peer (if join was successful), let's supply it directly as we know
 	# it using the "-o" option
 	if [ -z "$CORE_PEER_TLS_ENABLED" -o "$CORE_PEER_TLS_ENABLED" = "false" ]; then
-		peer chaincode invoke -o orderer.example.com:7050 -C $CHANNEL_NAME -n mycc $PEER_CONN_PARMS -c '{"Args":["invoke","a","b","10"]}' >&log.txt
+		peer chaincode invoke -o ordererBob.example.com:7050 -C $CHANNEL_NAME -n $CC_NAME $PEER_CONN_PARMS -c '{"Args":["invoke","a","b","10"]}' >&log.log
 	else
-        peer chaincode invoke -o orderer.example.com:7050  --tls --cafile $ORDERER_CA -C $CHANNEL_NAME -n mycc $PEER_CONN_PARMS -c '{"Args":["invoke","a","b","10"]}' >&log.txt
+        peer chaincode invoke -o ordererBob.example.com:7050  --tls --cafile $ORDERER_CA -C $CHANNEL_NAME -n $CC_NAME $PEER_CONN_PARMS -c '{"Args":["invoke","a","b","10"]}' >&log.log
 	fi
 	res=$?
-	cat log.txt
+	cat log.log
 	verifyResult $res "Invoke execution on PEER$PEER failed "
 	echo "===================== Invoke transaction successful on $PEERS on channel '$CHANNEL_NAME' ===================== "
 	echo
 }
 
-# Check for orderering service availablility
-echo "Check orderering service availability..."
-checkOSNAvailability
+# # Check for orderering service availablility
+# echo "Check orderering service availability..."
+# checkOSNAvailability
 
-# Create channel
-echo "Creating channel..."
-createChannel
+# # Create channel
+# echo "Creating channel..."
+# createChannel
 
-# Join all the peers to the channel
+# # Join all the peers to the channel
 echo "Having all peers join the channel..."
-joinChannel
+# joinChannel
 
-# Set the anchor peers for each org in the channel
-echo "Updating anchor peers for org1..."
-updateAnchorPeers 0 1
-echo "Updating anchor peers for org2..."
-updateAnchorPeers 0 2
+# # Set the anchor peers for each org in the channel
+echo "Updating anchor peers for Alice..."
+# updateAnchorPeers 0 1
+echo "Updating anchor peers for Bob..."
+# updateAnchorPeers 0 2
 
-# Install chaincode on peer0.org1 and peer2.org2
-echo "Installing chaincode on peer0.org1..."
-installChaincode 0 1
-echo "Install chaincode on peer0.org2..."
-installChaincode 0 2
+# # Install chaincode on peer0.Alice and peer2.Bob
+echo "Installing chaincode on peer0.Alice..."
+# installChaincode 0 1
 
-# Instantiate chaincode on peer0.org2
-echo "Instantiating chaincode on peer0.org2..."
+echo "Install chaincode on peer0.Bob..."
+# installChaincode 0 2
+
+# # Instantiate chaincode on peer0.Alice
+echo "Instantiating chaincode on peer0.Alice..."
+instantiateChaincode 0 1
+
+# # Instantiate chaincode on peer0.Bob
+echo "Instantiating chaincode on peer0.Bob..."
 instantiateChaincode 0 2
 
-# Query on chaincode on peer0.org1
-echo "Querying chaincode on peer0.org1..."
-chaincodeQuery 0 1 100
+# # Query on chaincode on peer0.Alice
+echo "Querying chaincode on peer0.Alice..."
+# chaincodeQuery 0 1 100
 
-# Invoke on chaincode on peer0.org1 and peer0.org2
-echo "Sending invoke transaction on peer0.org1 and peer0.org2..."
-chaincodeInvoke 0 1 0 2
+# # Invoke on chaincode on peer0.Alice and peer0.Bob
+# echo "Sending invoke transaction on peer0.Alice and peer0.Bob..."
+# chaincodeInvoke 0 1 0 2
 
-# Install chaincode on peer1.org2
-echo "Installing chaincode on peer1.org2..."
-installChaincode 1 2
+# Install chaincode on peer1.Bob
+# echo "Installing chaincode on peer1.Bob..."
+# installChaincode 1 2
 
-# Query on chaincode on peer1.org2, check if the result is 90
-echo "Querying chaincode on peer1.org2..."
-chaincodeQuery 1 2 90
+# Query on chaincode on peer1.Bob, check if the result is 90
+# echo "Querying chaincode on peer1.Bob..."
+# chaincodeQuery 1 2 90
 
 #Query on chaincode on peer1.org3 with idemix MSP type, check if the result is 90
-echo "Querying chaincode on peer1.org3..."
-chaincodeQuery 1 3 90
+# echo "Querying chaincode on peer1.org3..."
+# chaincodeQuery 1 3 90
 
 echo
 echo "===================== All GOOD, End-2-End execution completed ===================== "
@@ -326,4 +332,13 @@ echo "| |___  | |\  | | |_| | |_____| | |___   / __/  | |___ "
 echo "|_____| |_| \_| |____/          |_____| |_____| |_____|"
 echo
 
+# set +o xtrace
+
 exit 0
+
+
+# ./scripts/script.sh > ./scripts/run.log &
+
+# peer chaincode list -o ordererAlice.example.com:7050 -C fudan0110 --installed --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/ordererBob.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+# peer chaincode list -o ordererAlice.example.com:7050 -C fudan0110 --instantiated --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/ordererBob.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+
