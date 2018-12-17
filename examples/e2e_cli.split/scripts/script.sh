@@ -234,6 +234,13 @@ parsePeerConnectionParameters() {
         	exit 1
 	fi
 
+		if [ x$2 == x1 ]
+		then
+			PEER="peer$1.Alice"
+		else
+			PEER="peer$1.Bob"
+		fi
+
 	PEER_CONN_PARMS=""
 	PEERS=""
 	while [ "$#" -gt 0 ]; do
