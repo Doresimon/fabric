@@ -22,7 +22,7 @@ PEER0_ORG1_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrga
 PEER0_ORG2_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/Bob.example.com/peers/peer0.Bob.example.com/tls/ca.crt
 ORDERER_SYSCHAN_ID=e2e-orderer-syschan
 
-CC_NAME=mycc0110-3
+CC_NAME=mycc0110-0000
 
 CHAINCODE_VERSION=1.0
 
@@ -273,23 +273,23 @@ chaincodeInvoke () {
 	echo
 }
 
-# # Check for orderering service availablility
-# echo "Check orderering service availability..."
+# Check for orderering service availablility
+echo "Check orderering service availability..."
 checkOSNAvailability
 
-# # Create channel
-# echo "Creating channel..."
-createChannel
+# # # Create channel
+# # echo "Creating channel..."
+# # createChannel
 
-# # Join all the peers to the channel
-echo "Having all peers join the channel..."
-joinChannel
+# # # Join all the peers to the channel
+# echo "Having all peers join the channel..."
+# # joinChannel
 
-# # Set the anchor peers for each org in the channel
-echo "Updating anchor peers for Alice..."
-updateAnchorPeers 0 1
-echo "Updating anchor peers for Bob..."
-updateAnchorPeers 0 2
+# # # Set the anchor peers for each org in the channel
+# echo "Updating anchor peers for Alice..."
+# # updateAnchorPeers 0 1
+# echo "Updating anchor peers for Bob..."
+# # updateAnchorPeers 0 2
 
 # # Install chaincode on peer0.Alice and peer2.Bob
 echo "Installing chaincode on peer0.Alice..."
@@ -307,8 +307,8 @@ echo "Instantiating chaincode on peer0.Bob..."
 instantiateChaincode 0 2
 
 # # Query on chaincode on peer0.Alice
-echo "Querying chaincode on peer0.Alice..."
-# chaincodeQuery 0 1 100
+# echo "Querying chaincode on peer0.Alice..."
+# chaincodeQuery 0 2 100
 
 # # Invoke on chaincode on peer0.Alice and peer0.Bob
 # echo "Sending invoke transaction on peer0.Alice and peer0.Bob..."
