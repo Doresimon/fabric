@@ -73,6 +73,20 @@ function generateChannelArtifacts() {
 }
 
 
+# Use the CLI container to create the configuration transaction needed to add
+# Org3 to the network
+function createConfigTx () {
+  echo
+  echo "###############################################################"
+  echo "####### Generate and submit config tx to add $ORG_NAME #############"
+  echo "###############################################################"
+  docker exec cli addOrg/step1addorg.sh $CHANNEL_NAME $CLI_DELAY $LANGUAGE $CLI_TIMEOUT $VERBOSE
+  if [ $? -ne 0 ]; then
+    echo "ERROR !!!! Unable to create config tx"
+    exit 1
+  fi
+}
+
 
 generateCerts
 
