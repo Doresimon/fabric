@@ -1,0 +1,34 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: "2"
+
+services:
+  kafkaREPLACE_ORG_NAME:
+    extends:
+      file: base/kafka.base.yaml
+      service: kafka
+    container_name: kafkaREPLACE_ORG_NAME
+    hostname: kafkaREPLACE_ORG_NAME
+    environment:
+      - KAFKA_BROKER_ID=REPLACE_ORG_ID
+      # min.insync.replicas=M --- 设置一个M值（例如1<M<N，查看下面的default.replication.factor）
+      # 数据提交时会写入至少M个副本（这些数据然后会被同步并且归属到in-sync副本集合或ISR）。
+      # 其它情况，写入操作会返回一个错误。接下来：
+      # 1. 如果channel写入的数据多达N-M个副本变的不可用，操作可以正常执行。
+      # 2. 如果有更多的副本不可用，Kafka不可以维护一个有M数量的ISR集合，因此Kafka停止接收写操作。Channel只有当同步M个副本后才可以重新可以写。
+      - KAFKA_MIN_INSYNC_REPLICAS=1
+      - KAFKA_DEFAULT_REPLICATION_FACTOR=2
+      # 指向 Zookeeper 节点的集合，其中包含ZK的集合。
+      - KAFKA_ZOOKEEPER_CONNECT=zooKeeperREPLACE_ORG_NAME_1:2181,zooKeeperREPLACE_ORG_NAME_2:2181
+    volumes:
+      # kafka 数据存储路径，映射到本地
+      - ./chainData/kafka/kafka-logs/kafkaREPLACE_ORG_NAME/:/tmp/kafka-logs/
+    extra_hosts:
+      - "zooKeeperREPLACE_ORG_NAME_1:REPLACE_ORG_IP_1"
+      - "zooKeeperREPLACE_ORG_NAME_2:REPLACE_ORG_IP_2"
+      
+      - "kafkaREPLACE_ORG_NAME_1:REPLACE_ORG_IP_1"
+      - "kafkaREPLACE_ORG_NAME_2:REPLACE_ORG_IP_2"

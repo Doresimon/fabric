@@ -1,0 +1,29 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: "2"
+
+services:
+  peer0.REPLACE_ORG_NAME.example.com:
+    container_name: peer0.REPLACE_ORG_NAME.example.com
+    extends:
+      file: base/peer.base.yaml
+      service: peer.base
+    environment:
+      - CORE_PEER_ID=peer0.REPLACE_ORG_NAME.example.com
+      - CORE_PEER_ADDRESS=peer0.REPLACE_ORG_NAME.example.com:7051
+      - CORE_PEER_CHAINCODEADDRESS=peer0.REPLACE_ORG_NAME.example.com:7052
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.REPLACE_ORG_NAME.example.com:7051
+      - CORE_PEER_LOCALMSPID=REPLACE_ORG_NAMEMSP
+    volumes:
+      - /var/run/:/host/var/run/
+      - ./crypto-config/peerOrganizations/REPLACE_ORG_NAME.example.com/peers/peer0.REPLACE_ORG_NAME.example.com/msp:/etc/hyperledger/fabric/msp
+      - ./crypto-config/peerOrganizations/REPLACE_ORG_NAME.example.com/peers/peer0.REPLACE_ORG_NAME.example.com/tls:/etc/hyperledger/fabric/tls
+    extra_hosts:
+      - "ordererREPLACE_ORG_NAME_1.example.com:REPLACE_ORG_IP_1"
+      - "ordererREPLACE_ORG_NAME_2.example.com:REPLACE_ORG_IP_2"
+      - "peer0.REPLACE_ORG_NAME_1.example.com:REPLACE_ORG_IP_1"
+      - "peer0.REPLACE_ORG_NAME_2.example.com:REPLACE_ORG_IP_2"

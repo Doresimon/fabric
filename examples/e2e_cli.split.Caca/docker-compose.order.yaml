@@ -1,0 +1,30 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: "2"
+
+services:
+  ordererBob.example.com:
+    extends:
+      file: base/orderer.base.yaml
+      service: orderer.base
+    container_name: ordererBob.example.com
+    volumes:
+      # mapping data from docker to local storage
+      - ./chainData/orderer/ordererBob/:/var/hyperledger/production/
+      - ./crypto-config/ordererOrganizations/example.com/orderers/ordererBob.example.com/msp:/var/hyperledger/orderer/msp
+      - ./crypto-config/ordererOrganizations/example.com/orderers/ordererBob.example.com/tls:/var/hyperledger/orderer/tls
+    extra_hosts:
+      - "ordererAlice.example.com:10.171.5.32"
+      - "ordererBob.example.com:10.171.5.128"
+
+      - "peer0.Alice.example.com:10.171.5.32"
+      - "peer0.Bob.example.com:10.171.5.128"
+
+      - "zooKeeperAlice:10.171.5.32"
+      - "kafkaAlice:10.171.5.32"
+
+      - "zooKeeperBob:10.171.5.128"
+      - "kafkaBob:10.171.5.128"

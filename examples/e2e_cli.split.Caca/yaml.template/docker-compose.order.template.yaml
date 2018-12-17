@@ -1,0 +1,30 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: "2"
+
+services:
+  ordererREPLACE_ORG_NAME.example.com:
+    extends:
+      file: base/orderer.base.yaml
+      service: orderer.base
+    container_name: ordererREPLACE_ORG_NAME.example.com
+    volumes:
+      # mapping data from docker to local storage
+      - ./chainData/orderer/ordererREPLACE_ORG_NAME/:/var/hyperledger/production/
+      - ./crypto-config/ordererOrganizations/example.com/orderers/ordererREPLACE_ORG_NAME.example.com/msp:/var/hyperledger/orderer/msp
+      - ./crypto-config/ordererOrganizations/example.com/orderers/ordererREPLACE_ORG_NAME.example.com/tls:/var/hyperledger/orderer/tls
+    extra_hosts:
+      - "ordererREPLACE_ORG_NAME_1.example.com:REPLACE_ORG_IP_1"
+      - "ordererREPLACE_ORG_NAME_2.example.com:REPLACE_ORG_IP_2"
+
+      - "peer0.REPLACE_ORG_NAME_1.example.com:REPLACE_ORG_IP_1"
+      - "peer0.REPLACE_ORG_NAME_2.example.com:REPLACE_ORG_IP_2"
+
+      - "zooKeeperREPLACE_ORG_NAME_1:REPLACE_ORG_IP_1"
+      - "kafkaREPLACE_ORG_NAME_1:REPLACE_ORG_IP_1"
+
+      - "zooKeeperREPLACE_ORG_NAME_2:REPLACE_ORG_IP_2"
+      - "kafkaREPLACE_ORG_NAME_2:REPLACE_ORG_IP_2"

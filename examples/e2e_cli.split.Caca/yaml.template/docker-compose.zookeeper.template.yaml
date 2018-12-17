@@ -1,0 +1,25 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: "2"
+
+services:
+  zookeeperREPLACE_ORG_NAME:
+    container_name: zookeeperREPLACE_ORG_NAME
+    hostname: zooKeeperREPLACE_ORG_NAME
+    extends:
+      file: base/zookeeper.base.yaml
+      service: zookeeper
+    environment:
+      - ZOO_MY_ID=REPLACE_ORG_ID
+      - ZOO_SERVERS=server.1=zooKeeperREPLACE_ORG_NAME_1:2888:3888 server.2=zooKeeperREPLACE_ORG_NAME_2:2888:3888
+    volumes:
+      # 数据固化，将zookeeper产生的数据映射到本地，当zookeeper丢失等风险是不至于数据丢失
+      - ./chainData/zookeeper/data/zookeeperREPLACE_ORG_NAME/:/data/
+    extra_hosts:
+      - "zooKeeperREPLACE_ORG_NAME_1:REPLACE_ORG_IP_1"
+      - "kafkaREPLACE_ORG_NAME_1:REPLACE_ORG_IP_1"
+      - "zooKeeperREPLACE_ORG_NAME_2:REPLACE_ORG_IP_2"
+      - "kafkaREPLACE_ORG_NAME_2:REPLACE_ORG_IP_2"
