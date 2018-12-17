@@ -8,6 +8,17 @@
 
 #set -e
 
+if [ x$1 == x ]
+then
+    echo
+	echo "please run with args"
+	echo "such as 'Alice'"
+	exit 1
+fi
+
+ORG_NAME=$1
+ORG_ID=$2
+
 export FABRIC_ROOT=$PWD/../..
 export FABRIC_CFG_PATH=$PWD
 echo
@@ -30,7 +41,7 @@ function generateCerts (){
 	echo "##########################################################"
 	echo "##### Generate certificates using cryptogen tool #########"
 	echo "##########################################################"
-	$CRYPTOGEN generate --config=./crypto-config.Caca.yaml
+	$CRYPTOGEN generate --config=./crypto-config.$ORG_NAME.yaml
 	echo
 }
 
@@ -65,4 +76,4 @@ function generateChannelArtifacts() {
 
 generateCerts
 
-generateChannelArtifacts
+# generateChannelArtifacts
