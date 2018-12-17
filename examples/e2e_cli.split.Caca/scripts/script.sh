@@ -22,7 +22,7 @@ PEER0_ORG1_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrga
 PEER0_ORG2_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/Bob.example.com/peers/peer0.Bob.example.com/tls/ca.crt
 ORDERER_SYSCHAN_ID=e2e-orderer-syschan
 
-CC_NAME=mycc0110-1
+CC_NAME=mycc-0002
 
 CHAINCODE_VERSION=1.0
 
@@ -234,11 +234,6 @@ parsePeerConnectionParameters() {
         	exit 1
 	fi
 
-	PEER_CONN_PARMS=""
-	PEERS=""
-	while [ "$#" -gt 0 ]; do
-
-
 		if [ x$2 == x1 ]
 		then
 			PEER="peer$1.Alice"
@@ -246,6 +241,10 @@ parsePeerConnectionParameters() {
 			PEER="peer$1.Bob"
 		fi
 
+	PEER_CONN_PARMS=""
+	PEERS=""
+	while [ "$#" -gt 0 ]; do
+		PEER="peer$1.org$2"
 		PEERS="$PEERS $PEER"
 		PEER_CONN_PARMS="$PEER_CONN_PARMS --peerAddresses $PEER.example.com:7051"
 		if [ -z "$CORE_PEER_TLS_ENABLED" -o "$CORE_PEER_TLS_ENABLED" = "true" ]; then
@@ -281,49 +280,58 @@ chaincodeInvoke () {
 	echo
 }
 
-# # Check for orderering service availablility
-# echo "Check orderering service availability..."
-# checkOSNAvailability
+# Check for orderering service availablility
+echo "Check orderering service availability..."
+checkOSNAvailability
 
 # # # Create channel
 # # echo "Creating channel..."
-# createChannel
+# # createChannel
 
 # # # Join all the peers to the channel
 # echo "Having all peers join the channel..."
-# joinChannel
+# # joinChannel
 
 # # # Set the anchor peers for each org in the channel
 # echo "Updating anchor peers for Alice..."
-# updateAnchorPeers 0 1
+# # updateAnchorPeers 0 1
 # echo "Updating anchor peers for Bob..."
-# updateAnchorPeers 0 2
+# # updateAnchorPeers 0 2
 
-# # # Install chaincode on peer0.Alice and peer2.Bob
-# echo "Installing chaincode on peer0.Alice..."
-# installChaincode 0 1
+# # Install chaincode on peer0.Alice and peer2.Bob
+echo "Installing chaincode on peer0.Alice..."
+installChaincode 0 1
 
 # echo "Install chaincode on peer0.Bob..."
 # installChaincode 0 2
 
-# # # Instantiate chaincode on peer0.Alice
+# # Instantiate chaincode on peer0.Alice
 # echo "Instantiating chaincode on peer0.Alice..."
 # instantiateChaincode 0 1
 
-# # # Instantiate chaincode on peer0.Bob
+# # Instantiate chaincode on peer0.Bob
 # echo "Instantiating chaincode on peer0.Bob..."
 # instantiateChaincode 0 2
 
 # # Query on chaincode on peer0.Alice
 # echo "Querying chaincode on peer0.Alice..."
-# chaincodeQuery 0 1 100
-# echo "Querying chaincode on peer0.Bob..."
 # chaincodeQuery 0 2 100
 
 # # Invoke on chaincode on peer0.Alice and peer0.Bob
 # echo "Sending invoke transaction on peer0.Alice and peer0.Bob..."
 # chaincodeInvoke 0 1 0 2
 
+# Install chaincode on peer1.Bob
+# echo "Installing chaincode on peer1.Bob..."
+# installChaincode 1 2
+
+# Query on chaincode on peer1.Bob, check if the result is 90
+# echo "Querying chaincode on peer1.Bob..."
+# chaincodeQuery 1 2 90
+
+#Query on chaincode on peer1.org3 with idemix MSP type, check if the result is 90
+# echo "Querying chaincode on peer1.org3..."
+# chaincodeQuery 1 3 90
 
 echo
 echo "===================== All GOOD, End-2-End execution completed ===================== "
@@ -342,10 +350,10 @@ echo
 exit 0
 
 
-# docker exec -it cli /bin/bash
-
 # ./scripts/script.sh > ./scripts/run.log &
 
 # peer chaincode list -o ordererAlice.example.com:7050 -C fudan0110 --installed --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/ordererBob.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
 # peer chaincode list -o ordererAlice.example.com:7050 -C fudan0110 --instantiated --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/ordererBob.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
 
+# peer chaincode invoke -o ordererAlice.example.com:7050 -C fudan0110 -n mycc-0002 -c '{"Args":["invoke","a","b","10"]}'
+# peer chaincode invoke -o ordererBob.example.com:7050  --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/ordererAlice.example.com/msp/tlscacerts/tlsca.example.com-cert.pem --tlsRootCertFiles /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/Alice.example.com/peers/peer0.Alice.example.com/tls/ca.crt -C fudan0110 -n mycc-0002 --peerAddresses peer0.Alice.example.com:7051 -c '{"Args":["invoke","a","b","10"]}'
