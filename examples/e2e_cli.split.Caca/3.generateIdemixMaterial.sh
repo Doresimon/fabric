@@ -8,10 +8,6 @@
 
 #set -e
 
-CHANNEL_NAME=$1
-: ${CHANNEL_NAME:="mychannel"}
-echo $CHANNEL_NAME
-
 export FABRIC_ROOT=$PWD/../..
 export FABRIC_CFG_PATH=$PWD
 echo

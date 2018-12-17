@@ -5,32 +5,14 @@
 #
 
 # ---------------------------------------------------------------------------
-# "OrdererOrgs" - Definition of organizations managing orderer nodes
-OrdererOrgs:
-  # ---------------------------------------------------------------------------
-  # Orderer
-  # ---------------------------------------------------------------------------
-  - Name: Orderer
-    Domain: example.com
-    CA:
-      Country: US
-      Province: California
-      Locality: San Francisco
-    # ---------------------------------------------------------------------------
-    # "Specs" - See PeerOrgs below for complete description
-    # ---------------------------------------------------------------------------
-    Specs:
-      - Hostname: ordererAlice
-      - Hostname: ordererBob
-# ---------------------------------------------------------------------------
 # "PeerOrgs" - Definition of organizations managing peer nodes
 # ---------------------------------------------------------------------------
 PeerOrgs:
   # ---------------------------------------------------------------------------
   # Alice
   # ---------------------------------------------------------------------------
-  - Name: Alice
-    Domain: Alice.example.com
+  - Name: Caca
+    Domain: Caca.example.com
     EnableNodeOUs: true
     CA:
       Country: US
@@ -78,19 +60,5 @@ PeerOrgs:
     # ---------------------------------------------------------------------------
     # Count: The number of user accounts _in addition_ to Admin
     # ---------------------------------------------------------------------------
-    Users:
-      Count: 1
-  # ---------------------------------------------------------------------------
-  # Bob: See "Alice" for full specification
-  # ---------------------------------------------------------------------------
-  - Name: Bob
-    Domain: Bob.example.com
-    EnableNodeOUs: true
-    CA:
-      Country: US
-      Province: California
-      Locality: San Francisco
-    Template:
-      Count: 2
     Users:
       Count: 1

@@ -6,7 +6,13 @@
 
 ## Bob
 
-> ./network_setup.Bob.sh up > Alice.log &
+> ./network_setup.Bob.sh up > Bob.log &
+
+## Caca
+
+`10.108.233.160`
+
+> ./network_setup.Caca.sh up > Caca.log &
 
 ## 启动顺序
 
