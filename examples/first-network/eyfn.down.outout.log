@@ -1,0 +1,64 @@
+Stopping with channel 'mychannel' and CLI timeout of '10' seconds and CLI delay of '3' seconds
+Continue? [Y/n] proceeding ...
+Stopping Org3cli                ... 
+Stopping peer1.org3.example.com ... 
+Stopping peer0.org3.example.com ... 
+Stopping cli                    ... 
+Stopping peer1.org2.example.com ... 
+Stopping peer0.org2.example.com ... 
+Stopping peer1.org1.example.com ... 
+Stopping orderer.example.com    ... 
+Stopping peer0.org1.example.com ... 
+[6A[2KStopping cli                    ... [32mdone[0m[6B[9A[2KStopping Org3cli                ... [32mdone[0m[9B[2A[2KStopping orderer.example.com    ... [32mdone[0m[2B[1A[2KStopping peer0.org1.example.com ... [32mdone[0m[1B[4A[2KStopping peer0.org2.example.com ... [32mdone[0m[4B[5A[2KStopping peer1.org2.example.com ... [32mdone[0m[5B[3A[2KStopping peer1.org1.example.com ... [32mdone[0m[3B[7A[2KStopping peer0.org3.example.com ... [32mdone[0m[7B[8A[2KStopping peer1.org3.example.com ... [32mdone[0m[8BRemoving Org3cli                ... 
+Removing peer1.org3.example.com ... 
+Removing peer0.org3.example.com ... 
+Removing cli                    ... 
+Removing peer1.org2.example.com ... 
+Removing peer0.org2.example.com ... 
+Removing peer1.org1.example.com ... 
+Removing orderer.example.com    ... 
+Removing peer0.org1.example.com ... 
+[8A[2KRemoving peer1.org3.example.com ... [32mdone[0m[8B[1A[2KRemoving peer0.org1.example.com ... [32mdone[0m[1B[7A[2KRemoving peer0.org3.example.com ... [32mdone[0m[7B[2A[2KRemoving orderer.example.com    ... [32mdone[0m[2B[6A[2KRemoving cli                    ... [32mdone[0m[6B[3A[2KRemoving peer1.org1.example.com ... [32mdone[0m[3B[4A[2KRemoving peer0.org2.example.com ... [32mdone[0m[4B[5A[2KRemoving peer1.org2.example.com ... [32mdone[0m[5B[9A[2KRemoving Org3cli                ... [32mdone[0m[9BRemoving network net_byfn
+Removing volume net_peer0.org3.example.com
+Removing volume net_peer1.org3.example.com
+Removing volume net_orderer.example.com
+Removing volume net_peer0.org2.example.com
+Removing volume net_peer0.org1.example.com
+Removing volume net_peer1.org1.example.com
+Removing volume net_peer1.org2.example.com
+e3077f17643d
+619b5f18a286
+cbec36cc30a9
+928e1bbe771e
+78328ff5974b
+b999d7cbf139
+Untagged: dev-peer0.org2.example.com-mycc-2.0-c7aee9ad18dddc18319f5f00199f05d866f9e61dca40c9af3e226d434ac4a63c:latest
+Deleted: sha256:6bb3d8272f73297dad982a4a9195fcdc67d85a87a9cc6f4cd922d67c6bb55786
+Deleted: sha256:e725b90ca7b7e1f3749038f51bcee2ae23353e6b8c976c0008f0f8bf31529f61
+Deleted: sha256:3541c97a5e0e7b7d778e3d90a114fe6df65f38d90dbe8d8d7b6f7b4401fa1c13
+Deleted: sha256:897f0dead814a5c8adde41e7a314ec2a49a904d7f9dd5b0079f5e5b61ba6e6ab
+Untagged: dev-peer0.org3.example.com-mycc-2.0-156223788c3ef42ff3094c6cf1d2f71284c36f2074cc4d1f09a7065cb903d192:latest
+Deleted: sha256:a4810a2c4da5243f19d3d79790241f66305006e4a3010312dcdff6a00cc9b787
+Deleted: sha256:1f96888e46c219ce25412515945a6f55ee3628ead28afe0ad624f3e4491be74e
+Deleted: sha256:64db22592023b0b00b77ef7e44b70cfc53ae0d8df147f9d20c28224811064907
+Deleted: sha256:576f7517c21abd13a6e4af0d01dd896141c96fa33a54f7a1dc3e2355a89b9a23
+Untagged: dev-peer0.org1.example.com-mycc-2.0-2732cd4d96a0b88594aefca15581eaa0fb481ad15beeb86cc79931b2a90ee621:latest
+Deleted: sha256:33fa621682736c5388f7ed9eb5da63908f78a5c242297a2e5b5bddf185799f10
+Deleted: sha256:a721c8458831a38fad2a3219dc5abcb2e08f1fa4abcb3ad7abe8b7aa4bc0bd2c
+Deleted: sha256:c5ee008b16974cf239ed95371ca1b744d028e461ca1146f36dd0287f8951d795
+Deleted: sha256:839f6c9bad8c585b0c36dde09ee1a5d7bddbeed968cc0cad4df51ea53b1925b5
+Untagged: dev-peer1.org2.example.com-mycc-1.0-26c2ef32838554aac4f7ad6f100aca865e87959c9a126e86d764c8d01f8346ab:latest
+Deleted: sha256:bd5fbd65ccc8d60cae8ac7a9c27f20ac9d42acb6fdbe74d41eac78ed4de5894a
+Deleted: sha256:77379faa4e0f1cf13e78438711a66242c57fe4a3939326c18f3fa6b49d9cbcdf
+Deleted: sha256:962abb0964704026bccda1afb23fe17676de73825f88e72fcbf25999dde00021
+Deleted: sha256:6375e87048f1cddf9557c7e887739baf18fe2314f4376ccb0d23f44a0904efcf
+Untagged: dev-peer0.org1.example.com-mycc-1.0-384f11f484b9302df90b453200cfb25174305fce8f53f4e94d45ee3b6cab0ce9:latest
+Deleted: sha256:c47f6e43d682d52d43ffeb131581e433d624a6c6c227fa58a4bbda49f233f1b2
+Deleted: sha256:feb7fe8207d9cf77fced058a32f7e0d97aa353dad34c3e2a300c24e2c2086df1
+Deleted: sha256:9406b011e4a5f2ccbe76e8c4abded8b0c34a04f5311da63288e2f803c98489ab
+Deleted: sha256:130b1d41c1374c7e3153a54182cf3709b696560a89614e2cb09403efd6f680a2
+Untagged: dev-peer0.org2.example.com-mycc-1.0-15b571b3ce849066b7ec74497da3b27e54e0df1345daff3951b94245ce09c42b:latest
+Deleted: sha256:5a24b7792c05ef9c106a37afbf72ee820214b7a5f32eb41b95e29548a4201772
+Deleted: sha256:e585d1b5ebcfc49cd0a4bbf4722189f4e7356820dc6b980eaf9e11d79a89d5aa
+Deleted: sha256:aa1374da90a786c91fd7a83a6e3cf51369a08fd38684928b1dd247b724c1a36a
+Deleted: sha256:46a9c5eb8628e80441c1fbec3002ef999d9dc9c40cf2e3006ed5bfaefd03d3ea

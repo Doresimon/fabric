@@ -1,0 +1,90 @@
+Generating certs and genesis block for with channel 'mychannel' and CLI timeout of '10' seconds and CLI delay of '3' seconds
+Continue? [Y/n] proceeding ...
+/home/halo/Desktop/dev/fabric-samples/first-network/../bin/cryptogen
+
+###############################################################
+##### Generate Org3 certificates using cryptogen tool #########
+###############################################################
++ cryptogen generate --config=./org3-crypto.yaml
+org3.example.com
++ res=0
++ set +x
+
+/home/halo/Desktop/dev/fabric-samples/first-network/../bin/configtxgen
+##########################################################
+#########  Generating Org3 config material ###############
+##########################################################
++ configtxgen -printOrg Org3MSP
+[34m2018-11-14 17:56:19.333 CST [common/tools/configtxgen] main -> INFO 001[0m Loading configuration
+[33m2018-11-14 17:56:19.338 CST [common/tools/configtxgen/encoder] NewOrdererOrgGroup -> WARN 002[0m Default policy emission is deprecated, please include policy specifications for the orderer org group Org3MSP in configtx.yaml
++ res=0
++ set +x
+
+
+###############################################################
+####### Generate and submit config tx to add Org3 #############
+###############################################################
+
+========= Creating config transaction to add org3 to network =========== 
+
+Installing jq
+Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+Hit:2 http://archive.ubuntu.com/ubuntu xenial InRelease
+Get:3 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Get:4 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [104 kB]
+Get:5 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [744 kB]
+Get:6 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Get:7 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [506 kB]
+Get:8 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3748 B]
+Get:9 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [290 kB]
+Get:10 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [1138 kB]
+Get:11 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [905 kB]
+Get:12 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [18.8 kB]
+Get:12 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [18.8 kB]
+Get:13 http://archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [7959 B]
+Fetched 4030 kB in 4min 5s (16.4 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+jq is already the newest version (1.5+dfsg-1ubuntu0.1).
+0 upgraded, 0 newly installed, 0 to remove and 32 not upgraded.
+Fetching the most recent configuration block for the channel
++ peer channel fetch config config_block.pb -o orderer.example.com:7050 -c mychannel --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+[34m2018-11-14 10:00:27.745 UTC [channelCmd] InitCmdFactory -> INFO 001[0m Endorser and orderer connections initialized
+[34m2018-11-14 10:00:27.748 UTC [cli/common] readBlock -> INFO 002[0m Received block: 4
+[34m2018-11-14 10:00:27.753 UTC [cli/common] readBlock -> INFO 003[0m Received block: 2
++ set +x
+Decoding config block to JSON and isolating config to config.json
++ jq '.data.data[0].payload.data.config'
++ configtxlator proto_decode --input config_block.pb --type common.Block
++ set +x
++ jq -s '.[0] * {"channel_group":{"groups":{"Application":{"groups": {"Org3MSP":.[1]}}}}}' config.json ./channel-artifacts/org3.json
++ set +x
++ configtxlator proto_encode --input config.json --type common.Config
++ configtxlator proto_encode --input modified_config.json --type common.Config
++ configtxlator compute_update --channel_id mychannel --original original_config.pb --updated modified_config.pb
++ configtxlator proto_decode --input config_update.pb --type common.ConfigUpdate
++ jq .
+++ cat config_update.json
++ echo '{"payload":{"header":{"channel_header":{"channel_id":"mychannel", "type":2}},"data":{"config_update":{' '"channel_id":' '"mychannel",' '"isolated_data":' '{},' '"read_set":' '{' '"groups":' '{' '"Application":' '{' '"groups":' '{' '"Org1MSP":' '{' '"groups":' '{},' '"mod_policy":' '"",' '"policies":' '{},' '"values":' '{},' '"version":' '"1"' '},' '"Org2MSP":' '{' '"groups":' '{},' '"mod_policy":' '"",' '"policies":' '{},' '"values":' '{},' '"version":' '"1"' '}' '},' '"mod_policy":' '"",' '"policies":' '{' '"Admins":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '},' '"Readers":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '},' '"Writers":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '}' '},' '"values":' '{' '"Capabilities":' '{' '"mod_policy":' '"",' '"value":' null, '"version":' '"0"' '}' '},' '"version":' '"1"' '}' '},' '"mod_policy":' '"",' '"policies":' '{},' '"values":' '{},' '"version":' '"0"' '},' '"write_set":' '{' '"groups":' '{' '"Application":' '{' '"groups":' '{' '"Org1MSP":' '{' '"groups":' '{},' '"mod_policy":' '"",' '"policies":' '{},' '"values":' '{},' '"version":' '"1"' '},' '"Org2MSP":' '{' '"groups":' '{},' '"mod_policy":' '"",' '"policies":' '{},' '"values":' '{},' '"version":' '"1"' '},' '"Org3MSP":' '{' '"groups":' '{},' '"mod_policy":' '"Admins",' '"policies":' '{' '"Admins":' '{' '"mod_policy":' '"Admins",' '"policy":' '{' '"type":' 1, '"value":' '{' '"identities":' '[' '{' '"principal":' '{' '"msp_identifier":' '"Org3MSP",' '"role":' '"ADMIN"' '},' '"principal_classification":' '"ROLE"' '}' '],' '"rule":' '{' '"n_out_of":' '{' '"n":' 1, '"rules":' '[' '{' '"signed_by":' 0 '}' ']' '}' '},' '"version":' 0 '}' '},' '"version":' '"0"' '},' '"Readers":' '{' '"mod_policy":' '"Admins",' '"policy":' '{' '"type":' 1, '"value":' '{' '"identities":' '[' '{' '"principal":' '{' '"msp_identifier":' '"Org3MSP",' '"role":' '"MEMBER"' '},' '"principal_classification":' '"ROLE"' '}' '],' '"rule":' '{' '"n_out_of":' '{' '"n":' 1, '"rules":' '[' '{' '"signed_by":' 0 '}' ']' '}' '},' '"version":' 0 '}' '},' '"version":' '"0"' '},' '"Writers":' '{' '"mod_policy":' '"Admins",' '"policy":' '{' '"type":' 1, '"value":' '{' '"identities":' '[' '{' '"principal":' '{' '"msp_identifier":' '"Org3MSP",' '"role":' '"MEMBER"' '},' '"principal_classification":' '"ROLE"' '}' '],' '"rule":' '{' '"n_out_of":' '{' '"n":' 1, '"rules":' '[' '{' '"signed_by":' 0 '}' ']' '}' '},' '"version":' 0 '}' '},' '"version":' '"0"' '}' '},' '"values":' '{' '"MSP":' '{' '"mod_policy":' '"Admins",' '"value":' '{' '"config":' '{' '"admins":' '[' '"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNLekNDQWRHZ0F3SUJBZ0lSQVBMVEx0TG9HMWdMQnFDaTMyamxBV2t3Q2dZSUtvWkl6ajBFQXdJd2N6RUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhHVEFYQmdOVkJBb1RFRzl5WnpNdVpYaGhiWEJzWlM1amIyMHhIREFhQmdOVkJBTVRFMk5oCkxtOXlaek11WlhoaGJYQnNaUzVqYjIwd0hoY05NVGd4TVRFME1EazFNVEF3V2hjTk1qZ3hNVEV4TURrMU1UQXcKV2pCc01Rc3dDUVlEVlFRR0V3SlZVekVUTUJFR0ExVUVDQk1LUTJGc2FXWnZjbTVwWVRFV01CUUdBMVVFQnhNTgpVMkZ1SUVaeVlXNWphWE5qYnpFUE1BMEdBMVVFQ3hNR1kyeHBaVzUwTVI4d0hRWURWUVFEREJaQlpHMXBia0J2CmNtY3pMbVY0WVcxd2JHVXVZMjl0TUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFaGduaEJYL3cKdkZKNXJSUDJMWnd4bTRGbVZ2UmNqNEZzYWV4ekJkTWFtREF5OWwyeFZOM0dPVDBBbytlcHVhZ2w5c3pralZSdwpNMlgzZkNzRjRacGRRcU5OTUVzd0RnWURWUjBQQVFIL0JBUURBZ2VBTUF3R0ExVWRFd0VCL3dRQ01BQXdLd1lEClZSMGpCQ1F3SW9BZzZWT1YwTmxicjJuUTBRRVZzb2xobGVXMEtGMkhNWmtON1J0amh0YlJlaWd3Q2dZSUtvWkkKemowRUF3SURTQUF3UlFJaEFJY0VvODI1a3g5bG1vVUI4N240eEhhQmsvSklrL0lQODVVY2RnY29vcVBIQWlCTwpVWHB3SnprZGVvT2djZlpKdDlndHR2WCtSUWloZmJQSlBHZTVMNWhxeHc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="' '],' '"crypto_config":' '{' '"identity_identifier_hash_function":' '"SHA256",' '"signature_hash_family":' '"SHA2"' '},' '"fabric_node_ous":' '{' '"client_ou_identifier":' '{' '"certificate":' '"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNRekNDQWVxZ0F3SUJBZ0lSQUtZdXBQV054QWlJRlM0MFBFcWsvQXN3Q2dZSUtvWkl6ajBFQXdJd2N6RUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhHVEFYQmdOVkJBb1RFRzl5WnpNdVpYaGhiWEJzWlM1amIyMHhIREFhQmdOVkJBTVRFMk5oCkxtOXlaek11WlhoaGJYQnNaUzVqYjIwd0hoY05NVGd4TVRFME1EazFNVEF3V2hjTk1qZ3hNVEV4TURrMU1UQXcKV2pCek1Rc3dDUVlEVlFRR0V3SlZVekVUTUJFR0ExVUVDQk1LUTJGc2FXWnZjbTVwWVRFV01CUUdBMVVFQnhNTgpVMkZ1SUVaeVlXNWphWE5qYnpFWk1CY0dBMVVFQ2hNUWIzSm5NeTVsZUdGdGNHeGxMbU52YlRFY01Cb0dBMVVFCkF4TVRZMkV1YjNKbk15NWxlR0Z0Y0d4bExtTnZiVEJaTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEEwSUEKQkFhaXVuUys0Ymk4TXpZbEc1Q0Z1OE0xWTcvK2JYQnJHeHNYUjlWNEVocVo5TmxqdTNwQzlZUlhQcDd3ZXc0awplZUtWR0RObXdRYzdrVmdiQVkxeDRkR2pYekJkTUE0R0ExVWREd0VCL3dRRUF3SUJwakFQQmdOVkhTVUVDREFHCkJnUlZIU1VBTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3S1FZRFZSME9CQ0lFSU9sVGxkRFpXNjlwME5FQkZiS0oKWVpYbHRDaGRoekdaRGUwYlk0YlcwWG9vTUFvR0NDcUdTTTQ5QkFNQ0EwY0FNRVFDSUhGSm9vT1A3eUJNOTQ0Rgo4bjlTQ25RTzFZUmVJSjRNSlFHcnBSMDZJbFdJQWlCdnp5L0tIRlE2MTdqbS9HUzVESEFSRGxUSGhZYXpJRXRjCnhoY3AwWU1lNWc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",' '"organizational_unit_identifier":' '"client"' '},' '"enable":' true, '"peer_ou_identifier":' '{' '"certificate":' '"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNRekNDQWVxZ0F3SUJBZ0lSQUtZdXBQV054QWlJRlM0MFBFcWsvQXN3Q2dZSUtvWkl6ajBFQXdJd2N6RUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhHVEFYQmdOVkJBb1RFRzl5WnpNdVpYaGhiWEJzWlM1amIyMHhIREFhQmdOVkJBTVRFMk5oCkxtOXlaek11WlhoaGJYQnNaUzVqYjIwd0hoY05NVGd4TVRFME1EazFNVEF3V2hjTk1qZ3hNVEV4TURrMU1UQXcKV2pCek1Rc3dDUVlEVlFRR0V3SlZVekVUTUJFR0ExVUVDQk1LUTJGc2FXWnZjbTVwWVRFV01CUUdBMVVFQnhNTgpVMkZ1SUVaeVlXNWphWE5qYnpFWk1CY0dBMVVFQ2hNUWIzSm5NeTVsZUdGdGNHeGxMbU52YlRFY01Cb0dBMVVFCkF4TVRZMkV1YjNKbk15NWxlR0Z0Y0d4bExtTnZiVEJaTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEEwSUEKQkFhaXVuUys0Ymk4TXpZbEc1Q0Z1OE0xWTcvK2JYQnJHeHNYUjlWNEVocVo5TmxqdTNwQzlZUlhQcDd3ZXc0awplZUtWR0RObXdRYzdrVmdiQVkxeDRkR2pYekJkTUE0R0ExVWREd0VCL3dRRUF3SUJwakFQQmdOVkhTVUVDREFHCkJnUlZIU1VBTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3S1FZRFZSME9CQ0lFSU9sVGxkRFpXNjlwME5FQkZiS0oKWVpYbHRDaGRoekdaRGUwYlk0YlcwWG9vTUFvR0NDcUdTTTQ5QkFNQ0EwY0FNRVFDSUhGSm9vT1A3eUJNOTQ0Rgo4bjlTQ25RTzFZUmVJSjRNSlFHcnBSMDZJbFdJQWlCdnp5L0tIRlE2MTdqbS9HUzVESEFSRGxUSGhZYXpJRXRjCnhoY3AwWU1lNWc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",' '"organizational_unit_identifier":' '"peer"' '}' '},' '"intermediate_certs":' '[],' '"name":' '"Org3MSP",' '"organizational_unit_identifiers":' '[],' '"revocation_list":' '[],' '"root_certs":' '[' '"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNRekNDQWVxZ0F3SUJBZ0lSQUtZdXBQV054QWlJRlM0MFBFcWsvQXN3Q2dZSUtvWkl6ajBFQXdJd2N6RUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhHVEFYQmdOVkJBb1RFRzl5WnpNdVpYaGhiWEJzWlM1amIyMHhIREFhQmdOVkJBTVRFMk5oCkxtOXlaek11WlhoaGJYQnNaUzVqYjIwd0hoY05NVGd4TVRFME1EazFNVEF3V2hjTk1qZ3hNVEV4TURrMU1UQXcKV2pCek1Rc3dDUVlEVlFRR0V3SlZVekVUTUJFR0ExVUVDQk1LUTJGc2FXWnZjbTVwWVRFV01CUUdBMVVFQnhNTgpVMkZ1SUVaeVlXNWphWE5qYnpFWk1CY0dBMVVFQ2hNUWIzSm5NeTVsZUdGdGNHeGxMbU52YlRFY01Cb0dBMVVFCkF4TVRZMkV1YjNKbk15NWxlR0Z0Y0d4bExtTnZiVEJaTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEEwSUEKQkFhaXVuUys0Ymk4TXpZbEc1Q0Z1OE0xWTcvK2JYQnJHeHNYUjlWNEVocVo5TmxqdTNwQzlZUlhQcDd3ZXc0awplZUtWR0RObXdRYzdrVmdiQVkxeDRkR2pYekJkTUE0R0ExVWREd0VCL3dRRUF3SUJwakFQQmdOVkhTVUVDREFHCkJnUlZIU1VBTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3S1FZRFZSME9CQ0lFSU9sVGxkRFpXNjlwME5FQkZiS0oKWVpYbHRDaGRoekdaRGUwYlk0YlcwWG9vTUFvR0NDcUdTTTQ5QkFNQ0EwY0FNRVFDSUhGSm9vT1A3eUJNOTQ0Rgo4bjlTQ25RTzFZUmVJSjRNSlFHcnBSMDZJbFdJQWlCdnp5L0tIRlE2MTdqbS9HUzVESEFSRGxUSGhZYXpJRXRjCnhoY3AwWU1lNWc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="' '],' '"signing_identity":' null, '"tls_intermediate_certs":' '[],' '"tls_root_certs":' '[' '"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNTRENDQWUrZ0F3SUJBZ0lRWW8rYi9idTBDZ01keHM2K1kyV1hRakFLQmdncWhrak9QUVFEQWpCMk1Rc3cKQ1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0JNS1EyRnNhV1p2Y201cFlURVdNQlFHQTFVRUJ4TU5VMkZ1SUVaeQpZVzVqYVhOamJ6RVpNQmNHQTFVRUNoTVFiM0puTXk1bGVHRnRjR3hsTG1OdmJURWZNQjBHQTFVRUF4TVdkR3h6ClkyRXViM0puTXk1bGVHRnRjR3hsTG1OdmJUQWVGdzB4T0RFeE1UUXdPVFV4TURCYUZ3MHlPREV4TVRFd09UVXgKTURCYU1IWXhDekFKQmdOVkJBWVRBbFZUTVJNd0VRWURWUVFJRXdwRFlXeHBabTl5Ym1saE1SWXdGQVlEVlFRSApFdzFUWVc0Z1JuSmhibU5wYzJOdk1Sa3dGd1lEVlFRS0V4QnZjbWN6TG1WNFlXMXdiR1V1WTI5dE1SOHdIUVlEClZRUURFeFowYkhOallTNXZjbWN6TG1WNFlXMXdiR1V1WTI5dE1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMEQKQVFjRFFnQUVJQkcvTys2aGVIRU1BclFmZEhpb0ordFFlVzkvTGVZaE9EYlZ0cmNzdEFoeWkwUStWNE56NHRESAo3QXJOWUhFSGdIZ2JNdlpxZUdNemV6MGdLQnY2bHFOZk1GMHdEZ1lEVlIwUEFRSC9CQVFEQWdHbU1BOEdBMVVkCkpRUUlNQVlHQkZVZEpRQXdEd1lEVlIwVEFRSC9CQVV3QXdFQi96QXBCZ05WSFE0RUlnUWdvaGtsZnhHZWZBVmQKc2RjZVlaU0h6bHFwNSthQjJIRkVzOXk4bUhWb3R2d3dDZ1lJS29aSXpqMEVBd0lEUndBd1JBSWdJSzF6cm8xawpIdVpSRjV2MGFRWUlvZ1VFMXQ1RHlHZHl2OVRJb2txQTdDb0NJRGI2cmo5d0psUnptcnNnZVRvWUZqa3Bld0dkCmo0M24wb1R1UmluWmt1c3gKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="' ']' '},' '"type":' 0 '},' '"version":' '"0"' '}' '},' '"version":' '"0"' '}' '},' '"mod_policy":' '"Admins",' '"policies":' '{' '"Admins":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '},' '"Readers":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '},' '"Writers":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '}' '},' '"values":' '{' '"Capabilities":' '{' '"mod_policy":' '"",' '"value":' null, '"version":' '"0"' '}' '},' '"version":' '"2"' '}' '},' '"mod_policy":' '"",' '"policies":' '{},' '"values":' '{},' '"version":' '"0"' '}' '}}}}'
++ configtxlator proto_encode --input config_update_in_envelope.json --type common.Envelope
+
++ set +x
++ peer channel signconfigtx -f org3_update_in_envelope.pb
+========= Config transaction to add org3 to network created ===== 
+
+Signing config transaction
+
+[34m2018-11-14 10:00:28.305 UTC [channelCmd] InitCmdFactory -> INFO 001[0m Endorser and orderer connections initialized
+
++ set +x
+========= Submitting transaction from a different peer (peer0.org2) which also signs it ========= 
+
++ peer channel update -f org3_update_in_envelope.pb -c mychannel -o orderer.example.com:7050 --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+[34m2018-11-14 10:00:28.368 UTC [channelCmd] InitCmdFactory -> INFO 001[0m Endorser and orderer connections initialized
+[34m2018-11-14 10:00:28.381 UTC [channelCmd] update -> INFO 002[0m Successfully submitted channel update
++ set +x
+
+========= Config transaction to add org3 to network submitted! =========== 
+

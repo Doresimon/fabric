@@ -1,0 +1,55 @@
+Generating certs and genesis block for channel 'mychannel' with CLI timeout of '10' seconds and CLI delay of '3' seconds
+Continue? [Y/n] proceeding ...
+/home/halo/Desktop/dev/fabric-samples/first-network/../bin/cryptogen
+
+##########################################################
+##### Generate certificates using cryptogen tool #########
+##########################################################
++ cryptogen generate --config=./crypto-config.yaml
+org1.example.com
+org2.example.com
++ res=0
++ set +x
+
+/home/halo/Desktop/dev/fabric-samples/first-network/../bin/configtxgen
+##########################################################
+#########  Generating Orderer Genesis block ##############
+##########################################################
++ configtxgen -profile TwoOrgsOrdererGenesis -outputBlock ./channel-artifacts/genesis.block
+[33m2018-11-14 17:52:08.646 CST [common/tools/configtxgen] main -> WARN 001[0m Omitting the channel ID for configtxgen for output operations is deprecated.  Explicitly passing the channel ID will be required in the future, defaulting to 'testchainid'.
+[34m2018-11-14 17:52:08.646 CST [common/tools/configtxgen] main -> INFO 002[0m Loading configuration
+[34m2018-11-14 17:52:08.682 CST [common/tools/configtxgen] doOutputBlock -> INFO 003[0m Generating genesis block
+[34m2018-11-14 17:52:08.683 CST [common/tools/configtxgen] doOutputBlock -> INFO 004[0m Writing genesis block
++ res=0
++ set +x
+
+#################################################################
+### Generating channel configuration transaction 'channel.tx' ###
+#################################################################
++ configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID mychannel
+[34m2018-11-14 17:52:08.734 CST [common/tools/configtxgen] main -> INFO 001[0m Loading configuration
+[34m2018-11-14 17:52:08.758 CST [common/tools/configtxgen] doOutputChannelCreateTx -> INFO 002[0m Generating new channel configtx
+[34m2018-11-14 17:52:08.759 CST [common/tools/configtxgen] doOutputChannelCreateTx -> INFO 003[0m Writing new channel tx
++ res=0
++ set +x
+
+#################################################################
+#######    Generating anchor peer update for Org1MSP   ##########
+#################################################################
++ configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -channelID mychannel -asOrg Org1MSP
+[34m2018-11-14 17:52:08.793 CST [common/tools/configtxgen] main -> INFO 001[0m Loading configuration
+[34m2018-11-14 17:52:08.817 CST [common/tools/configtxgen] doOutputAnchorPeersUpdate -> INFO 002[0m Generating anchor peer update
+[34m2018-11-14 17:52:08.817 CST [common/tools/configtxgen] doOutputAnchorPeersUpdate -> INFO 003[0m Writing anchor peer update
++ res=0
++ set +x
+
+#################################################################
+#######    Generating anchor peer update for Org2MSP   ##########
+#################################################################
++ configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org2MSPanchors.tx -channelID mychannel -asOrg Org2MSP
+[34m2018-11-14 17:52:08.853 CST [common/tools/configtxgen] main -> INFO 001[0m Loading configuration
+[34m2018-11-14 17:52:08.875 CST [common/tools/configtxgen] doOutputAnchorPeersUpdate -> INFO 002[0m Generating anchor peer update
+[34m2018-11-14 17:52:08.876 CST [common/tools/configtxgen] doOutputAnchorPeersUpdate -> INFO 003[0m Writing anchor peer update
++ res=0
++ set +x
+

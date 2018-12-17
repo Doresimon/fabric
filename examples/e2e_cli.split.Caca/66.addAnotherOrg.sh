@@ -61,7 +61,7 @@ function generateChannelArtifacts() {
 	echo "##########################################################"
 	# Note: For some unknown reason (at least for now) the block file can't be
 	# named orderer.genesis.block or the orderer will fail to launch!
-	$CONFIGTXGEN -printOrg $ORG_NAME\MSP > ./channel-artifacts/$ORG_NAME.json
+	$CONFIGTXGEN --configPath=./ -printOrg ${ORG_NAME}MSP > ./channel-artifacts/$ORG_NAME.json
 
 	echo
 	echo "#################################################################"
@@ -76,4 +76,4 @@ function generateChannelArtifacts() {
 
 generateCerts
 
-# generateChannelArtifacts
+generateChannelArtifacts
